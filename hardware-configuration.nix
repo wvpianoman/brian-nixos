@@ -8,11 +8,12 @@
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [
- #   "applespi"            #
- #   "intel_lpss_pci"      #
- #   "mac_hid"             #
- #   "spi_pxa2xx_platform" #
- #   "usbcore"             #
+    "applespi"            # MacBook (Pro) SPI keyboard and touchpad driver
+    "intel_lpss_pci"      # Intel Low Power Subsystem support in PCI mode
+    "mac_hid"             # HID support stuff for Macintosh computers.
+    "spi_pxa2xx_platform" # SPI keyboard / trackpad found on 12" MacBooks (2015 and later) and newer MacBook Pros (late 2016 and later).
+    "spi_pxa2xx_pci"      # PCI glue driver for SPI PXA2xx compatible controllers.
+    "usbcore"             #
 
     "xhci_pci"
     "ehci_pci"
@@ -24,13 +25,13 @@
     "sr_mod"
     "sdhci_pci"
   ];
-#  systemd.services.fix-suspend = {
-#    script = ''
-#      # Fix macbook 12 suspend issues
-#      echo 0 > /sys/bus/pci/devices/0000:01:00.0/d3cold_allowed
-#    '';
-#    wantedBy = [ "multi-user.target" ];
-#  };
+  systemd.services.fix-suspend = {
+    script = ''
+      # Fix macbook 12 suspend issues
+      echo 0 > /sys/bus/pci/devices/0000:01:00.0/d3cold_allowed
+    '';
+    wantedBy = [ "multi-user.target" ];
+  };
 
   # boot.extraModulePackages = [ ];
   boot.initrd.kernelModules = [ ];
@@ -72,12 +73,6 @@
 #      "${automountOpts},credentials=${credentialsPath},uid=${uid},gid=${gid},vers=${vers},${cacheOpts}"
 #    ];
 #  };
-
-  #---------------------------------------------------------------------
-  # For AMD hardware / chipsets
-  #---------------------------------------------------------------------
-
-  # hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   #---------------------------------------------------------------------
   # For Intel hardware / chipsets

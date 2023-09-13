@@ -16,13 +16,22 @@
   #---------------------------------------------------------------------
   # Import snippet files
   #---------------------------------------------------------------------
-  imports = [ # ##  ONLY UNCOMMENT THE ./hardware GPU YOU WANT  ###
+  imports = [ 
 
-    ./core/gpu                          # INTEL GPU with (Open-GL), tlp and auto-cpufreq
+    ./core/gpu 
     ./core
     ./hardware-configuration.nix
   ];
 
+  #---------------------------------------------------------------------
+  # flakes
+  #---------------------------------------------------------------------
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
   # --------------------------------------------------------------------
   # Permit Insecure Packages
   # --------------------------------------------------------------------
@@ -46,25 +55,17 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #---------------------------------------------------------------------
-  # Set network host name
+  # Enable networking & set host name
   #---------------------------------------------------------------------
+  networking.networkmanager.enable = true;
   networking.hostName = "nixos";
 
   #---------------------------------------------------------------------
-  # Enable networking
-  #---------------------------------------------------------------------
-  networking.networkmanager.enable = true;
-
-  #---------------------------------------------------------------------
-  # Set your time zone
+  # Set your time zone & internationalisation
+  # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   #---------------------------------------------------------------------
   time.timeZone = "America/New_York";
-
-  #---------------------------------------------------------------------
-  # Select internationalisation properties.
-  #---------------------------------------------------------------------
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -136,7 +137,18 @@
   #---------------------------------------------------------------------
   # Enable the OpenSSH daemon.
   #---------------------------------------------------------------------
-  services.openssh.enable = true;
+  # ssh
+  services.openssh = {
+    enable = true;
+    settings = {
+      kexAlgorithms = [ "curve25519-sha256" ];
+      ciphers = [ "chacha20-poly1305@openssh.com" ];
+      passwordAuthentication = false;
+      permitRootLogin = "no"; # do not allow to login as root user
+      kbdInteractiveAuthentication = false;
+    };
+  };  
+
 
     # mkpasswd -m sha-512
   #  hashedPassword =
@@ -160,38 +172,72 @@
   # User Configuration
   #---------------------------------------------------------------------
 
-  users.users.brian = {
-    homeMode = "0755";
-    isNormalUser = true;
-    description = "Brian Francisco";
-    uid = 1000;
-    extraGroups = [
-      "adbusers"
-      "audio"
-      "corectrl"
-      "disk"
-      "docker"
-      "input"
-      "libvirtd"
-      "lp"
-      "mongodb"
-      "mysql"
-      "network"
-      "networkmanager"
-      "postgres"
-      "power"
-      "samba"
-      "scanner"
-      "smb"
-      "sound"
-      "systemd-journal"
-      "udev"
-      "users"
-      "video"
-      "wheel"
+  users.users = {
+    brian = {
+      createHome = true;
+      isNormalUser = true;
+      description = "Brian Francisco";
+      extraGroups = [
+        "adbusers"
+        "audio"
+        "corectrl"
+        "disk"
+        "docker"
+        "input"
+        "libvirtd"
+        "lp"
+        "mongodb"
+        "mysql"
+        "network"
+        "networkmanager"
+        "postgres"
+        "power"
+        "samba"
+        "scanner"
+        "smb"
+        "sound"
+        "systemd-journal"
+        "udev"
+        "users"
+        "video"
+        "wheel"
     ];
     packages = [ pkgs.home-manager ];
 
+  };
+
+  # installed packages
+  environment.systemPackages = with pkgs; [
+    # cli utils
+    git
+    curl
+    wget
+    vim
+    htop
+
+    # browser
+    chromium
+
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions; [
+        bbenoist.nix # syntax highlight for .nix files in vscode
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "search-crates-io";
+          publisher = "belfz";
+          version = "1.2.1";
+          sha256 = "sha256-K2H4OHH6vgQvhhcOFdP3RD0fPghAxxbgurv+N82pFNs=";
+          # sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+        }
+      ];
+    })
+  ];
+
+  programs.chromium = {
+    enable = true;
+    extensions = [
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
+    ];
   };
 
   #---------------------------------------------------------------------  
