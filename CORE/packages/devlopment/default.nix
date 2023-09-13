@@ -27,9 +27,9 @@
       nixfmt        # An opinionated formatter for Nix
       nixos-option
       
-      vscode-with-extensions 
-      vscode-extensions.mkhl.direnv
-      vscode-extensions.brettm12345.nixfmt-vscode
+      #vscode-with-extensions 
+      #vscode-extensions.mkhl.direnv
+      #vscode-extensions.brettm12345.nixfmt-vscode
 
   #####################################
   # Github related

@@ -9,9 +9,9 @@
     
     ./nix
     ./packages
-    ./programs
-    ./services
-    ./system
+    #./programs
+    #./services
+    #./system
 
   ];
 

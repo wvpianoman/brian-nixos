@@ -27,8 +27,8 @@
               home.homeDirectory = "/home/brian";
               programs.home-manager.enable = true;
               home.packages = with pkgs; [
-                thunderbird
-                keepassxc
+                #thunderbird
+                #keepassxc
               ];
               home.stateVersion = "23.11";
             };
