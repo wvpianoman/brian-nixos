@@ -58,7 +58,7 @@
   # Enable networking & set host name
   #---------------------------------------------------------------------
   networking.networkmanager.enable = true;
-  networking.hostName = "nixos";
+  networking.hostName = "discordia";
 
   #---------------------------------------------------------------------
   # Set your time zone & internationalisation

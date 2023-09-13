@@ -15,7 +15,7 @@
     ./firewall
     ./fonts
     #./kernel-sysctl # kernel tweaks
-    ./network
+    #./network
     ./systemd
     #./theme    # GNOME THEME?
   ];
