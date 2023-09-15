@@ -6,8 +6,8 @@
   # ------------------------------------------
 
   xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
+    # enable = true;
+    # xdgOpenUsePortal = true;
 
     # lxqt = {
     #   enable = false;
@@ -20,13 +20,13 @@
     # };
 
     # Turn Wayland off
-    # wlr = { enable = false; };
+     wlr = { enable = false; };
 
     extraPortals = with pkgs;
       [
         #  xdg-desktop-portal-gtk
         #  xdg-desktop-portal-wlr
-        xdg-desktop-portal-kde
+        # xdg-desktop-portal-kde
       ];
 
   };

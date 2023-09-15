@@ -2,16 +2,16 @@
 
 {
   #---------------------------------------------------------------------  
-  # My CORE components        ( TODO LIST)
+  # My CORE components        ( TODO LIST).
   #---------------------------------------------------------------------
 
   imports = [
     
     ./nix
     ./packages
-    #./programs
-    #./services
-    #./system
+    ./programs
+    ./services
+    ./system
 
   ];
 

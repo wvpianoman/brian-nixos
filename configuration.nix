@@ -214,6 +214,7 @@
     wget
     vim
     htop
+    kate
 
     # browser
     chromium

@@ -4,19 +4,19 @@
 
     # Configuration for  Services 
 
-    # ./plasma
+    #./plasma
     ./power-profiles-daemon   # Uncomment for laptops
-    #./thermald                # Uncomment for laptops
-    # ./virtualisation           # BETA NEEDS TESTING
+    ./thermald               # Uncomment for laptops
+    #./virtualisation         # BETA NEEDS TESTING
 
     ./avahi
     ./bluetooth-manager
     ./dbus
-   # ./envfs
+    ./envfs
     ./flat-pak
     ./fstrim
     ./mysql
-  #  ./openssh
+    ./openssh
     ./printer
     ./samba
     ./scanner

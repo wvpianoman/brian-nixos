@@ -28,7 +28,7 @@
               programs.home-manager.enable = true;
               home.packages = with pkgs; [
                 #thunderbird
-                #keepassxc
+                keepassxc
               ];
               home.stateVersion = "23.11";
             };
