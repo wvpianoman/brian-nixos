@@ -218,20 +218,6 @@
       # browser
       chromium
 
-      (vscode-with-extensions.override {
-        vscodeExtensions = with vscode-extensions;
-          [
-            bbenoist.nix # syntax highlight for .nix files in vscode
-          ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
-            name = "search-crates-io";
-            publisher = "belfz";
-            version = "1.2.1";
-            sha256 = "sha256-K2H4OHH6vgQvhhcOFdP3RD0fPghAxxbgurv+N82pFNs=";
-            # sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-          }];
-      })
-    ];
-
     programs.chromium = {
       enable = true;
       extensions = [
