@@ -16,11 +16,12 @@
   #---------------------------------------------------------------------
   # Import snippet files
   #---------------------------------------------------------------------
-  imports = [ 
+  imports = [
 
-    ./core/gpu 
     ./core
+    ./core/gpu
     ./hardware-configuration.nix
+
   ];
 
   #---------------------------------------------------------------------
@@ -35,9 +36,8 @@
   # --------------------------------------------------------------------
   # Permit Insecure Packages
   # --------------------------------------------------------------------
-  nixpkgs.config.permittedInsecurePackages = [
-  "openssl-1.1.1u" "openssl-1.1.1v" "electron-12.2.3"
-  ];
+  nixpkgs.config.permittedInsecurePackages =
+    [ "openssl-1.1.1u" "openssl-1.1.1v" "electron-12.2.3" ];
 
   #---------------------------------------------------------------------
   # Bootloader and System Settings
@@ -48,7 +48,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   #---------------------------------------------------------------------
   # Switch to most recent kernel available
   #---------------------------------------------------------------------
@@ -147,10 +147,9 @@
       permitRootLogin = "no"; # do not allow to login as root user
       kbdInteractiveAuthentication = false;
     };
-  };  
+  };
 
-
-    # mkpasswd -m sha-512
+  # mkpasswd -m sha-512
   #  hashedPassword =
   #    "$6$yn6swk2CdH.7MJu/$GtdPxLNz0kyNmDXZ7FsCNVKvgd16Lk3xxp5AGxzq/ojyM6uderrA5SSTYz4Y8cvu97BHi7mCg6pB8zfhlUjHd.";
 
@@ -158,15 +157,15 @@
   #    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvVHo9LMvIwrgm1Go89hsQy4tMpE5dsftxdJuqdrf99 kingtolga@gmail.com"
   #  ];
 
-    # Generate an SSH Key Pair:                 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-    # Locate Your Public Key:                   usually ~/.ssh/id_rsa.pub
-    # Create or Edit the authorized_keys File:  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-    # To create a new authorized_keys file:     mkdir -p ~/.ssh
-    #                                           cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
-    # Set Permissions:                          chmod 700 ~/.ssh
-    #                                           chmod 600 ~/.ssh/authorized_keys
-    # Copy the Public Key Entry:                ssh-rsa bla bla bla== your_email@example.com
-    #                                           Replace your_email@example.com
+  # Generate an SSH Key Pair:                 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  # Locate Your Public Key:                   usually ~/.ssh/id_rsa.pub
+  # Create or Edit the authorized_keys File:  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+  # To create a new authorized_keys file:     mkdir -p ~/.ssh
+  #                                           cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
+  # Set Permissions:                          chmod 700 ~/.ssh
+  #                                           chmod 600 ~/.ssh/authorized_keys
+  # Copy the Public Key Entry:                ssh-rsa bla bla bla== your_email@example.com
+  #                                           Replace your_email@example.com
 
   #---------------------------------------------------------------------
   # User Configuration
@@ -201,44 +200,61 @@
         "users"
         "video"
         "wheel"
-    ];
-    packages = [ pkgs.home-manager ];
-
-  };
-
-  # installed packages
-  environment.systemPackages = with pkgs; [
-    # cli utils
-    git
-    curl
-    wget
-    vim
-    htop
-    kate
-
-    # browser
-    chromium
-
-    (vscode-with-extensions.override {
-      vscodeExtensions = with vscode-extensions; [
-        bbenoist.nix # syntax highlight for .nix files in vscode
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "search-crates-io";
-          publisher = "belfz";
-          version = "1.2.1";
-          sha256 = "sha256-K2H4OHH6vgQvhhcOFdP3RD0fPghAxxbgurv+N82pFNs=";
-          # sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-        }
       ];
-    })
-  ];
+      packages = [ pkgs.home-manager ];
 
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
+    };
+
+    # installed packages
+    environment.systemPackages = with pkgs; [
+      # cli utils
+      git
+      curl
+      wget
+      vim
+      htop
+      kate
+
+      # browser
+      chromium
+
+      (vscode-with-extensions.override {
+        vscodeExtensions = with vscode-extensions;
+          [
+            bbenoist.nix # syntax highlight for .nix files in vscode
+          ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
+            name = "search-crates-io";
+            publisher = "belfz";
+            version = "1.2.1";
+            sha256 = "sha256-K2H4OHH6vgQvhhcOFdP3RD0fPghAxxbgurv+N82pFNs=";
+            # sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+          }];
+      })
     ];
+
+    programs.chromium = {
+      enable = true;
+      extensions = [
+        "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
+        "kbfnbcaeplbcioakkpcpgfkobkghlhen" # Grammarly
+        "mdjildafknihdffpkfmmpnpoiajfjnjd" # Consent-O-Matic
+        "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock for YouTube
+        "gebbhagfogifgggkldgodflihgfeippi" # Return YouTube Dislike
+        "edlifbnjlicfpckhgjhflgkeeibhhcii" # Screenshot Tool
+      ];
+
+      extraOpts = {
+        "AutofillAddressEnabled" = false;
+        "AutofillCreditCardEnabled" = false;
+        "BuiltInDnsClientEnabled" = false;
+        "DeviceMetricsReportingEnabled" = true;
+        "ReportDeviceCrashReportInfo" = false;
+        "PasswordManagerEnabled" = false;
+        "SpellcheckEnabled" = true;
+        "SpellcheckLanguage" = [ "en-GB" "en-US" ];
+        "VoiceInteractionHotwordEnabled" = false;
+      };
+    };
   };
 
   #---------------------------------------------------------------------  
