@@ -1,5 +1,5 @@
 {
-  description = "flake for brian with Home Manager enabled";
+  description = "flake for discordia with Home Manager enabled";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -14,7 +14,7 @@
     ...
   }: {
     nixosConfigurations = {
-      Nixos = nixpkgs.lib.nixosSystem {
+      discordia = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
@@ -22,7 +22,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.brian = { pkgs, ... }: {
+            home-manager.users.brian = { pkgs, ... }: {
               home.username = brian";
               home.homeDirectory = "/home/brian";
               programs.home-manager.enable = true;

@@ -5,13 +5,13 @@
   #  Android Utilities
   #####################################
 
-   #  adbfs-rootless          # Mount Android phones on Linux with adb, no root required
-   #  haskellPackages.adb     # Android Debug Bridge (ADB) protocol
-   #  android-tools           # Android SDK platform tools
-   #  android-file-transfer   # Reliable MTP client with minimalistic UI
-   #  droidcam                # Linux client for DroidCam app
-   #  scrcpy                  # Display and control Android devices over USB or TCP/IP
-   #  waydroid                # Waydroid is a container-based approach to boot a full Android system on a regular GNU/Linux system
+   #   adbfs-rootless          # Mount Android phones on Linux with adb, no root required
+   #   haskellPackages.adb     # Android Debug Bridge (ADB) protocol
+   #   android-tools           # Android SDK platform tools
+   #   android-file-transfer   # Reliable MTP client with minimalistic UI
+   #   droidcam                # Linux client for DroidCam app
+   #   scrcpy                  # Display and control Android devices over USB or TCP/IP
+   #   waydroid                # Waydroid is a container-based approach to boot a full Android system on a regular GNU/Linux system
 
   #####################################
   # Archive Utilities
@@ -107,8 +107,8 @@
   # Add the required packages for iwd backend
   ###########################################
   
-    iwd          # Wireless daemon for Linux
-    # iwd-tools 
+      iwd          # Wireless daemon for Linux
+    #  iwd-tools 
     
   #####################################
   # Network Testing and Monitoring:
@@ -190,7 +190,7 @@
       #---------------------------------------------------------------------
 
       baobab           # Graphical application to analyse disk usage in any GNOME environment
-    # brasero          # A Gnome CD/DVD Burner
+    #  brasero          # A Gnome CD/DVD Burner
       etcher           # Flash OS images to SD cards and USB drives, safely and easily
       isoimagewriter   # ISO Image Writer is a tool to write a .iso file to a USB disk.
       testdisk-qt      # Data recovery utilities
@@ -224,7 +224,7 @@
        
       blueberry        # Bluetooth configuration tool
       efibootmgr       # A Linux user-space application to modify the Intel Extensible Firmware Interface (EFI) Boot Manager
-     # keepassxc       # Offline password manager with many features.
+      keepassxc       # Offline password manager with many features.
       xscreensaver     # A set of screensavers
 
   #####################################
@@ -236,7 +236,7 @@
       libnotify                       # A library that sends desktop notifications to a notification daemon
       #-------------------------------------------------------------------
       # Desktop Notify agent example:
-      #notify-send --icon=fcitx --app-name="DONE" "Fonts folder copied into $(whoami)" "$font_dest" -u normal
+      # notify-send --icon=fcitx --app-name="DONE" "Fonts folder copied into $(whoami)" "$font_dest" -u normal
       #-------------------------------------------------------------------
    
       notify-desktop                  # Little application that lets you send desktop notifications with one command

@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment = {
-    systemPackages = with pkgs;
+    home.Packages = with pkgs;
       with libsForQt5; [
   #####################################
   # Database related

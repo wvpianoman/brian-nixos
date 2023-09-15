@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-    systemPackages = with pkgs;
+    home.Packages = with pkgs;
       [
         (vscode-with-extensions.override {
 

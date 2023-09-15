@@ -4,7 +4,7 @@
   # Web Browsers:
   #####################################
     
-  environment = { systemPackages = with pkgs; [ firefox google-chrome ]; };
+  environment = { home.Packages = with pkgs; [ firefox google-chrome ]; };
 
   programs = {
     firefox = {
