@@ -22,13 +22,19 @@ if [ "$(id -u)" -eq 0 ]; then
   exit 1
 fi
 
+# nix-shell -p espeak-classic
 start_time=$(date +%s)
 current_dir=$(pwd)
 clear
 
+#nix-shell -p # espeak-classic
+espeak -v en+m7 -s 165 "Welcome! This script will! initiate! the! basic! setup! for your system. Thank you for using! my configuration." --punct=","
+
 # Install notify agents
 nix-env -iA nixos.libnotify
 nix-env -iA nixos.notify-desktop
+
+# espeak -v en+m7 -s 165 "Copying!   fonts!    wallpapers!   and    creating!  the!   basic!   setup! for   your     system. " --punct=","
 
 # Install Samba
 nix-env -iA nixos.cifs-utils
@@ -46,18 +52,20 @@ wallpapers_dest="/home/$(whoami)/Pictures"
 
 # Create destination folders if they don't exist
 
+# espeak -s 165 "Copying! fonts! wallpapers! " --punct=","
+
 # Check if font_dest exists
 if [ -d "$font_dest" ]; then
-    
-    # Copy contents of font_folder into font_dest
-    cp -r "$font_folder"/* "$font_dest/"
-    echo "Contents of $font_folder copied to $font_dest"
-    notify-send --icon=font-collection --app-name="DONE" "Fonts folder copied into $(whoami)" "$font_dest" -u normal
+
+  # Copy contents of font_folder into font_dest
+  cp -r "$font_folder"/* "$font_dest/"
+  echo "Contents of $font_folder copied to $font_dest"
+  notify-send --icon=font-collection --app-name="DONE" "Fonts folder copied into $(whoami)" "$font_dest" -u normal
 else
-    echo "$font_dest does not exist. Creating it..."
-    mkdir -p "$font_dest"
-    cp -r "$font_folder"/* "$font_dest/"
-    echo "Contents of $font_folder copied to $font_dest"
+  echo "$font_dest does not exist. Creating it..."
+  mkdir -p "$font_dest"
+  cp -r "$font_folder"/* "$font_dest/"
+  echo "Contents of $font_folder copied to $font_dest"
 fi
 
 mkdir -p "$script_dest"
@@ -85,6 +93,56 @@ chown -R "$user_name":"$user_group" "$font_dest"
 chown -R "$user_name":"$user_group" "$script_dest"
 chown -R "$user_name":"$user_group" "$wallpapers_dest"
 
+sleep 2
+
+# Change Wallpaper
+clear
+
+echo "Setting up Desktop wallpaper"
+
+# Get the script's folder path
+script_folder="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Specify the source image file path
+source_file="/etc/nixos/SETUP/wallpapers/arc-mountain.png"
+#source_file="/etc/nixos/SETUP/wallpapers/nix.png"
+
+# Specify the destination picture folder path
+picture_folder="$HOME/Pictures"
+
+# Specify the destination wallpaper file name
+wallpaper_file="wallpaper.jpg"
+
+# Check if the source image file exists
+if [ ! -f "$source_file" ]; then
+  echo "Error: Source image file not found."
+  exit 1
+fi
+
+# Copy the image file to the picture folder
+cp "$source_file" "$picture_folder/$wallpaper_file"
+if [ $? -ne 0 ]; then
+  echo "Failed to copy the image file to the picture folder."
+  exit 1
+fi
+
+# Set the wallpaper using KDE's command-line tool
+command="qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript"
+script="
+var allDesktops = desktops();
+for (i=0;i<allDesktops.length;i++) {
+    d = allDesktops[i];
+    d.wallpaperPlugin = 'org.kde.image';
+    d.currentConfigGroup = Array('Wallpaper', 'org.kde.image', 'General');
+    d.writeConfig('Image', 'file://$picture_folder/$wallpaper_file');
+    d.writeConfig('FillMode', '2');
+}"
+eval "$command \"$script\""
+
+echo "Desktop Wallpaper set successfully."
+sleep1
+
+espeak -v en-us+m7 -s 165 "Scripts, fonts! and wallpapers! have been moved! to your home directory! and permissions set."
 echo "Scripts, fonts and wallpapers folders have been moved to your home directory and permissions set."
 
 end_time=$(date +%s)
@@ -95,8 +153,20 @@ notify-send --icon=ktimetracker --app-name="Post set-up" "Basic set-up Complete"
 # Change directory to the SETUP directory
 cd /etc/nixos/SETUP
 
+# Check if the 59-minute cron job already exists in the crontab
+if ! crontab -l | grep -q "*/59 * * * * nixos-archive >> /home/tolga/test.log"; then
+  # Add the 59-minute cron job to the crontab
+  echo "*/59 * * * * nixos-archive >> /home/tolga/test.log" | crontab -
+  echo "Cron job added successfully to run every 59 minutes."
+else
+  echo "Cron job already set to run every 59 minutes in the crontab."
+fi
+
+notify-send --icon=gtk-help --app-name="Cron setup" "Cron job added" "Time taken: $time_taken seconds" -u normal
+
 # Change the permissions of location
 sudo chmod -R o+rw /etc/nixos/
+sudo chmod -R "$user_name":users /etc/nixos
 
 # Run the script PART-B-WITH-SUDO.sh with superuser privileges
 
@@ -104,6 +174,7 @@ sudo chmod -R o+rw /etc/nixos/
 # reset='\033[0m'      # Reset text color
 # sudo echo -e "${yellow}[!]${reset}[Running Part (B) ...]" && sudo konsole -T "Post setup for $user_name " -geometry 1099x530 -e "/etc/nixos/SETUP/My-SSH.sh"
 
+# espeak -s 165 "Initiating!   Part 2!   setup!   stand!       by!"
 sudo ./PART-B-WITH-SUDO.sh
 
 # Return to the original directory

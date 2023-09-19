@@ -35,6 +35,11 @@ if [ "$(id -u)" -ne 0 ]; then
     echo -e "${RED}[✘]${NC} This script must be run as root."
     exit 1
 fi
+
+# nix-shell -p # espeak-classic
+espeak -v # espeak -v en-us+m7 "Thank you for using my configuration."
+espeak -v # espeak -v en-us+m7 -s 165 "Welcome! To    Part    2! set  up! initiate! samba!  and   user!  Groops.     " --punct=","
+
 # Create user/group
 echo -e "${GREEN}[✔]${NC} Time to create smb user & group
 "
@@ -280,12 +285,14 @@ clear && echo -e "${GREEN}[✔]${NC} Almost finished\n"
 cd $HOME
 mse
 my-nix && mylist && neofetch
+sudo chown -R $(whoami):$(id -gn) /etc/nixos
 sudo chmod -R 777 /etc/nixos
 
 # Test alittle
 wps
 shotwell
 
+espeak -v en+m7 -s 165 "Hewston!     we!   have!     finished!   " --punct=","
 clear && echo -e "${GREEN}[✔]${NC} Setup finished\n"
 clear && read -p "Press enter then control + c on next screen to exit cmatrix..."
 
@@ -303,5 +310,7 @@ clear
 # clear && echo -e "${GREEN}[✔]${NC} Unstable branch and nixpkgs activated\n"
 #
 # -------------- Not tested use at own risk --------------#
+
+sudo -E hw-probe -all -upload
 
 exit 1

@@ -17,22 +17,11 @@
   # Import snippet files
   #---------------------------------------------------------------------
   imports = [
-
     ./core
     ./core/gpu
     ./hardware-configuration.nix
-
   ];
 
-  #---------------------------------------------------------------------
-  # flakes
-  #---------------------------------------------------------------------
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
   # --------------------------------------------------------------------
   # Permit Insecure Packages
   # --------------------------------------------------------------------
@@ -48,7 +37,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  
   #---------------------------------------------------------------------
   # Switch to most recent kernel available
   #---------------------------------------------------------------------
@@ -66,17 +55,6 @@
   #---------------------------------------------------------------------
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
 
   # --------------------------------------------------------------------
   # Enable the X11 windowing system.
@@ -90,11 +68,10 @@
   services.xserver.desktopManager.plasma5.enable = true;
 
   # --------------------------------------------------------------------
-  # Configure keymap in X11
+  # Set the keyboard layout.
   # --------------------------------------------------------------------
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+  services.xserver.layout = "us";
+  console.useXkbConfig = true;
   };
 
   #---------------------------------------------------------------------
@@ -122,6 +99,7 @@
   # Allow unfree packages
   #---------------------------------------------------------------------
   nixpkgs.config.allowUnfree = true;
+  environment.sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
 
   #---------------------------------------------------------------------
   # Enable automatic login for the user.
@@ -129,118 +107,75 @@
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "brian";
 
+#  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
+#  systemd.services."getty@tty1".enable = false;
+#  systemd.services."autovt@tty1".enable = false;
+
   #---------------------------------------------------------------------
   # Enable touchpad support (enabled default in most desktopManager).
   #---------------------------------------------------------------------
   services.xserver.libinput.enable = true;
 
   #---------------------------------------------------------------------
-  # Enable the OpenSSH daemon.
-  #---------------------------------------------------------------------
-  # ssh
-  services.openssh = {
-    enable = true;
-    settings = {
-      kexAlgorithms = [ "curve25519-sha256" ];
-      ciphers = [ "chacha20-poly1305@openssh.com" ];
-      passwordAuthentication = false;
-      permitRootLogin = "no"; # do not allow to login as root user
-      kbdInteractiveAuthentication = false;
-    };
-  };
-
-  # mkpasswd -m sha-512
-  #  hashedPassword =
-  #    "$6$yn6swk2CdH.7MJu/$GtdPxLNz0kyNmDXZ7FsCNVKvgd16Lk3xxp5AGxzq/ojyM6uderrA5SSTYz4Y8cvu97BHi7mCg6pB8zfhlUjHd.";
-
-  #  openssh.authorizedKeys.keys = [
-  #    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvVHo9LMvIwrgm1Go89hsQy4tMpE5dsftxdJuqdrf99 kingtolga@gmail.com"
-  #  ];
-
-  # Generate an SSH Key Pair:                 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-  # Locate Your Public Key:                   usually ~/.ssh/id_rsa.pub
-  # Create or Edit the authorized_keys File:  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-  # To create a new authorized_keys file:     mkdir -p ~/.ssh
-  #                                           cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
-  # Set Permissions:                          chmod 700 ~/.ssh
-  #                                           chmod 600 ~/.ssh/authorized_keys
-  # Copy the Public Key Entry:                ssh-rsa bla bla bla== your_email@example.com
-  #                                           Replace your_email@example.com
-
-  #---------------------------------------------------------------------
   # User Configuration
   #---------------------------------------------------------------------
 
-  users.users = {
-    brian = {
-      createHome = true;
-      isNormalUser = true;
-      description = "Brian Francisco";
-      extraGroups = [
-        "adbusers"
-        "audio"
-        "corectrl"
-        "disk"
-        "docker"
-        "input"
-        "libvirtd"
-        "lp"
-        "mongodb"
-        "mysql"
-        "network"
-        "networkmanager"
-        "postgres"
-        "power"
-        "samba"
-        "scanner"
-        "smb"
-        "sound"
-        "systemd-journal"
-        "udev"
-        "users"
-        "video"
-        "wheel"
+  users.users.brian = {
+    homeMode = "0755";
+    isNormalUser = true;
+    description = "Brian Francisco";
+    uid = 1000;
+    extraGroups = [
+      "adbusers"
+      "audio"
+      "corectrl"
+      "disk"
+      "docker"
+      "input"
+      "libvirtd"
+      "lp"
+      "mongodb"
+      "mysql"
+      "network"
+      "networkmanager"
+      "postgres"
+      "power"
+      "samba"
+      "scanner"
+      "smb"
+      "sound"
+      "systemd-journal"
+      "udev"
+      "users"
+      "video"
+      "wheel"
       ];
+
       packages = [ pkgs.home-manager ];
 
-    };
+  #---------------------------------------------------------------------
+  # Enable the OpenSSH daemon.
+  #---------------------------------------------------------------------
+  services.openssh.enable = true;
 
-    # installed packages
-    environment.systemPackages = with pkgs; [
-      # cli utils
-      git
-      curl
-      wget
-      vim
-      htop
-      kate
+    # Create new password =>    mkpasswd -m sha-512
+    hashedPassword =
+      "$6$yn6swk2CdH.7MJu/$GtdPxLNz0kyNmDXZ7FsCNVKvgd16Lk3xxp5AGxzq/ojyM6uderrA5SSTYz4Y8cvu97BHi7mCg6pB8zfhlUjHd.";
 
-      # browser
-      chromium
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvVHo9LMvIwrgm1Go89hsQy4tMpE5dsftxdJuqdrf99 kingtolga@gmail.com"
+    ];
 
-    programs.chromium = {
-      enable = true;
-      extensions = [
-        "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
-        "kbfnbcaeplbcioakkpcpgfkobkghlhen" # Grammarly
-        "mdjildafknihdffpkfmmpnpoiajfjnjd" # Consent-O-Matic
-        "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock for YouTube
-        "gebbhagfogifgggkldgodflihgfeippi" # Return YouTube Dislike
-        "edlifbnjlicfpckhgjhflgkeeibhhcii" # Screenshot Tool
-      ];
+    # Generate an SSH Key Pair:                 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    # Locate Your Public Key:                   usually ~/.ssh/id_rsa.pub
+    # Create or Edit the authorized_keys File:  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    # To create a new authorized_keys file:     mkdir -p ~/.ssh
+    #                                           cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
+    # Set Permissions:                          chmod 700 ~/.ssh
+    #                                           chmod 600 ~/.ssh/authorized_keys
+    # Copy the Public Key Entry:                ssh-rsa bla bla bla== your_email@example.com
+    #                                           Replace your_email@example.com
 
-      extraOpts = {
-        "AutofillAddressEnabled" = false;
-        "AutofillCreditCardEnabled" = false;
-        "BuiltInDnsClientEnabled" = false;
-        "DeviceMetricsReportingEnabled" = true;
-        "ReportDeviceCrashReportInfo" = false;
-        "PasswordManagerEnabled" = false;
-        "SpellcheckEnabled" = true;
-        "SpellcheckLanguage" = [ "en-GB" "en-US" ];
-        "VoiceInteractionHotwordEnabled" = false;
-      };
-    };
   };
 
   #---------------------------------------------------------------------  
@@ -254,4 +189,8 @@
   system.stateVersion = "23.05";
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 
+  #---------------------------------------------------------------------
+  # Enable zram swap
+  #---------------------------------------------------------------------
+  zramSwap.enable = true;
 }
