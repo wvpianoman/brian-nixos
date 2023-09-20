@@ -40,7 +40,7 @@
   boot.kernelParams = [ "mitigations=off" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/af2a8f84-2679-47d1-b584-d99ec1e33c0d";
+    { device = "/dev/disk/by-uuid/a19fe475-fea4-4053-afa7-1608e18598a5";
       fsType = "ext4";
     # for ssd
     options =
@@ -48,12 +48,12 @@
   };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7E45-7DA0";
+    { device = "/dev/disk/by-uuid/2B95-47BA";
       fsType = "vfat";
   };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/35fc6858-e8d0-4219-a26f-1675d6d72b73"; }
+    [ { device = "/dev/disk/by-uuid/b76b10a3-95ef-446b-9a6b-2e8836375403"; }
     ];
 
 #  fileSystems."/mnt/nixos_share" = {
@@ -73,12 +73,6 @@
 #      "${automountOpts},credentials=${credentialsPath},uid=${uid},gid=${gid},vers=${vers},${cacheOpts}"
 #    ];
 #  };
-
-  #---------------------------------------------------------------------
-  # For AMD hardware / chipsets
-  #---------------------------------------------------------------------
-
-  # hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   #---------------------------------------------------------------------
   # For Intel hardware / chipsets

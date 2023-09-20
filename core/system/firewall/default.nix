@@ -51,7 +51,7 @@
         # Transmission
         9091
         60450
-        # Syncthing port
+        # Custom port
         22000
         # For gnomecast server
         80
@@ -78,8 +78,9 @@
         137
         # NetBIOS Datagram Service
         138
-        # Syncthing port
-        22000                
+        # Custom port
+        22000
+        # Custom port
         21027
         # For device discovery
         5353

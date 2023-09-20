@@ -41,7 +41,7 @@
   programs = {
 
     # type "fuck" to fix the last command that made you go "fuck"
-    thefuck.enable = true;
+    # thefuck.enable = true;
 
     # Please put eval "$(thefuck --alias)" in your ~/.bashrc and apply changes with source ~/.bashrc or restart your shell.
     # Or run fuck a second time to configure it automatically.

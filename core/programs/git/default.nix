@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   email = "kingtolga@gmail.com";
@@ -26,15 +26,10 @@ in {
           signingKey = "~/.ssh/id_ed25519.pub";
         };
 
-        #init = { defaultBranch = "main"; };
-        #pull = { rebase = "true"; };
-        core.editor = "kate";
-        github.user = "tolgaerok";
-        init.defaultBranch = "main";
-        pull.rebase = true;
+        core = { editor = "kate"; };
+        init = { defaultBranch = "main"; };
+        pull = { rebase = "true"; };
 
-        # ignores = [ ".envrc" ".direnv" ];
-        
         url = {
           "git@github.com:" = { insteadOf = [ "https://github.com/" ]; };
           "git@gitlab.com:" = { insteadOf = [ "https://gitlab.com/" ]; };

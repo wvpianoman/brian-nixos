@@ -1,5 +1,7 @@
-# *`Available packages`*
+# *`My NixOs 23.05 packages`*
 ```sh
+Tolga Erok
+14/6/2023
 ```
 <div align="center">
   <table style="border-collapse: collapse; width: 100%; border: none;">
@@ -18,7 +20,7 @@
 </div>
 
 
-This is not an exhaustive list of included package, but most are included here.  You can look through the default.nix files in each folder of packages and # out the packages you don't want to install, or delete the # in front of the packages you want.  It's all about choice after all.
+I've curated a collection of essential packages that you can conveniently install on your NixOS system with a single command: `sudo nixos-rebuild switch`. These carefully selected programs cover a wide range of categories, from archive utilities and multimedia tools to programming languages, office suites, and system utilities. By including these packages, I've aimed to enhance your NixOS experience and make your system feel more complete. Whether you're a developer, content creator, or everyday user, these additions offer a well-rounded toolkit that's ready for immediate use. Simply run the command, and enjoy the convenience and functionality that these packages bring to your NixOS environment.
 #
 # Archive Utilities
 - atool:  A command-line tool for managing file archives.

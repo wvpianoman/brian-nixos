@@ -4,7 +4,8 @@
 
     # Configuration for Programs
 
-    #./adb
+    # ./steam
+    ./adb
     ./command-not-found
     ./corectrl
     ./fish
@@ -13,6 +14,6 @@
     ./java
     ./konsole
     ./partition-manager
-    #./steam
+
   ];
 }

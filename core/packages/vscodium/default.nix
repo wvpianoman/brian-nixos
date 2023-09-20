@@ -4,6 +4,8 @@
       [
         (vscode-with-extensions.override {
 
+          vscode = vscodium;
+
           vscode = vscode;
 
           vscodeExtensions = with vscode-extensions;

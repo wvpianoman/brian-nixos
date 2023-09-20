@@ -70,7 +70,7 @@
 
   # Enable TLP for better power management with Schedutil governor
   # ---------------------------------------------------------------------
-  services.tlp.enable = true;
+  services.tlp.enable = false;
 
   services.tlp.settings = {
     CPU_BOOST_ON_AC = 1;

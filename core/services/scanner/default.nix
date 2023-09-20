@@ -1,11 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, ... }: {
+  environment = {
+    systemPackages = with pkgs;
+      [
 
-{
-  environment.systemPackages = with pkgs;
-    [
+        # Scanning
 
-      gnome.simple-scan
+        gnome.simple-scan
 
-    ];
+      ];
+  };
 }
-
