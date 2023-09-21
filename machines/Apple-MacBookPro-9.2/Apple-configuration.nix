@@ -23,6 +23,7 @@
     "${
       builtins.fetchTarball "https://github.com/Mic92/envfs/archive/main.tar.gz"
     }/modules/envfs.nix"
+ ./test.nix
   ];
   # programs.bash.enable = true;
 
