@@ -37,37 +37,46 @@
           <th align="left">Device</th>
           <th align="left">Specification</th>
         </tr>
-        <tr>
-          <td>BLUE-TOOTH</td>
-          <td>Apple Bluetooth USB Host Controller</td>
-        </tr>
-        <tr>
-          <td>CPU</td>
-          <td>Intel i5-3210M (4) @ 3.100GHz</td>
-        </tr>
-        <tr>
-          <td>GPU</td>
-          <td>Intel 3rd Gen Core processor Graphics Controller</td>
-        </tr>
-        <tr>
+         <tr>
           <td>MODEL</td>
-          <td>Apple MacBookPro9,2</td>
+          <td>Dell Latitude E6540</td>
         </tr>
         <tr>
           <td>MOTHERBOARD</td>
-          <td>Apple Motherboard Mac-6F01561E16C75D06</td>
+          <td>Dell Motherboard 0CYT5F A00</td>
         </tr>
         <tr>
-          <td>NETWORK</td>
-          <td>Edimax EW-7811Un 802.11n Wireless Adapter [Realtek RTL8188CUS]</td>
+          <td>CPU</td>
+          <td>Intel(R) Core i7-4800MQ CPU @ 2.70GHz</td>
         </tr>
         <tr>
+          <td>GPU</td>
+          <td>Intel 4th Gen Core Processor Integrated Graphics Controller</td>
+        </tr>
+                     <tr>
+          <td>GPU</td>
+          <td>AMD/ATI Mars XTX [Radeon HD 8790M]</td>
+        </tr>
+                <tr>
           <td>RAM</td>
-          <td>8GB SODIMM</td>
+          <td>2x RAM Module 8GB SODIMM DDR3 1600MT/s</td>
         </tr>
         <tr>
           <td>SATA</td>
-          <td>KINGSTON SKC400S37256G 256GB SSD</td>
+          <td>PNY CS900 1TB SSD</td>
+        </tr>
+                <tr>
+          <td>NETWORK</td>
+          <td>Intel Centrino Ultimate-N 6300</td>
+        </tr>
+         <tr>
+          <td>BLUE-TOOTH</td>
+          <td>
+          Apple Bluetooth USB Host Controller</td>
+        </tr>
+        <tr>
+          <td>NETWORK</td>
+          <td>---</td>
         </tr>
       </table>
     </td>

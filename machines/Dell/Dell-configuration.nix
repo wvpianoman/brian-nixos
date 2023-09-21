@@ -1,12 +1,13 @@
-# MODEL:      	Apple MacBookPro9,2
-# BIOS:       	Apple BIOS 226.0.0.0.0 04/16/2019
-# MOTHERBOARD:	Apple Motherboard Mac-6F01561E16C75D06
-# CPU:        	Intel i5-3210M (4) @ 3.100GHz
-# GPU:        	Intel 3rd Gen Core processor Graphics Controller
-# RAM:        	RAM Module(s) 8GB SODIMM
-# HARD DRIVE: 	KINGSTON SKC400S37256G 256GB SSD
-# NETWORK:    	Edimax EW-7811Un 802.11n Wireless Adapter [Realtek RTL8188CUS]
-# BLUETOOTH:  	Apple Bluetooth USB Host Controller
+# MODEL:        	Dell Latitude E6540
+# MOTHERBOARD:  	Dell Motherboard 0CYT5F A00
+# BIOS:         	Dell BIOS A17 12/01/2015
+# CPU:          	Intel(R) Core i7-4800MQ CPU @ 2.70GHz
+# GPU:          	Intel 4th Gen Core Processor Integrated Graphics Controller
+# GPU:          	AMD/ATI Mars XTX [Radeon HD 8790M]
+# RAM:          	2x RAM Module 8GB SODIMM DDR3 1600MT/s
+# SATA:         	PNY CS900 1TB SSD
+# NETWORK:      	Intel Centrino Ultimate-N 6300
+# BLUE-TOOTH:
 #--------------------------------------------------------------------------------------------------------------------------
 
 { config, pkgs, ... }:
