@@ -25,8 +25,7 @@
     }/modules/envfs.nix"
  ./test.nix
   ];
-  # programs.bash.enable = true;
-
+ 
   services = {
     dbus = {
       enable = true;
