@@ -10,7 +10,7 @@
       sane-backends
       scanbd
       sxiv
-      
+
     ];
   };
 }

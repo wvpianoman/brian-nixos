@@ -11,16 +11,11 @@ let
     vaapiSupport = true;
     vdpauSupport = true;
   };
-in
-{
+in {
   config = {
     hardware.opengl = {
       enable = true;
-      extraPackages = with pkgs; [
-        vaapiNvidia
-        libvdpau
-        libvdpau-va-gl
-      ];
+      extraPackages = with pkgs; [ vaapiNvidia libvdpau libvdpau-va-gl ];
     };
   };
 }

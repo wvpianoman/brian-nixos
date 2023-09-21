@@ -1,7 +1,1 @@
-{pkgs, ...}: {
-  programs = {
-    partition-manager = {
-      enable = true;
-    };
-  };
-}
+{ pkgs, ... }: { programs = { partition-manager = { enable = true; }; }; }

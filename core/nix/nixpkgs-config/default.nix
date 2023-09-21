@@ -59,7 +59,7 @@
     # - sun tzu
     java = {
       enable = false;
-    #  package = pkgs.jre;
+      #  package = pkgs.jre;
     };
 
     direnv = {

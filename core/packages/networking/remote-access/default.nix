@@ -1,10 +1,8 @@
-{ config, lib, pkgs, ... }:
-{
+{ config, lib, pkgs, ... }: {
   # Remote Access and Automation:
-  
-  imports =
-  [
-   # ./teamviewer.nix
+
+  imports = [
+    # ./teamviewer.nix
   ];
 
   environment = {
@@ -15,7 +13,7 @@
       heroku
       powershell
       sshpass
-      teamviewer 
+      teamviewer
     ];
   };
 

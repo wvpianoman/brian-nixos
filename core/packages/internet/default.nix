@@ -1,10 +1,5 @@
 {
   # Execute the following:
-  imports =
-    [
-      ./downloading-apps
-      ./Messaging
-      ./web-browsers
-    ];
+  imports = [ ./downloading-apps ./Messaging ./web-browsers ];
 
 }

@@ -1,8 +1,7 @@
 {
   # Execute the following:
-  imports = 
-  [
-    
+  imports = [
+
     # ./iwd
     ./network-testing
     ./remote-access

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   #---------------------------------------------------------------------
   # Office and Productivity:
   #---------------------------------------------------------------------
@@ -8,11 +7,11 @@
     systemPackages = with pkgs; [
 
       # Office suite
-      wpsoffice     
+      wpsoffice
 
       # Desktop accessories
       deepin.deepin-calculator
-      
+
     ];
   };
 }

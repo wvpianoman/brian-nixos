@@ -4,11 +4,11 @@
 
   environment = {
     systemPackages = with pkgs; [
-      
+
       # Downloading Videos and Files
       clipgrab
       wget
-      
+
     ];
   };
 }

@@ -1,7 +1,1 @@
-{pkgs, ...}: {
-  programs = {
-    gamemode = {
-      enable = false;
-    };
-  };
-}
+{ pkgs, ... }: { programs = { gamemode = { enable = false; }; }; }

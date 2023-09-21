@@ -1,28 +1,24 @@
+#!/bin/bash
 #!/usr/bin/env bash
 #!/run/current-system/sw/bin/bash
-
 # Tolga Erok
 # 14/7/2023
 # Post Nixos setup!
 # ¯\_(ツ)_/¯
-
 # -----------------------------------------------------------------------------------
 # Capture the original user ID passed as an argument
 # -----------------------------------------------------------------------------------
-
 original_user_id=$1
-
 # -----------------------------------------------------------------------------------
 # Check if Script is Run as Root
 # -----------------------------------------------------------------------------------
-
 if [ "$(id -u)" -ne 0 ]; then
     echo -e "${RED}[✘]${NC} This script must be run as root."
     exit 1
 else
     echo -e "${GREEN}[✔]${NC}PASSED: Logged as root, continuing...\n"
     sleep 2
-
+    
 fi
 
 # -----------------------------------------------------------------------------------
@@ -126,7 +122,6 @@ sleep 2
 # -----------------------------------------------------------------------------------
 # Function to create directories if they don't exist and set permissions
 # -----------------------------------------------------------------------------------
-
 create_directory_if_not_exist() {
     if [ ! -d "$1" ]; then
         mkdir -p "$1"

@@ -215,7 +215,6 @@
   # Switch to most recent kernel available
   #---------------------------------------------------------------------
 
-  
   zramSwap.enable = true;
 
 }

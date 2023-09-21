@@ -1,12 +1,1 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
-  hardware = {
-    bluetooth = {
-      enable = true;
-    };
-  };
-}
+{ config, pkgs, lib, ... }: { hardware = { bluetooth = { enable = true; }; }; }

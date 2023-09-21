@@ -1,7 +1,1 @@
-{pkgs, ...}: {
-  programs = {
-    corectrl = {
-      enable = false;
-    };
-  };
-}
+{ pkgs, ... }: { programs = { corectrl = { enable = false; }; }; }

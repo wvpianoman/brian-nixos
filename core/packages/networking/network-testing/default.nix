@@ -6,7 +6,7 @@
       # Network Utilities
       doppler
       ookla-speedtest
-      
+
     ];
   };
 }

@@ -1,9 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
 
   # Github related
 
   environment = {
-    systemPackages = with pkgs; [ 
+    systemPackages = with pkgs; [
 
       # git-extras
       # git-my

@@ -13,12 +13,12 @@ unmount_directory() {
     echo "$dir is already unmounted"
     return 0
   fi
-# Unmount smb share
-sudo umount -f /mnt/*
-sudo umount -l /mnt/*
-# Unmount smb share
-sudo umount -f /media/*
-sudo umount -l /media/*
+  # Unmount smb share
+  sudo umount -f /mnt/*
+  sudo umount -l /mnt/*
+  # Unmount smb share
+  sudo umount -f /media/*
+  sudo umount -l /media/*
   # Unmount the directory
   sudo umount -lf "$dir"
 

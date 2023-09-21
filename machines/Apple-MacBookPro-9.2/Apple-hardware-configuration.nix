@@ -8,22 +8,22 @@
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [
+
+    "ahci"
     "applespi" # MacBook (Pro) SPI keyboard and touchpad driver
+    "ehci_pci"
+    "firewire_ohci"
     "intel_lpss_pci" # Intel Low Power Subsystem support in PCI mode
     "mac_hid" # HID support stuff for Macintosh computers.
-    "spi_pxa2xx_platform" # SPI keyboard / trackpad found on 12" MacBooks (2015 and later) and newer MacBook Pros (late 2016 and later).
-    "spi_pxa2xx_pci" # PCI glue driver for SPI PXA2xx compatible controllers.
-    "usbcore"
-
-    "xhci_pci"
-    "ehci_pci"
-    "ahci"
-    "firewire_ohci"
-    "usb_storage"
-    "usbhid"
     "sd_mod"
-    "sr_mod"
     "sdhci_pci"
+    "spi_pxa2xx_pci" # PCI glue driver for SPI PXA2xx compatible controllers.
+    "spi_pxa2xx_platform" # SPI keyboard / trackpad found on 12" MacBooks (2015 and later) and newer MacBook Pros (late 2016 and later).
+    "sr_mod"
+    "usb_storage"
+    "usbcore"
+    "usbhid"
+    "xhci_pci"
   ];
   # systemd.services.fix-suspend = {
   #   script = ''
@@ -34,9 +34,9 @@
   # };
 
   # boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "wl" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   boot.kernelParams = [ "mitigations=off" ];
 
   fileSystems."/" = {
@@ -85,7 +85,21 @@
   # platform if they are not explicitly defined otherwise.
   #---------------------------------------------------------------------
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   networking.useDHCP = lib.mkDefault true;
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+    #---------------------------------------------------------------------
+  # NTFS Support
+  #---------------------------------------------------------------------
+
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  #---------------------------------------------------------------------
+  # Enable memory compression for faster processing and less SSD usage
+  #---------------------------------------------------------------------
+
+  zramSwap.enable = true;
+  zramSwap.memoryMax = 4294967296;
+  zramSwap.memoryPercent = 20;
 
 }

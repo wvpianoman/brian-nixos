@@ -1,7 +1,1 @@
-{pkgs, ...}: {
-  programs = {
-    command-not-found = {
-      enable = true;
-    };
-  };
-}
+{ pkgs, ... }: { programs = { command-not-found = { enable = true; }; }; }

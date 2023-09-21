@@ -12,7 +12,8 @@
   hardware.nvidia.modesetting.enable = true;
   hardware.opengl.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;   # Works well with Nvidia GT-1030 onwards
+  hardware.nvidia.package =
+    config.boot.kernelPackages.nvidiaPackages.stable; # Works well with Nvidia GT-1030 onwards
 
   # -----------------------------------------------------------------------------
   # Optionally, you may need to select the appropriate driver version for your specific GPU.

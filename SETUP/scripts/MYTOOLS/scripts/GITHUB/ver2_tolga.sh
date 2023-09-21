@@ -47,8 +47,6 @@ echo "Pulled remote changes using merge"
 
 git add "$config_files"
 
-
-
 commit_time=$(date +"%I:%M %p") # 12-hour format
 git commit -m "Update at $commit_time"
 echo "Committed local changes"

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-
-# Tolga Erok 
+# Tolga Erok
 # 18/8/23
 
 # Set source and destination paths
@@ -27,7 +26,7 @@ commit_and_push() {
 # Start inotifywait to monitor changes
 while true; do
     inotifywait -e modify,create,delete -r "$SOURCE_DIR"
-    
+
     # Remove the index lock file if it exists
     rm -f "$DEST_REPO/.git/index.lock"
 
@@ -35,12 +34,12 @@ while true; do
     while [[ -f "$DEST_REPO/.git/index.lock" ]]; do
         sleep 1
     done
-    
+
     # Navigate to the repo directory or exit if navigation fails
     cd "$DEST_REPO" || exit
 
     # Prompt for automatic staging and committing
-    read -r -p "Automatic staging and committing? (y/n): " choice < /dev/tty
+    read -r -p "Automatic staging and committing? (y/n): " choice </dev/tty
     if [[ "$choice" == [Yy] ]]; then
         # Copy the changed files to the local repo
         cp -r "$SOURCE_DIR" "$DEST_REPO"

@@ -23,13 +23,13 @@
     "${
       builtins.fetchTarball "https://github.com/Mic92/envfs/archive/main.tar.gz"
     }/modules/envfs.nix"
- ./test.nix
+
   ];
- 
+
   services = {
     dbus = {
       enable = true;
-      packages = with pkgs; [ dconf gcr udisks2 ];
+      packages = with pkgs; [ dconf gcr udisks2 dos2unix toybox busybox ];
     };
   };
 
@@ -58,7 +58,7 @@
   boot.loader.systemd-boot.enable = true;
 
   services.devmon.enable = true;
-  services.gvfs.enable = true;
+  # services.gvfs.enable = true;
   services.udisks2.enable = true;
 
   #---------------------------------------------------------------------
@@ -212,6 +212,7 @@
   system.copySystemConfiguration = true;
   system.stateVersion = "23.05"; # Did you read the comment?
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+
   #---------------------------------------------------------------------
   # Enable memory compression for faster processing and less SSD usage
   #---------------------------------------------------------------------

@@ -1,14 +1,5 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
-  services = {
-    thermald = {
-      enable = false;
-    };
-  };
+{ config, pkgs, lib, ... }: {
+  services = { thermald = { enable = false; }; };
 }
 
 # thermald is a Linux daemon that helps manage the thermal environment 

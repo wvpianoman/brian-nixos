@@ -49,7 +49,7 @@ delete_old_generations() {
     while read -r generation; do
         age=$(sudo nix-env --query --requisites --installed --profile /nix/var/nix/profiles/system/$generation | awk -F ":" '{print $2}')
         printf "%-13s %s\n" "$generation" "$age"
-    done <<< "$sorted_generations"
+    done <<<"$sorted_generations"
 
     # Prompt for generation to delete
     read -p $'\n\033[1;33mEnter the generation to delete (0 to cancel): \033[0m' choice
@@ -68,25 +68,25 @@ display_menu
 while true; do
     read -p "Enter your choice (0-17): " choice
     case $choice in
-        1) execute_command "nixos-rebuild switch" ;;
-        2) execute_command "nix-store --optimise" ;;
-        3) execute_command "nix-collect-garbage -d" ;;
-        4) execute_command "nix-store --gc" ;;
-        5) execute_command "nix-env --list-generations" ;;
-        6) execute_command "nix-env --profile /nix/var/nix/profiles/system --list-generations" ;;
-        7) execute_command "nix-channel --list" ;;
-        8) execute_command "nix-channel --list --unstable" ;;
-        9) execute_command "nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable" ;;
-        10) execute_command "nix-channel --remove nixos-unstable" ;;
-        11) execute_command "nix-channel --update" ;;
-        12) execute_command "nix-env --upgrade" ;;
-        13) execute_command "nix-channel --update" ;;
-        14) execute_command "nix-store --optimise" ;;
-        15) execute_command "nix-collect-garbage" ;;
-        16) execute_command "nix-store --gc --print-dead" ;;
-        17) execute_command "sudo nix-collect-garbage --delete-old" ;;
-        0) exit ;;
-        *) echo -e "\033[1;31mInvalid choice. Please try again.\033[0m" ;;
+    1) execute_command "nixos-rebuild switch" ;;
+    2) execute_command "nix-store --optimise" ;;
+    3) execute_command "nix-collect-garbage -d" ;;
+    4) execute_command "nix-store --gc" ;;
+    5) execute_command "nix-env --list-generations" ;;
+    6) execute_command "nix-env --profile /nix/var/nix/profiles/system --list-generations" ;;
+    7) execute_command "nix-channel --list" ;;
+    8) execute_command "nix-channel --list --unstable" ;;
+    9) execute_command "nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable" ;;
+    10) execute_command "nix-channel --remove nixos-unstable" ;;
+    11) execute_command "nix-channel --update" ;;
+    12) execute_command "nix-env --upgrade" ;;
+    13) execute_command "nix-channel --update" ;;
+    14) execute_command "nix-store --optimise" ;;
+    15) execute_command "nix-collect-garbage" ;;
+    16) execute_command "nix-store --gc --print-dead" ;;
+    17) execute_command "sudo nix-collect-garbage --delete-old" ;;
+    0) exit ;;
+    *) echo -e "\033[1;31mInvalid choice. Please try again.\033[0m" ;;
     esac
     read -rsn1 -p "Press any key to continue..."
     clear

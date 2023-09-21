@@ -6,11 +6,13 @@ clear
 set -euo pipefail
 
 ## Defaults
-keepGensDef=10; keepDaysDef=7
-keepGens=$keepGensDef; keepDays=$keepDaysDef
+keepGensDef=10
+keepDaysDef=7
+keepGens=$keepGensDef
+keepDays=$keepDaysDef
 
 ## Usage
-usage () {
+usage() {
     printf "Usage:\n\t trim-generations.sh (defaults are: Keep-Gens=$keepGensDef Keep-Days=$keepDaysDef Profile=user)\n\n"
     printf "If you enter any parameters, you must enter all three.\n\n"
     printf "Example:\n\t trim-generations.sh 15 10 home-manager\n"
@@ -24,20 +26,21 @@ if [[ $EUID -ne 0 ]]; then
 else
     profile="/nix/var/nix/profiles/default"
 fi
-if (( $# < 1 )); then
+if (($# < 1)); then
     printf "Keeping default: 10 generations OR 7 days, whichever is more\n"
 elif [[ $# -le 2 ]]; then
     printf "\nError: Not enough arguments.\n\n" >&2
     usage
     exit 1
-elif (( $# > 4)); then
+elif (($# > 4)); then
     printf "\nError: Too many arguments.\n\n" >&2
     usage
     exit 2
 else
-    keepGens=$1; keepDays=$2;
-    (( keepGens < 1 )) && keepGens=1
-    (( keepDays < 0 )) && keepDays=0
+    keepGens=$1
+    keepDays=$2
+    ((keepGens < 1)) && keepGens=1
+    ((keepDays < 0)) && keepDays=0
     if [[ $EUID -ne 0 ]]; then
         if [[ $3 == "user" ]] || [[ $3 == "default" ]]; then
             profile=$(readlink /home/$USER/.nix-profile)
@@ -67,7 +70,7 @@ fi
 printf "Operating on profile: \t $profile\n\n"
 
 ## Runs at the end, to decide whether to delete profiles that match chosen parameters.
-choose () {
+choose() {
     local default="$1"
     local prompt="$2"
     local answer
@@ -76,43 +79,44 @@ choose () {
     [ -z "$answer" ] && answer="$default"
 
     case "$answer" in
-        [yY1] ) #printf "answered yes!\n"
-             nix-env --delete-generations -p $profile ${!gens[@]}
-            exit 0
-            ;;
-        [nN0] ) printf "answered no! exiting\n"
-            exit 6;
-            ;;
-        *     ) printf "%b" "Unexpected answer '$answer'!" >&2
-            exit 7;
-            ;;
+    [yY1]) #printf "answered yes!\n"
+        nix-env --delete-generations -p $profile ${!gens[@]}
+        exit 0
+        ;;
+    [nN0])
+        printf "answered no! exiting\n"
+        exit 6
+        ;;
+    *)
+        printf "%b" "Unexpected answer '$answer'!" >&2
+        exit 7
+        ;;
     esac
 } # end of function choose
 
-
 ## Query nix-env for generations list
-IFS=$'\n' nixGens=( $(nix-env --list-generations -p $profile | sed 's:^\s*::; s:\s*$::' | tr '\t' ' ' | tr -s ' ') )
+IFS=$'\n' nixGens=($(nix-env --list-generations -p $profile | sed 's:^\s*::; s:\s*$::' | tr '\t' ' ' | tr -s ' '))
 timeNow=$(date +%s)
 
 ## Get info on oldest generation
-IFS=' ' read -r -a oldestGenArr <<< "${nixGens[0]}"
+IFS=' ' read -r -a oldestGenArr <<<"${nixGens[0]}"
 oldestGen=${oldestGenArr[0]}
 oldestDate=${oldestGenArr[1]}
 printf "%-30s %s\n" "oldest generation:" $oldestGen
 #oldestDate=${nixGens[0]:3:19}
 printf "%-30s %s\n" "oldest generation created:" $oldestDate
 oldestTime=$(date -d "$oldestDate" +%s)
-oldestElapsedSecs=$((timeNow-oldestTime))
-oldestElapsedMins=$((oldestElapsedSecs/60))
-oldestElapsedHours=$((oldestElapsedMins/60))
-oldestElapsedDays=$((oldestElapsedHours/24))
+oldestElapsedSecs=$((timeNow - oldestTime))
+oldestElapsedMins=$((oldestElapsedSecs / 60))
+oldestElapsedHours=$((oldestElapsedMins / 60))
+oldestElapsedDays=$((oldestElapsedHours / 24))
 printf "%-30s %s\n" "minutes before now:" $oldestElapsedMins
 printf "%-30s %s\n" "hours before now:" $oldestElapsedHours
 printf "%-30s %s\n\n" "days before now:" $oldestElapsedDays
 
 ## Get info on current generation
 for i in "${nixGens[@]}"; do
-    IFS=' ' read -r -a iGenArr <<< "$i"
+    IFS=' ' read -r -a iGenArr <<<"$i"
     genNumber=${iGenArr[0]}
     genDate=${iGenArr[1]}
     if [[ "$i" =~ current ]]; then
@@ -121,10 +125,10 @@ for i in "${nixGens[@]}"; do
         currentDate=$genDate
         printf "%-30s %s\n" "current generation created:" $currentDate
         currentTime=$(date -d "$currentDate" +%s)
-        currentElapsedSecs=$((timeNow-currentTime))
-        currentElapsedMins=$((currentElapsedSecs/60))
-        currentElapsedHours=$((currentElapsedMins/60))
-        currentElapsedDays=$((currentElapsedHours/24))
+        currentElapsedSecs=$((timeNow - currentTime))
+        currentElapsedMins=$((currentElapsedSecs / 60))
+        currentElapsedHours=$((currentElapsedMins / 60))
+        currentElapsedDays=$((currentElapsedHours / 24))
         printf "%-30s %s\n" "minutes before now:" $currentElapsedMins
         printf "%-30s %s\n" "hours before now:" $currentElapsedHours
         printf "%-30s %s\n\n" "days before now:" $currentElapsedDays
@@ -132,28 +136,28 @@ for i in "${nixGens[@]}"; do
 done
 
 ## Compare oldest and current generations
-timeBetweenOldestAndCurrent=$((currentTime-oldestTime))
-elapsedDays=$((timeBetweenOldestAndCurrent/60/60/24))
-generationsDiff=$((currentGen-oldestGen))
+timeBetweenOldestAndCurrent=$((currentTime - oldestTime))
+elapsedDays=$((timeBetweenOldestAndCurrent / 60 / 60 / 24))
+generationsDiff=$((currentGen - oldestGen))
 
 ## Figure out what we should do, based on generations and options
 if [[ elapsedDays -le keepDays ]]; then
     printf "All generations are no more than $keepDays days older than the current generation. \nOldest gen days difference from current gen: $elapsedDays \n\n\tNothing to do!\n"
-    exit 4;
+    exit 4
 elif [[ generationsDiff -lt keepGens ]]; then
     printf "The oldest generation ($oldestGen) is only $generationsDiff generation(s) behind the current generation ($currentGen). \n\n\tNothing to do!\n"
-    exit 5;
+    exit 5
 else
     printf "\tSomething to do...\n"
     declare -a gens
     for i in "${nixGens[@]}"; do
-        IFS=' ' read -r -a iGenArr <<< "$i"
+        IFS=' ' read -r -a iGenArr <<<"$i"
         genNumber=${iGenArr[0]}
-        genDiff=$((currentGen-genNumber))
+        genDiff=$((currentGen - genNumber))
         genDate=${iGenArr[1]}
         genTime=$(date -d "$genDate" +%s)
-        elapsedSecs=$((timeNow-genTime))
-        genDaysOld=$((elapsedSecs/60/60/24))
+        elapsedSecs=$((timeNow - genTime))
+        genDaysOld=$((elapsedSecs / 60 / 60 / 24))
         if [[ genDaysOld -gt keepDays ]] && [[ genDiff -ge keepGens ]]; then
             gens["$genNumber"]="$genDate, $genDaysOld day(s) old"
         fi

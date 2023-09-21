@@ -1,14 +1,12 @@
-{ pkgs, ... }:
-{
-  
-  
+{ pkgs, ... }: {
+
   environment = {
     systemPackages = with pkgs; [
 
       # File Transfer:
       filezilla
       libfilezilla
-      rsync 
+      rsync
       transmission-gtk
 
     ];

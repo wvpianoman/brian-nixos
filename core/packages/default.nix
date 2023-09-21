@@ -10,14 +10,14 @@
     #---------------------------------------------------------------------
     # Editor
     #---------------------------------------------------------------------
- 
-    ./database        # dbeaver, pgmodeler, sqlitebrowser
+
+    ./database # dbeaver, pgmodeler, sqlitebrowser
     ./dsctool
 
     #---------------------------------------------------------------------
     # Basic
     #---------------------------------------------------------------------
-   
+
     ./archiver
 
     #---------------------------------------------------------------------
@@ -26,25 +26,25 @@
 
     ./audio-video
     ./image
-    ./multi-media             # digikam, shotwell, gimp-with-plugins, brasero, vlc, youtube-dl
+    ./multi-media # digikam, shotwell, gimp-with-plugins, brasero, vlc, youtube-dl
 
     #---------------------------------------------------------------------
     # Programming
     #---------------------------------------------------------------------
-    
+
     # ./julia
     # ./vscodium
     #./vscode
-    ./custom-pkgs             # My personal system-wide pkgs
+    ./custom-pkgs # My personal system-wide pkgs
     ./devlopment
-    
+
     #---------------------------------------------------------------------
     # Desktop
     #---------------------------------------------------------------------
 
-    ./internet                # clipgrab, wget, discord, whatsapp-for-linux, telegram, element, FF, Chrome
-    ./libreoffice-various     # libreoffice-fresh qownnotes, zotero
-    ./networking              # samba4Full, clif-utilities, teamviewer, openssh, sshpass, iwd
+    ./internet # clipgrab, wget, discord, whatsapp-for-linux, telegram, element, FF, Chrome
+    #./libreoffice-various     # libreoffice-fresh qownnotes, zotero
+    ./networking # samba4Full, clif-utilities, teamviewer, openssh, sshpass, iwd
     ./plasma
     ./screensaver
     ./theme-packages
@@ -58,15 +58,20 @@
     ./andriod
     ./misc
     ./openssl
-    ./tools                   # isoimagewriter, keepassxc, media-downloader, testdisk-qt, ventoy-full
+    ./tools # isoimagewriter, keepassxc, media-downloader, testdisk-qt, ventoy-full
     ./utilities
 
     #---------------------------------------------------------------------
     # Enable flatpak
     #---------------------------------------------------------------------
 
-    # ./flatpak
+    #./flatpak
 
+    #---------------------------------------------------------------------
+    # My personal additions
+    #---------------------------------------------------------------------
+
+    ./1-brian-pkgs
   ];
 
 }

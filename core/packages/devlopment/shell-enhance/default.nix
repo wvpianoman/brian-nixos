@@ -1,16 +1,17 @@
 { pkgs, ... }: {
 
   # Shell Enhancements and Utilities:
-  
+
   environment = {
-    systemPackages = with pkgs; [
+    systemPackages = with pkgs;
+      [
 
-      # Fonts and Shell
-      #rPackages.fontawesome
-      #zsh
-      #zsh-autosuggestions
-      #zsh-syntax-highlighting
+        # Fonts and Shell
+        #rPackages.fontawesome
+        #zsh
+        #zsh-autosuggestions
+        #zsh-syntax-highlighting
 
-    ];
+      ];
   };
 }

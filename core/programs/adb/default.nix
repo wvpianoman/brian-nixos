@@ -1,7 +1,1 @@
-{pkgs, ...}: {
-  programs = {
-    adb = {
-      enable = true;
-    };
-  };
-}
+{ pkgs, ... }: { programs = { adb = { enable = true; }; }; }

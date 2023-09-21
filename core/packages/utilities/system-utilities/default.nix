@@ -24,7 +24,7 @@
       figlet
       htop
       imagemagick
-      inotify-tools         # inotifywait   inotifywatch    https://github.com/inotify-tools/inotify-tools/wiki
+      inotify-tools # inotifywait   inotifywatch    https://github.com/inotify-tools/inotify-tools/wiki
       isoimagewriter
       less
       lf
@@ -46,7 +46,7 @@
       tldr
       tree
       vim
-      gnome.zenity    # For notifications and code dialogs
+      gnome.zenity # For notifications and code dialogs
 
       # XDG Utilities
       xdg-launch

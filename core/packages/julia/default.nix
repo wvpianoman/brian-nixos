@@ -1,10 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   environment = {
-    systemPackages = with pkgs; [
+    systemPackages = with pkgs;
+      [
 
-      # Scientific computing
-      julia
-      
-    ];
+        # Scientific computing
+        julia
+
+      ];
   };
 }

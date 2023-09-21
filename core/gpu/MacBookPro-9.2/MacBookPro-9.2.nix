@@ -1,9 +1,9 @@
 { config, pkgs, lib, ... }:
 
-  # Laptop { various}
-  # Intel hardware video acceleration and
-  # VAAPI/VDPAU compatibility, which are more
-  # relevant for Intel and AMD GPU's
+# Laptop { various}
+# Intel hardware video acceleration and
+# VAAPI/VDPAU compatibility, which are more
+# relevant for Intel and AMD GPU's
 
 {
   # Laptop configuration
@@ -28,10 +28,10 @@
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
-      intel-media-driver   # Intel Media Driver for VAAPI — Broadwell+ iGPUs  LIBVA_DRIVER_NAME=iHD
-      vaapiIntel           # VA-API user mode driver for Intel GEN Graphics family LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      vaapiVdpau           # VDPAU driver for the VAAPI library
-      libvdpau-va-gl       # VDPAU driver with OpenGL/VAAPI backend
+      intel-media-driver # Intel Media Driver for VAAPI — Broadwell+ iGPUs  LIBVA_DRIVER_NAME=iHD
+      vaapiIntel # VA-API user mode driver for Intel GEN Graphics family LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiVdpau # VDPAU driver for the VAAPI library
+      libvdpau-va-gl # VDPAU driver with OpenGL/VAAPI backend
     ];
   };
 
@@ -60,10 +60,10 @@
   #    turbo = "auto";
   #  };
 
-    # power management is auto-cpufreq which aims to replace tlp.
-    # When using auto-cpufreq it is therefore recommended to disable tlp as
-    # these tools are conflicting with each other. However, NixOS does allow
-    # for using both at the same time, and you therefore run them in tandem at your own risk.
+  # power management is auto-cpufreq which aims to replace tlp.
+  # When using auto-cpufreq it is therefore recommended to disable tlp as
+  # these tools are conflicting with each other. However, NixOS does allow
+  # for using both at the same time, and you therefore run them in tandem at your own risk.
 
   #  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   #};
