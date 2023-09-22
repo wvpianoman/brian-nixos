@@ -84,8 +84,20 @@
 </table>
 
 
-Greetings fellow **NixOS** users! If you're a proud owner of a system equipped desktop with a Nvidia or a laptop with Intel GPU drivers, and your heart beats for the sleekness of KDE Plasma, then this custom configuration has been meticulously crafted with you in mind. My ongoing commitment to updates and fixes ensures that your experience remains top-notch.
+Greetings fellow **NixOS** users! 
 
-It's important to note that, for the time being, I've chosen to disable Wayland in favor of prioritizing Plasma 5 and X11 integration. This emphasis guarantees a seamless and stable experience within the KDE Plasma ecosystem.
+One word of advice... make aure that your git is set so autocrlf is only using lf
+
+git config --get core.autocrlf
+
+if it isn't enter in terminal
+
+git config core.autocrlf input
+
+Verify the configuration 
+
+git config --get core.autocrlf
+
+All credit to this config goes to Tolga Erok.
 
 

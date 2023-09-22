@@ -4,7 +4,7 @@
 
   imports = [
 
-    ./machines/Apple-MacBookPro-9.2/Apple-configuration.nix
+    ./machines/Dell-Latitude-E6540/DELL-configuration.nix
 
   ];
 

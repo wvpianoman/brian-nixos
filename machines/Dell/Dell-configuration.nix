@@ -13,33 +13,12 @@
 { config, pkgs, ... }:
 
 {
-  #---------------------------------------------------------------------
-  # Import snippet files
-  #---------------------------------------------------------------------
   imports = [
 
     ../../core
-    ../../core/gpu
-    ./Apple-hardware-configuration.nix
-    "${
-      builtins.fetchTarball "https://github.com/Mic92/envfs/archive/main.tar.gz"
-    }/modules/envfs.nix"
- ./test.nix
-  ];
- 
-  services = {
-    dbus = {
-      enable = true;
-      packages = with pkgs; [ dconf gcr udisks2 ];
-    };
-  };
+    ../../core/gpu/intel/intel-laptop # INTEL GPU with (Open-GL), HP Eilite-Folio-9470M-HD-Intel-4000
+    ./DELL-hardware-configuration.nix
 
-  services.envfs.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    firefox
-    kate
-    # thunderbird]
   ];
 
   # --------------------------------------------------------------------
@@ -59,10 +38,10 @@
   boot.loader.systemd-boot.enable = true;
 
   services.devmon.enable = true;
-  services.gvfs.enable = true;
+  # services.gvfs.enable = true;
   services.udisks2.enable = true;
 
-  #---------------------------------------------------------------------
+   #---------------------------------------------------------------------
   # Switch to most recent kernel available
   #---------------------------------------------------------------------
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -131,10 +110,14 @@
     wireplumber.enable = true;
   };
 
+  #---------------------------------------------------------------------
   # Enable touchpad support (enabled default in most desktopManager).
+  #---------------------------------------------------------------------
   services.xserver.libinput.enable = true;
 
+  #---------------------------------------------------------------------
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  #---------------------------------------------------------------------
   users.users.brian = {
     isNormalUser = true;
     description = "Brian Francisco";
@@ -146,10 +129,7 @@
       "audio"
       "corectrl"
       "disk"
-      "docker"
-      "flatpak"
       "input"
-      "libvirtd"
       "lp"
       "mongodb"
       "mysql"
@@ -157,12 +137,9 @@
       "networkmanager"
       "postgres"
       "power"
-      "samba"
       "scanner"
-      "smb"
       "sound"
       "systemd-journal"
-      "udev"
       "users"
       "video"
       "wheel"
@@ -213,6 +190,7 @@
   system.copySystemConfiguration = true;
   system.stateVersion = "23.05"; # Did you read the comment?
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+
   #---------------------------------------------------------------------
   # Enable memory compression for faster processing and less SSD usage
   #---------------------------------------------------------------------
