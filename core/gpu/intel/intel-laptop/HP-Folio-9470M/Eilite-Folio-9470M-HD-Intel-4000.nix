@@ -11,14 +11,14 @@
   };
 
   # For Laptop
-  libinput = {
-    enable = true;
-    touchpad.tapping = false;
-    touchpad.naturalScrolling = true;
-    touchpad.scrollMethod = "twofinger";
-    touchpad.disableWhileTyping = true;
-    touchpad.clickMethod = "clickfinger";
-  };
+ # libinput = {
+ #   enable = true;
+ #   touchpad.tapping = false;
+ #   touchpad.naturalScrolling = true;
+ #   touchpad.scrollMethod = "twofinger";
+ #   touchpad.disableWhileTyping = true;
+ #   touchpad.clickMethod = "clickfinger";
+ # };
 
   # Update microcode when available
   hardware.cpu.intel.updateMicrocode =
