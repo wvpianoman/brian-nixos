@@ -4,9 +4,10 @@
   #---------------------------------------------------------------------
   # X11 and KDE Plasma
   #---------------------------------------------------------------------
+  
   services.xserver = {
     enable = true;
-    layout = "us";
+    layout = "au";
     xkbVariant = "";
 
     desktopManager = { plasma5.enable = true; };
@@ -15,15 +16,6 @@
       sddm = {
         enable = true;
         autoNumlock = true;
-
-        #  settings = {
-        #   Theme = {
-        #      CursorTheme = "breeze_cursors";
-        #      iconTheme = "yaru-remix-theme";
-        #    };
-        #  };
-
-        #  theme = "breeze";
 
       };
     };

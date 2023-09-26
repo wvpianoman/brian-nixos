@@ -41,18 +41,18 @@ if [ $? -eq 0 ]; then
     # Change the file permissions to tolga:tolga and give full access
     chmod 777 "$dest_path/$year/$month/$day/$filename"
     chown tolga:tolga "$dest_path/$year/$month/$day/$filename"
-
+    
     # Change group permission to tolga and others to full access
     chmod g+rw "$dest_path/$year/$month/$day/$filename"
     chgrp tolga "$dest_path/$year/$month/$day/$filename"
-
+    
     # Display a message to confirm that the copy has been completed
     echo "File copied successfully to $dest_path/$year/$month/$day/$filename"
 else
     # Display an error message and ask to try again
     echo "Error: File copy failed. Do you want to try again? (y/n)"
     read answer
-
+    
     if [ "$answer" == "y" ]; then
         # Run the script again
         bash /path/to/script.sh

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let
   email = "kingtolga@gmail.com";
@@ -23,13 +23,18 @@ in {
           # You may also need to configure Git to use your SSH key globally
           # (outside of this NixOS configuration).
           # See the note below for instructions.
-          signingKey = "~/.ssh/id_ed25519.pub";
+          signingKey = "ssh-ed25519";
         };
 
-        core = { editor = "kate"; };
-        init = { defaultBranch = "main"; };
-        pull = { rebase = "true"; };
+        #init = { defaultBranch = "main"; };
+        #pull = { rebase = "true"; };
+        core.editor = "kate";
+        github.user = "tolgaerok";
+        init.defaultBranch = "main";
+        pull.rebase = true;
 
+        # ignores = [ ".envrc" ".direnv" ];
+        
         url = {
           "git@github.com:" = { insteadOf = [ "https://github.com/" ]; };
           "git@gitlab.com:" = { insteadOf = [ "https://gitlab.com/" ]; };

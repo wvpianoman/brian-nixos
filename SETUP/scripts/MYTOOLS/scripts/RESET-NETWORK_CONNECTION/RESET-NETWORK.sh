@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if dialog is installed, if not install
-if ! command -v dialog &>/dev/null; then
+if ! command -v dialog &> /dev/null; then
     if [ -f /etc/os-release ]; then
         . /etc/os-release
         if [ "$ID" == "fedora" ]; then
@@ -80,7 +80,7 @@ clear
 dialog --title "Done" --msgbox "Done executing commands. Press any key to exit." 0 0
 
 # Determine which terminal emulator to use
-if command -v xterm &>/dev/null; then
+if command -v xterm &> /dev/null; then
     # Use xterm to display the "Press any key to exit" message and hold the terminal open
     xterm -hold -e "echo 'Press any key to exit'; read -n1" &
 else
@@ -93,3 +93,5 @@ fi
 exit
 # Close the current terminal window
 exit
+
+

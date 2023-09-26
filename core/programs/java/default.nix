@@ -1,1 +1,7 @@
-{ pkgs, ... }: { programs = { java = { enable = false; }; }; }
+{pkgs, ...}: {
+  programs = {
+    java = {
+      enable = false;
+    };
+  };
+}

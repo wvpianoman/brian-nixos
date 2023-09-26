@@ -10,7 +10,9 @@
 
   services = {
 
-    udev = { enable = true; };
-
+    udev = {
+      enable = true;
+    };
+    
   };
 }

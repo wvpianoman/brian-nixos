@@ -33,24 +33,25 @@ COLOR_NUM=$((RANDOM % 7))
 
 # Assign a color variable based on the RANDOM number
 case $COLOR_NUM in
-0) COLOR=$RED ;;
-1) COLOR=$GREEN ;;
-2) COLOR=$YELLOW ;;
-3) COLOR=$BLUE ;;
-4) COLOR=$CYAN ;;
-5) COLOR=$ORANGE ;;
-*) COLOR=$WHITE ;;
+    0) COLOR=$RED;;
+    1) COLOR=$GREEN;;
+    2) COLOR=$YELLOW;;
+    3) COLOR=$BLUE;;
+    4) COLOR=$CYAN;;
+    5) COLOR=$ORANGE;;
+    *) COLOR=$WHITE;;
 
 esac
 
 # Function to check port 22
 function check_port22() {
-    if pgrep sshd >/dev/null; then
+    if pgrep sshd > /dev/null; then
         echo -e "${GREEN}[✔]${NC} SSH service is running on port 22\n"
     else
         echo -e "${RED}[✘]${NC} SSH service is not running on port 22. Install and enable SSHD service.\n"
     fi
 }
+
 
 # Function to display the menu
 function display_menu() {
@@ -98,7 +99,7 @@ check_internet_connection() {
     echo -e "${YELLOW}[*]${NC} Checking Internet Connection .."
     echo ""
 
-    if curl -s -m 10 https://www.google.com >/dev/null || curl -s -m 10 https://www.github.com >/dev/null; then
+    if curl -s -m 10 https://www.google.com > /dev/null || curl -s -m 10 https://www.github.com > /dev/null; then
         echo -e "${GREEN}[✔]${NC} Network connection is OK ${GREEN}[✔]${NC}"
     else
         echo -e "${RED}[✘]${NC} Network connection is not available ${RED}[✘]${NC}"
@@ -113,7 +114,7 @@ check_internet_connection() {
 
 # Function to display help text
 function show_help() {
-    echo -e "$help_text"
+  echo -e "$help_text"
 }
 
 # Call the function to check internet connection
@@ -122,20 +123,21 @@ check_internet_connection
 # Function to handle command-line options
 function handle_options() {
     case "$1" in
-    --help)
-        show_help
-        exit 0
+        --help)
+            show_help
+            exit 0
         ;;
-    --checkport)
-        check_port22
-        exit 0
+        --checkport)
+            check_port22
+            exit 0
         ;;
-    --ubuntuserver)
-        check_port22
-        ssh_command_retry "192.168.0.11" ""
-        # exit 0
+        --ubuntuserver)
+            check_port22
+            ssh_command_retry "192.168.0.11" ""
+            # exit 0
         ;;
-    *) ;;
+        *)
+        ;;
     esac
 }
 
@@ -155,35 +157,35 @@ while true; do
     clear
 
     case $choice in
-    1)
-        check_port22
-        ssh_command_retry "192.168.0.20" ""
+        1)
+            check_port22
+            ssh_command_retry "192.168.0.20" ""
         ;;
-    2)
-        check_port22
-        ssh_command_retry "192.168.0.11" ""
+        2)
+            check_port22
+            ssh_command_retry "192.168.0.11" ""
         ;;
-    3)
-        check_port22
-        ssh_command_retry "192.168.0.13" ""
+        3)
+            check_port22
+            ssh_command_retry "192.168.0.13" ""
         ;;
-    4)
-        check_port22
-        ssh_command_retry "192.168.0.5" ""
+        4)
+            check_port22
+            ssh_command_retry "192.168.0.5" ""
         ;;
-    5)
-        check_port22
-        ssh_command_retry "192.168.0.8" ""
+        5)
+            check_port22
+            ssh_command_retry "192.168.0.8" ""
         ;;
-    6)
-        mysql -h 192.168.0.11 -P 3306 -u tolga -p
+        6)
+            mysql -h 192.168.0.11 -P 3306 -u tolga -p
         ;;
-    0)
-        echo -e "${RED}[✘]${NC} Quitting the script.${NC}"
-        break
+        0)
+            echo -e "${RED}[✘]${NC} Quitting the script.${NC}"
+            break
         ;;
-    *)
-        invalid_input
+        *)
+            invalid_input
         ;;
     esac
 done

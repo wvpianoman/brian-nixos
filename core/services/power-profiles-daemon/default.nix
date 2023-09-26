@@ -1,3 +1,12 @@
-{ config, pkgs, lib, ... }: {
-  services = { power-profiles-daemon = { enable = false; }; };
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
+  services = {
+    power-profiles-daemon = {
+      enable = false;
+    };
+  };
 }

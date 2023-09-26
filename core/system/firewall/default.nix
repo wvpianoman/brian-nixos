@@ -1,10 +1,12 @@
-{ config, pkgs, lib, ... }: {
+{ config, options, lib, pkgs, ... }: {
 
   networking = {
 
     enableIPv6 = true;
 
     networkmanager.enable = true;
+
+    # services.samba-wsdd.enable = true; # make shares visible for windows 10 clients
 
     # Configure firewall to your likings:
     firewall = {
@@ -51,13 +53,13 @@
         # Transmission
         9091
         60450
-        # Custom port
+        # Syncthing port
         22000
         # For gnomecast server
         80
         8010
         8888
-        #wsdd
+        # wsdd : samba 
         5357
         # Open KDE Connect
         {
@@ -78,13 +80,12 @@
         137
         # NetBIOS Datagram Service
         138
-        # Custom port
+        # Syncthing port
         22000
-        # Custom port
         21027
         # For device discovery
         5353
-        # wsdd
+        # wsdd : samba 
         3702
 
       ];

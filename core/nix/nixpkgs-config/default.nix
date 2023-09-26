@@ -12,7 +12,7 @@
       allowUnfree = true;
 
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      #allowUnfreePredicate = _: true;
+      # allowUnfreePredicate = _: true;
 
       allowUnfreePredicate = pkg:
         builtins.elem (lib.getName pkg) [
@@ -72,6 +72,7 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
+
       curl
       glib
       glibc
@@ -79,6 +80,7 @@
       libsecret
       libunwind
       libuuid
+
       # openssl
       stdenv.cc.cc
       util-linux
@@ -92,6 +94,7 @@
       vulkan-loader
       gdk-pixbuf
       xorg.libX11
+      
     ];
   };
 }

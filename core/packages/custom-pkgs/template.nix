@@ -3,9 +3,8 @@
 let
 
   xxx = pkgs.writeScriptBin "xxx" ''
-    
-      #!/usr/bin/env bash
-    
+  #!/usr/bin/env bash
+
   '';
 
 in {

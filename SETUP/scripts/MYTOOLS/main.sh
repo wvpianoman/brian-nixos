@@ -23,8 +23,8 @@ display_menu() {
   fi
 
   # Display the menu using dialog
-  dialog --clear --menu "Select a script or directory:" 15 45 10 "${menu_items[@]}" "Back" "" "Exit" "" 2>&1 >/dev/tty ||
-    return 1
+  dialog --clear --menu "Select a script or directory:" 15 45 10 "${menu_items[@]}" "Back" "" "Exit" "" 2>&1 >/dev/tty \
+    || return 1
 }
 
 # Function to execute the selected script

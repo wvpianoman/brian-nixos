@@ -16,21 +16,14 @@
 
   services.samba = {
     enable = true;
+
     package = pkgs.samba4Full;
     openFirewall = true;
     securityType = "user";
     extraConfig = ''
-     workgroup = WORKGROUP
-     server string = Brians_Mac_Book_Pro_NixOs_stoat
-     # netbios name = smb-NixOs23
-     security = user
-     hosts allow = 192.168.0. 127.0.0.1 localhost
-     hosts deny = 0.0.0.0/0
-                  
-     # Set the minimum SMB protocol version on the client end
-     # Allow accessing old SMB protocols (SMB1++ = COREPLUS)
-     client min protocol = COREPLUS
-                  
+      workgroup = WORKGROUP
+      server string = HP_G800_NixOs_stoat
+      # netbios name = smb-NixOs23
       security = user
       hosts allow = 192.168.0. 127.0.0.1 localhost
       hosts deny = 0.0.0.0/0
@@ -80,8 +73,8 @@
       # Public Share
       #---------------------------------------------------------------------
 
-      Brians_MacBook_Pro_Public = {
-        path = "/home/brian/Public";
+      Tolga_NixOS_Public = {
+        path = "/home/tolga/Public";
         comment = "Public Share";
         browseable = true;
         "read only" = false;
@@ -89,7 +82,7 @@
         writable = true;
         "create mask" = "0777";
         "directory mask" = "0777";
-        "force user" = "brian";
+        "force user" = "tolga";
         "force group" = "samba";
       };
 
@@ -97,7 +90,7 @@
       # Private Share
       #---------------------------------------------------------------------
 
-      Brians_MacBook_Pro_Private = {
+      Tolga_NixOS_Private = {
         path = "/home/NixOs";
         comment = "Private Share";
         browseable = true;
@@ -105,7 +98,7 @@
         "guest ok" = false;
         "create mask" = "0644";
         "directory mask" = "0755";
-        "force user" = "brian";
+        "force user" = "tolga";
         "force group" = "samba";
       };
 
