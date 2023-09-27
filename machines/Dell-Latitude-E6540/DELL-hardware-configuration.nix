@@ -21,20 +21,18 @@
   boot.kernelParams = [ "mitigations=off" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/50d21cc2-7897-4b42-8dc5-088c9a64769f";
+    { device = "/dev/disk/by-uuid/88a4463d-9aa9-4dd4-831b-81b4b1ddbd80";
       fsType = "ext4";
     # for ssd
     options =
       [ "noatime" "nodiratime" "discard" "errors=remount-ro" "data=ordered" ];
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C473-D73B";
+    { device = "/dev/disk/by-uuid/3DFC-3171";
       fsType = "vfat";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/6e2ee867-7220-4cc9-96b0-8321a7417182"; }
-    ];
+  swapDevices = [ ];
 
 #  fileSystems."/mnt/nixos_share" = {
 #    device = "//192.168.0.20/LinuxData/HOME/PROFILES/NIXOS-23-05/TOLGA/";
@@ -55,12 +53,6 @@
 #  };
 
   #---------------------------------------------------------------------
-  # For AMD hardware / chipsets
-  #---------------------------------------------------------------------
-
-  # hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-  #---------------------------------------------------------------------
   # For Intel hardware / chipsets
   #---------------------------------------------------------------------
 
@@ -74,4 +66,5 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   networking.useDHCP = lib.mkDefault true;
+};
 }

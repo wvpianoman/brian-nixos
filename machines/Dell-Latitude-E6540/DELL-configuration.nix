@@ -16,7 +16,7 @@
   imports = [
 
     ../../core
-    ../../core/gpu/intel/intel-laptop # INTEL GPU with (Open-GL), HP Eilite-Folio-9470M-HD-Intel-4000
+    ../../core/gpu
     ./DELL-hardware-configuration.nix
 
   ];
@@ -41,7 +41,7 @@
   # services.gvfs.enable = true;
   services.udisks2.enable = true;
 
-   #---------------------------------------------------------------------
+  #---------------------------------------------------------------------
   # Switch to most recent kernel available
   #---------------------------------------------------------------------
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -51,6 +51,33 @@
   #---------------------------------------------------------------------
   networking.hostName = "nixos_dell";
   networking.networkmanager.enable = true;
+  networking.networkmanager.connectionConfig = {
+    "ethernet.mtu" = 1462;
+    "wifi.mtu" = 1462;
+  };
+
+  #---------------------------------------------------------------------
+  # Install a couple of basic, off the bat pkgs
+  #---------------------------------------------------------------------
+  environment.systemPackages = with pkgs; [
+
+    appimage-run
+    espeak-classic
+    firefox
+    kate
+
+    # direnv
+    # nix-direnv
+
+    #-----------------------------------------------------------------
+    # Extra Audio packages
+    #-----------------------------------------------------------------
+    alsa-utils
+    pavucontrol
+    pulseaudio
+    pulsemixer
+
+  ];
 
   #---------------------------------------------------------------------
   # Set your time zone & internationalisation

@@ -4,8 +4,8 @@
 
     # Configuration for  intel gpu acceleration & tlp
 
-    ./MacBookPro-9.2/MacBookPro-9.2.nix
-    ./laptop-packages
+    ./Dell-Latitude-E6540/Dell-Latitude-E6540.nix
+    ./Dell-Latitude-E6540/laptop-packages.nix
 
   ];
 }
