@@ -32,7 +32,9 @@
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/1370c35f-024a-4592-b4c1-a122e9405d93"; }
+    ];
 
 #  fileSystems."/mnt/nixos_share" = {
 #    device = "//192.168.0.20/LinuxData/HOME/PROFILES/NIXOS-23-05/TOLGA/";
