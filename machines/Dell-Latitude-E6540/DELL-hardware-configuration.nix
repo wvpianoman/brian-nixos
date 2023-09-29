@@ -15,27 +15,24 @@
     "sdhci_pci"
     "aesni_intel"
   ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.kernelModules = [  ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.kernelParams = [ "mitigations=off" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4f52ec8e-b127-415b-9a20-1ec24a9b4669";
+    { device = "/dev/disk/by-uuid/88a4463d-9aa9-4dd4-831b-81b4b1ddbd80";
       fsType = "ext4";
     # for ssd
     options =
       [ "noatime" "nodiratime" "discard" "errors=remount-ro" "data=ordered" ];
-    };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C9B9-EC4E";
+    { device = "/dev/disk/by-uuid/3DFC-3171";
       fsType = "vfat";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/1370c35f-024a-4592-b4c1-a122e9405d93"; }
-    ];
+  swapDevices = [ ];
 
 #  fileSystems."/mnt/nixos_share" = {
 #    device = "//192.168.0.20/LinuxData/HOME/PROFILES/NIXOS-23-05/TOLGA/";
@@ -69,4 +66,5 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   networking.useDHCP = lib.mkDefault true;
+};
 }
