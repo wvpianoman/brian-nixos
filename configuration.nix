@@ -4,7 +4,7 @@
 
   imports = [
 
-    ./Sony-Viao-i3-330M/configuration.nix
+    ./machines/Dell-Latitude-E6540/DELL-configuration.nix
 
   ];
 
