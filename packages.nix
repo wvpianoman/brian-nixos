@@ -30,6 +30,10 @@
 
       atool     # a script for managing file archives of various types 
                 # provides: apack arepack als adiff atool aunpack acat
+                #
+                # examples: atool -x WPS-FONTS.zip    ==> this extracts the compressed file
+                #           atool -l WPS-FONTS.zip    ==> this lists the contents of the compressed file
+                #           atool -a name-your-compression.rar 1.pdf 2.pdf 3.sh    ==> this adds indovidual files to the compressed file
 
       gzip      # GNU zip compression program
                 # provides: gunzip zmore zegrep zfgrep zdiff zcmp uncompress gzip znew zless zcat zforce gzexe zgrep
