@@ -74,51 +74,77 @@
       # Multimedia Utilities
       # ---------------------------------------------------------------------
 
-      audacity                        # audacity
-      ffmpeg                          # ffprobe ffmpeg
-      ffmpegthumbnailer               # ffmpegthumbnailer
+      audacity                        # Sound editor with graphical UI
+
+      ffmpeg                          # A complete, cross-platform solution to record, convert and stream audio and video
+                                      # provides: ffprobe ffmpeg
+
+      ffmpegthumbnailer               # A lightweight video thumbnailer
       libdvdcss                       # A library for decrypting DVDs
       libdvdread                      # A library for reading DVDs
       libopus                         # Open, royalty-free, highly versatile audio codec
       libvorbis                       # Vorbis audio compression reference implementation
-      mediainfo                       # mediainfo
-      mpg123                          # out123 conplay mpg123-id3dump mpg123 mpg123-strip
-      mplayer                         # gmplayer mplayer mencoder
+      mediainfo                       # Supplies technical and tag information about a video or audio file
+      mediainfo-gui                   # Supplies technical and tag information about a video or audio file (GUI version)
+
+      mpg123                          # Fast console MPEG Audio Player and decoder library
+                                      # provides: out123 conplay mpg123-id3dump mpg123 mpg123-strip
+
+      mplayer                         # A movie player that supports many video formats
+                                      # provides: gmplayer mplayer mencoder
+
       mpv                             # General-purpose media player, fork of MPlayer and mplayer2
-      ocamlPackages.gstreamer         # mpv mpv_identify.sh umpv
-      simplescreenrecorder            # ssr-glinject simplescreenrecorder
-      video-trimmer                   # video-trimmer
+
+      ocamlPackages.gstreamer         # Bindings for the GStreamer library which provides functions for playning and manipulating multimedia streams
+                                      # provides: mpv mpv_identify.sh umpv
+
+      simplescreenrecorder            # A screen recorder for Linux
+                                      # provides: ssr-glinject simplescreenrecorder
+
+      video-trimmer                   # Trim videos quickly
 
       # ---------------------------------------------------------------------
       # Deduplicating archiver with compression and encryption softwar
       # ---------------------------------------------------------------------
 
-      borgbackup                      # borgfs, borg    Deduplicating archiver with compression and encryption
-      restic                          # restic          A backup program that is fast, efficient and secure       https://www.youtube.com/watch?v=MzJbSf7GQ1E
-      restique                        # restique        Restic GUI for Desktop/Laptop Backups
+      borgbackup                      # Deduplicating archiver with compression and encryption
+                                      # provides: borgfs, borg
+
+      restic                          # A backup program that is fast, efficient and secure
+                                      # https://www.youtube.com/watch?v=MzJbSf7GQ1E
+
+      restique                        # Restic GUI for Desktop/Laptop Backups
 
       # ---------------------------------------------------------------------
       # Database related
       # ---------------------------------------------------------------------
 
-      dbeaver                         # dbeaver
-      pgmodeler                       # pgmodeler-cli pgmodeler pgmodeler-ch pgmodeler-se
-      sqlitebrowser                   # sqlitebrowser
+      dbeaver                         # Universal SQL Client for developers, DBA and analysts. Supports MySQL, PostgreSQL, MariaDB, SQLite, and more
+
+      pgmodeler                       # A database modeling tool for PostgreSQL
+                                      # provides: pgmodeler-cli pgmodeler pgmodeler-ch pgmodeler-se
+
+      sqlitebrowser                   # DB Browser for SQLite
 
       # ---------------------------------------------------------------------
       # cli-utilities
       # ---------------------------------------------------------------------
 
-      # dialog
+      # dialog                          # Display dialog boxes from shell
       doas                            # Executes the given command as another user
       fx                              # Terminal JSON viewer
-      fzf                             # fzf-tmux fzf-share fzf
+
+      fzf                             # A command-line fuzzy finder written in Go
+                                      # provides: fzf-tmux fzf-share fzf
 
       # ---------------------------------------------------------------------
       # Clipboard Utilities:
       # ---------------------------------------------------------------------
 
-      # wl-clipboard                    # wl-copy wl-paste
+      # wl-clipboard                    # Command-line copy/paste utilities for Wayland
+                                        # provides: wl-copy wl-paste
+
+      # wl-clipboard-x11                # A wrapper to use wl-clipboard as a drop-in replacement for X11 clipboard tools
 
       # ---------------------------------------------------------------------
       # Code Search and Analysis:
@@ -128,20 +154,20 @@
                                       # rg
 
       ripgrep-all                     # Ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, and more
-                                      # rga-preproc rga
+                                      # provides: rga-preproc rga
 
       # ---------------------------------------------------------------------
       # Utilities
       # ---------------------------------------------------------------------
 
-      # sublime4
+      # sublime4                        # Sophisticated text editor for code, markup and prose
       direnv                          # A shell extension that manages your environment
       graalvm17-ce                    # High-Performance Polyglot VM
       mosh                            # Mobile shell (ssh replacement)
       nix-direnv                      # A fast, persistent use_nix implementation for direnv
       nixfmt                          # An opinionated formatter for Nix
       nixos-option
-      vscode
+      vscode                          # Open source source code editor developed by Microsoft for Windows, Linux and macOS 
       vscode-extensions.brettm12345.nixfmt-vscode
       vscode-extensions.mkhl.direnv
 
@@ -149,15 +175,17 @@
       # Github related
       # ---------------------------------------------------------------------
 
-      git
-      hut
+      git     # Distributed version control system
+      hut     # A CLI tool for Sourcehut / sr.ht
 
       # ---------------------------------------------------------------------
       # Programming Languages and Tools:
       # ---------------------------------------------------------------------
-      scala-cli
-      python311Full                 # idle3.11 python3.11-config idle python3-config pydoc pydoc3 pydoc3.11 idle3 2to3-3.11 2to3 python3.11 python3 python-config python
-      # python311Packages.pip
+      scala-cli                     # Command-line tool to interact with the Scala language
+      python311Full                 # A high-level dynamically-typed programming language
+                                    # provides: idle3.11 python3.11-config idle python3-config pydoc pydoc3 pydoc3.11
+                                    #           idle3 2to3-3.11 2to3 python3.11 python3 python-config python
+      # python311Packages.pip         # The PyPA recommended tool for installing Python packages
 
       # ---------------------------------------------------------------------
       # Dsctool
@@ -177,7 +205,7 @@
       # Scanning and Image Viewing
       # ---------------------------------------------------------------------
 
-      nsxiv                          # New Suckless X Image Viewe
+      nsxiv                          # New Suckless X Image Viewer
       sane-backends                  # SANE (Scanner Access Now Easy) backends
       scanbd                         # Scanner button daemon
       sxiv                           # Simple X Image Viewer
@@ -251,7 +279,7 @@
       # Disc burner
       # ---------------------------------------------------------------------
 
-      brasero                        # A Gnome CD/DVD Burner
+    #  brasero                        # A Gnome CD/DVD Burner
 
       # ---------------------------------------------------------------------
       # Remote Access and Automation:
@@ -275,19 +303,19 @@
 
 
       kdiff3                         # Compares and merges 2 or 3 files or directories
-      ark                 # Graphical file compression/decompression utility
-      filelight           # Disk usage statistics
-      kate                # Advanced text editor
-      kcalc               # Scientific calculator
-      kgpg                # A KDE based interface for GnuPG, a powerful encryption utility
-      krename             # A powerful batch renamer for KDE
+      ark                            # Graphical file compression/decompression utility
+      filelight                      # Disk usage statistics
+      kate                           # Advanced text editor
+      kcalc                          # Scientific calculator
+      kgpg                           # A KDE based interface for GnuPG, a powerful encryption utility
+      krename                        # A powerful batch renamer for KDE
       # libsForQt5.kdenetwork-filesharing
-      libsForQt5.kweather           # Weather application for Plasma Mobile
-      libsForQt5.kweathercore       # Library to facilitate retrieval of weather information including forecasts and alerts 
+      libsForQt5.kweather            # Weather application for Plasma Mobile
+      libsForQt5.kweathercore        # Library to facilitate retrieval of weather information including forecasts and alerts 
       #libsForQt5.qt5.qttools        # A cross-platform application framework for C++
-                                    # qhelpgenerator linguist qtplugininfo qdistancefieldgenerator pixeltool
-                                    # qcollectiongenerator assistant qtdiag qdbusviewer lupdate qtpaths
-                                    # qtattributionsscanner lconvert designer lupdate-pro lrelease qdbus lprodump lrelease-pro
+                                     # qhelpgenerator linguist qtplugininfo qdistancefieldgenerator pixeltool
+                                     # qcollectiongenerator assistant qtdiag qdbusviewer lupdate qtpaths
+                                     # qtattributionsscanner lconvert designer lupdate-pro lrelease qdbus lprodump lrelease-pro
 
       # libsForQt5.quazip             # Provides access to ZIP archives from Qt 5 programs
                                     # quazip
