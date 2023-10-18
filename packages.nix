@@ -17,7 +17,7 @@
                              # provides: aft-mtp-cli android-file-transfer aft-mtp-mount
 
       android-tools          # Android SDK platform tools
-			                       # provides: lpadd append2simg lpmake mke2fs.android mkdtboimg simg2img lpdump lpunpack ext2simg 
+			     # provides: lpadd append2simg lpmake mke2fs.android mkdtboimg simg2img lpdump lpunpack ext2simg 
                              # e2fsdroid adb unpack_bootimg repack_bootimg avbtool img2simg fastboot mkbootimg lpflash
 
       droidcam               # Linux client for DroidCam app
