@@ -30,6 +30,9 @@ let
 
     else if builtins.readFile "/sys/devices/virtual/dmi/id/product_name" == "Latitude E6540\n" then
       machines/LAPTOPS/Dell-Latitude-E6540/Dell-E6540-configuration.nix
+
+  #  else if builtins.readFile "/sys/devices/virtual/dmi/id/product_name" == "Latitude E6540\n" then
+  #    machines/LAPTOPS/Apple-MacBookPro-9.2/Apple-configuration.nix
   
   else
 
