@@ -17,7 +17,7 @@
                              # provides: aft-mtp-cli android-file-transfer aft-mtp-mount
 
       android-tools          # Android SDK platform tools
-			     # provides: lpadd append2simg lpmake mke2fs.android mkdtboimg simg2img lpdump lpunpack ext2simg 
+			                       # provides: lpadd append2simg lpmake mke2fs.android mkdtboimg simg2img lpdump lpunpack ext2simg 
                              # e2fsdroid adb unpack_bootimg repack_bootimg avbtool img2simg fastboot mkbootimg lpflash
 
       droidcam               # Linux client for DroidCam app
@@ -182,9 +182,11 @@
       # Programming Languages and Tools:
       # ---------------------------------------------------------------------
       scala-cli                     # Command-line tool to interact with the Scala language
+
       python311Full                 # A high-level dynamically-typed programming language
                                     # provides: idle3.11 python3.11-config idle python3-config pydoc pydoc3 pydoc3.11
                                     #           idle3 2to3-3.11 2to3 python3.11 python3 python-config python
+
       # python311Packages.pip         # The PyPA recommended tool for installing Python packages
 
       # ---------------------------------------------------------------------
@@ -300,7 +302,6 @@
       # ---------------------------------------------------------------------
       # KDE Plasma tools
       # ---------------------------------------------------------------------
-
 
       kdiff3                         # Compares and merges 2 or 3 files or directories
       ark                            # Graphical file compression/decompression utility
