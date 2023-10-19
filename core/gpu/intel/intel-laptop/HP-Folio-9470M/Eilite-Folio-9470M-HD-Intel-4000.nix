@@ -45,7 +45,7 @@ with lib;
     videoDrivers = [ "modesetting" ]; # Use the dedicated Intel driver
     xkbVariant = "";
     libinput.enable = true;
-    libinput.touchpad.tapping = true;
+    libinput.touchpad.tapping = false;
     libinput.touchpad.naturalScrolling = true;
     libinput.touchpad.scrollMethod = "twofinger";
     libinput.touchpad.disableWhileTyping = true;

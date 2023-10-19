@@ -26,7 +26,7 @@ with lib;
     videoDrivers = [ "modesetting" ]; # Use the dedicated Intel driver
     xkbVariant = "";
     libinput.enable = true;
-    libinput.touchpad.tapping = false;
+    libinput.touchpad.tapping = true;
     libinput.touchpad.naturalScrolling = true;
     libinput.touchpad.scrollMethod = "twofinger";
     libinput.touchpad.disableWhileTyping = true;
@@ -96,7 +96,12 @@ with lib;
 
   services.tlp.settings = {
 
+  # AHCI/Runtime Power Management
+  #---------------------------------------------------------------------
     AHCI_RUNTIME_PM_ON_BAT = "auto";
+
+  # CPU Settings
+  #---------------------------------------------------------------------
     CPU_BOOST_ON_AC = 1;
     CPU_BOOST_ON_BAT = 0;
     CPU_ENERGY_PERF_POLICY_ON_AC = "ondemand";
@@ -106,14 +111,26 @@ with lib;
     CPU_MIN_PERF_ON_BAT = 75;
     CPU_SCALING_GOVERNOR_ON_AC = "schedutil"; # Adjust as needed
     CPU_SCALING_GOVERNOR_ON_BAT = "schedutil"; # Adjust as needed
+
+  # Power Management
+  #---------------------------------------------------------------------
     NATACPI_ENABLE = 1;
     RUNTIME_PM_ON_AC = "on";
     RUNTIME_PM_ON_BAT = "auto";
     SCHED_POWERSAVE_ON_BAT = 1;
+
+  # Sound Settings
+  #---------------------------------------------------------------------
     SOUND_POWER_SAVE_ON_AC = 0;
     SOUND_POWER_SAVE_ON_BAT = 1;
+
+  # Battery Charging
+  #---------------------------------------------------------------------
     START_CHARGE_THRESH_BAT0 = 40;
     STOP_CHARGE_THRESH_BAT0 = 80;
+
+  # Other Settings
+  #---------------------------------------------------------------------
     TPACPI_ENABLE = 1;
     TPSMAPI_ENABLE = 1;
     WOL_DISABLE = "Y";
