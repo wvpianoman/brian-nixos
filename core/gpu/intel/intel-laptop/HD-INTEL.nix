@@ -3,7 +3,7 @@
 with lib;
 
 #---------------------------------------------------------------------
-#   Works Well on HP Eilite Folio 9470M i7-3667u x 4 HD Intel GPU 4000 
+#   Works Well on various Intel Mesa HD GPU
 #---------------------------------------------------------------------
 
 {
@@ -24,7 +24,6 @@ with lib;
   #---------------------------------------------------------------------
   services.xserver = {
     videoDrivers = [ "modesetting" ]; # Use the dedicated Intel driver
-    # layout = "au";
     xkbVariant = "";
     libinput.enable = true;
     libinput.touchpad.tapping = false;
@@ -51,6 +50,9 @@ with lib;
   #---------------------------------------------------------------------
   hardware.opengl = {
     enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+
     extraPackages = with pkgs; [
       intel-gmmlib
       intel-media-driver
