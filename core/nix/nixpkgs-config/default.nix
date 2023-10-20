@@ -33,7 +33,8 @@ with lib;
       joypixels.acceptLicense = true;
 
       # Allow insecure or old pkgs - Help from nix package manager
-      permittedInsecurePackages = [ "qtwebkit-5.212.0-alpha4" ];
+      permittedInsecurePackages =
+       [ "qtwebkit-5.212.0-alpha4" "openssl-1.1.1u" "openssl-1.1.1v" "electron-12.2.3" ];
     };
 
   };

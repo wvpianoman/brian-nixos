@@ -30,7 +30,7 @@
     # Main Core
     #---------------------------------------------
     ../../../core
-    ../../../core/gpu/intel/HD-INTEL.nix
+    ../../../core/gpu/intel/intel-laptop/HD-INTEL.nix
 
     ../../../core/user
     ./Dell-E6540-hardware-configuration.nix 
