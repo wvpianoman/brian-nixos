@@ -5,8 +5,11 @@ This repo contains the configs and programs for the computers in my stable.  Cur
 
 
 -MacbookPro 9,2
+
 -Dell Latitude E6540
+
 -Lenovo Slim7 16IAH7 82VB
+
 
 + **Should I use NixOS?**
 
