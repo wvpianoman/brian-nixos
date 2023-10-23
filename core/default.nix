@@ -7,7 +7,7 @@
 
   imports = [
     
- #   ./modules/iphone/iphone.nix
+  #  ./modules/iphone/iphone.nix
     ./nix
     ./packages
     ./programs

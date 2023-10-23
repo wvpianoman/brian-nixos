@@ -34,7 +34,7 @@
     ../../../core
     ../../../core/gpu/intel/intel-laptop/HD-INTEL.nix
 
-    ../../../core/user
+    ../../../user
     ./Apple-hardware-configuration.nix
     ./boot
 
@@ -58,8 +58,13 @@
   # --------------------------------------------------------------------
   # Permit Insecure Packages
   # --------------------------------------------------------------------
-  nixpkgs.config.permittedInsecurePackages =
-    [ "openssl-1.1.1u" "openssl-1.1.1v" "electron-12.2.3" ];
+  nixpkgs.config.permittedInsecurePackages = [
+
+    "openssl-1.1.1u"
+    "openssl-1.1.1v"
+    "electron-12.2.3"
+
+  ];
 
  
   # services.gvfs.enable = true;

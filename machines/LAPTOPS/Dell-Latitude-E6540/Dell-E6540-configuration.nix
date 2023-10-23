@@ -32,7 +32,7 @@
     ../../../core
     ../../../core/gpu/intel/intel-laptop/HD-INTEL.nix
 
-    ../../../core/user
+    ../../../user
     ./Dell-E6540-hardware-configuration.nix 
 
     
@@ -72,6 +72,13 @@
   #--------------------------------------------------------------------- 
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+
+    "openssl-1.1.1u"
+    "openssl-1.1.1v"
+    "electron-12.2.3"
+
+  ];
   #---------------------------------------------------------------------
   #   Enable the OpenSSH daemon.
   #---------------------------------------------------------------------
