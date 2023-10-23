@@ -1,55 +1,11 @@
 <div align="center">
   <h1 style="font-size: 24px; color: blue;">My NixOs 23.05 environment</h1>
 </div>
-<table style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <td style="border: none; width: 30%;" valign="top">
-      <div align="center">
-    <td style="border: none; width: 70%;">
-      <table>
-        <tr>
-          <th align="left">Device</th>
-          <th align="left">Specification</th>
-        </tr>
-        <tr>
-          <td>MODEL</td>
-          <td>Dell® Latitude E6540 </td>
-        </tr>
-        <tr>
-          <td>MOTHERBOARD</td>
-          <td>Dell Motherboard 0CYT5F A00 </td>
-        </tr>
-         <tr>
-          <td>CPU</td>
-          <td>Intel Core i7-4800MQ CPU @ 2.70GHz</td>
-        </tr>
-        <tr>
-          <td>GPU</td>
-          <td>Intel 4th Gen Core Processor Integrated Graphics Controller </td>
-        </tr>
-        <tr>
-          <td>GPU</td>
-          <td>AMD/ATI Mars XTX [Radeon HD 8790M] </td>
-        </tr>
-          <td>RAM</td>
-          <td> 2x RAM Module 8GB SODIMM DDR3 1600MT/s  </td>
-        </tr>
-        <tr>
-          <td>SATA</td>
-          <td> PNY CS900 1TB SSD   </td>
-        </tr>
-        <tr>
-          <td>NETWORK</td>
-          <td>Intel  	Centrino Ultimate-N 6300   </td>
-        </tr>
-        <tr>
-         <tr>
-          <td>BLUE-TOOTH</td>
-          <td>    </td>
-        </tr>
-      </table>
-  </tr>
-</table>
+This repo contains the configs and programs for the computers in my stable.  Currently there are 3 laptops I am deploying NixOS on:
+
+*MacbookPro 9,2
+*Dell Latitude E6540
+*Lenovo Slim7 16IAH7 82VB
 
 + **Should I use NixOS?**
 

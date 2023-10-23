@@ -1,4 +1,4 @@
-# MODEL:      	Lenovo  	Slim 7 16IAH7 82VB
+# MODEL:      	Lenovo Slim 7 16IAH7 82VB
 # BIOS:       	Lenovo BIOS KMCN09WW 04/26/2022
 # MOTHERBOARD:	Lenovo Motherboard LNVNB161216 SDK0T76461 WIN
 # CPU:        	Intel 12th Gen Core i7-12700H
