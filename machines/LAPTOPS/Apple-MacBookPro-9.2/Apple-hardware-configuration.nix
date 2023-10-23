@@ -49,7 +49,7 @@
   ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/a19fe475-fea4-4053-afa7-1608e18598a5";
+    device = "/dev/disk/by-uuid/f5dba7ed-ea99-4698-9f2a-9a6847229faf";
     fsType = "ext4";
 
     # Optimize SSD
@@ -67,12 +67,12 @@
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/2B95-47BA";
+    device = "/dev/disk/by-uuid/0669-FFDA";
     fsType = "vfat";
   };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/b76b10a3-95ef-446b-9a6b-2e8836375403"; }];
+    [{ device = "/dev/disk/by-uuid/c7beaf24-5290-4730-bb92-d9c7213802b1"; }];
 
   #---------------------------------------------------------------------
   # For Intel hardware / chipsets

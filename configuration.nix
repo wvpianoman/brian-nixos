@@ -22,6 +22,7 @@ let
     else if builtins.readFile "/sys/devices/virtual/dmi/id/product_name" == "82VB\n" then
       machines/LAPTOPS/Lenovo-Slim7/Lenovo-Slim7-configuration.nix
 
+
   else
 
     # Manually symlink host/machine

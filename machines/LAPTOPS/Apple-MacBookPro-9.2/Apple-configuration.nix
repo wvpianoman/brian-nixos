@@ -25,8 +25,8 @@
 
     # Custom System tweaks
     #---------------------------------------------
-    ../../../core/system-tweaks/kernel-tweaks/8GB-SYSTEM.nix      # Kernel tweak for 8GB
-    ../../../core/system-tweaks/storage-tweaks/SSD-tweak.nix      # SSD read & write tweaks
+    ../../../core/system-tweaks/kernel-tweaks/8GB-SYSTEM/8GB-SYSTEM.nix      # Kernel tweak for 8GB
+    ../../../core/system-tweaks/storage-tweaks/SSD/SSD-tweak.nix      # SSD read & write tweaks
     ../../../core/system-tweaks/zram/zram-8GB-SYSTEM.nix          # Zram tweak for 8GB
 
     # Main Core
