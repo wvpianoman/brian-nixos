@@ -1,8 +1,8 @@
 { lib, ... }:
 
 let
-  email = "kingtolga@gmail.com";
-  fullname = "Tolga Erok";
+  email = "dbf.linux@gmail.com";
+  fullname = "Brian Francisco";
 
 in {
   programs = {
@@ -29,7 +29,7 @@ in {
         #init = { defaultBranch = "main"; };
         #pull = { rebase = "true"; };
         core.editor = "kate";
-        github.user = "tolgaerok";
+        github.user = "wvpianoman";
         init.defaultBranch = "main";
         pull.rebase = true;
 
