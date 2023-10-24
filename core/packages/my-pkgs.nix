@@ -119,6 +119,8 @@
       rustdesk                       # Virtual / remote desktop infrastructure for everyone! Open source TeamViewer / Citrix alternative
       nomachine-client               # NoMachine remote desktop client (nxplayer)
       remmina                        # Remote desktop client written in GTK
+
+      github-desktop                 # GUI for managing Git and GitHub
     ];
   };
 }
