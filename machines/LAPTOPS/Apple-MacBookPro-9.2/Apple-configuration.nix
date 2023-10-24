@@ -55,8 +55,19 @@
     # thunderbird]
   ];
 
- 
-  # services.gvfs.enable = true;
+  # --------------------------------------------------------------------
+  # Permit Insecure Packages
+  # --------------------------------------------------------------------
+  nixpkgs.config.permittedInsecurePackages = [
+
+    "openssl-1.1.1u"
+    "openssl-1.1.1v"
+    "openssl-1.1.1w"
+    "electron-12.2.3"
+
+  ];
+
+   # services.gvfs.enable = true;
   services.devmon.enable = true;
   services.udisks2.enable = true;
 
