@@ -51,16 +51,6 @@
   # Cleans /tmp directory on every boot.
   boot.tmp.cleanOnBoot = true;
 
-  # enable appimage
-  boot.binfmt.registrations.appimage = {
-    wrapInterpreterInShell = false;
-    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
-    recognitionType = "magic";
-    offset = 0;
-    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
-    magicOrExtension = ''\x7fELF....AI\x02'';
-  };
-
   # Enables simultaneous use of processor threads.
   security.allowSimultaneousMultithreading = true;
 
@@ -82,13 +72,6 @@
   #--------------------------------------------------------------------- 
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.config.permittedInsecurePackages = [
-
-    "openssl-1.1.1u"
-    "openssl-1.1.1v"
-    "electron-12.2.3"
-
-  ];
   #---------------------------------------------------------------------
   #   Enable the OpenSSH daemon.
   #---------------------------------------------------------------------

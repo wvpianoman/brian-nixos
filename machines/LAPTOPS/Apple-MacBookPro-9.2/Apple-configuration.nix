@@ -55,17 +55,6 @@
     # thunderbird]
   ];
 
-  # --------------------------------------------------------------------
-  # Permit Insecure Packages
-  # --------------------------------------------------------------------
-  nixpkgs.config.permittedInsecurePackages = [
-
-    "openssl-1.1.1u"
-    "openssl-1.1.1v"
-    "electron-12.2.3"
-
-  ];
-
  
   # services.gvfs.enable = true;
   services.devmon.enable = true;
@@ -74,7 +63,7 @@
   #---------------------------------------------------------------------
   # Enable networking & set host name
   #---------------------------------------------------------------------
-  networking.hostName = "nixos_apple";
+  networking.hostName = "MacBook-Pro-NixOS";
   networking.networkmanager.enable = true;
 
   #---------------------------------------------------------------------

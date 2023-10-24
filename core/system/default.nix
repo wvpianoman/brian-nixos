@@ -8,6 +8,8 @@
 
   imports = [
 
+    ./appimage-registration
+    ./audio
     ./bluetooth
     ./documentation
     ./env
@@ -15,6 +17,8 @@
     ./firewall
     ./fonts
     ./network
+    ./systemd
+    ./unfree-insecure
     ./zram
 
   ];
