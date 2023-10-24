@@ -32,8 +32,8 @@
 
     # Boot - Plymouth
     # https://search.nixos.org/options?channel=unstable&show=boot.plymouth.enable
-    plymouth.enable = true;
-    plymouth.theme = "breeze";
+  #  plymouth.enable = true;
+  #  plymouth.theme = "breeze";
 
     # kernelPackages = pkgs.linuxPackages_latest;
 

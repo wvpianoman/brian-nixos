@@ -61,8 +61,8 @@
     };
     initrd.systemd.enable = true;
     
-    plymouth.enable = true;
-    plymouth.theme = "breeze";
+  #  plymouth.enable = true;
+  #  plymouth.theme = "breeze";
   };
 
   networking.hostName = "Dell-E6540-NixOS"; # Define your hostname.

@@ -71,8 +71,8 @@
     };
     initrd.systemd.enable = true;
     
-    plymouth.enable = true;
-    plymouth.theme = "breeze";
+  #  plymouth.enable = true;
+  #  plymouth.theme = "breeze";
   };
 
   networking.hostName = "Lenovo-Slim7-NixOS"; # Define your hostname.
