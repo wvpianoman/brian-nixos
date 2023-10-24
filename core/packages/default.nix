@@ -7,15 +7,15 @@
 
   imports = [
 
+   #  ./distrobox
+   #  ./flatpak
+   #  ./plasma-manager/plasma-config.nix
+   #  ./steam
     ./custom-pkgs
-    ./distrobox
     ./internet
     ./packages.nix
-   # ./plasma-manager/plasma-config.nix
-   # ./steam
     ./vm
     ./my-pkgs.nix
-    ./packages.nix
 
   ];
 
