@@ -18,7 +18,7 @@
       # profiles.default = {
       policies = {
         CaptivePortal = false;
-        DisableFirefoxAccounts = true;
+        DisableFirefoxAccounts = false;
         DisableFirefoxStudies = true;
         DisablePocket = true;
         DisableTelemetry = true;

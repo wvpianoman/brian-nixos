@@ -14,6 +14,7 @@
     ./SOS/SOS.nix
     ./brian/brian.nix
     ./user-profile-pic
+    ./user-home-settings
 
   ];
 

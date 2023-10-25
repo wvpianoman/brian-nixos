@@ -9,8 +9,13 @@
     enable = true;
     layout = "us";
     xkbVariant = "";
+    libinput.enable =
+      true; # Enable touchpad support (enabled default in most desktopManager).
 
-    desktopManager = { plasma5.enable = true; };
+    desktopManager = {
+
+      plasma5.enable = true;
+    };
 
     displayManager = {
       sddm = {
@@ -34,4 +39,11 @@
     ];
 
   };
+
+  #---------------------------------------------------------------------
+  # Enable the KDE Plasma Desktop Environment.
+  #---------------------------------------------------------------------
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
+
 }
