@@ -1,7 +1,7 @@
 # MODEL:      	Lenovo Slim 7 16IAH7 82VB
 # BIOS:       	Lenovo BIOS KMCN09WW 04/26/2022
 # MOTHERBOARD:	Lenovo Motherboard LNVNB161216 SDK0T76461 WIN
-# CPU:        	Intel 12th Gen Core i7-12700H
+# CPU:        	Intel 12th Gen Core i7-12700H @ 2.2GHz
 # GPU:        	Intel Alder Lake-P Integrated Graphics Controller
 # GPU:          Intel DG2 [Arc A370M]
 # RAM:        	RAM Module(s) 32GB SODIMM
