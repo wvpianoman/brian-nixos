@@ -21,7 +21,8 @@
       #------------------------------------
       # Miscellaneous:
       #------------------------------------
-      papirus-icon-theme                # Papirus icon theme
+      papirus-icon-theme               # Papirus icon theme
+      github-desktop                   # GUI for managing Git and GitHub
 
       #------------------------------------
       # Office Suites
@@ -120,7 +121,11 @@
       nomachine-client               # NoMachine remote desktop client (nxplayer)
       remmina                        # Remote desktop client written in GTK
 
-      github-desktop                 # GUI for managing Git and GitHub
+      #------------------------------------
+      # Download Manager
+      #------------------------------------
+      uget                           # Download manager using GTK and libcurl
+      uget-integrator                # Native messaging host to integrate uGet Download Manager with web browsers
     ];
   };
 }
