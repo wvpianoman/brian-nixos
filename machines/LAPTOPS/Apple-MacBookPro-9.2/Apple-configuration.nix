@@ -31,7 +31,7 @@
 
     # Main Core
     #---------------------------------------------
-    ../../../core
+    ../../../core/apple-default.nix
     ../../../core/gpu/intel/intel-laptop/HD-INTEL.nix
 
     ../../../user
@@ -74,7 +74,7 @@
   #---------------------------------------------------------------------
   # Enable networking & set host name
   #---------------------------------------------------------------------
-  networking.hostName = "MacBook-Pro-NixOS";
+  networking.hostName = "MacBook-NixOS";
   networking.networkmanager.enable = true;
 
   #---------------------------------------------------------------------
