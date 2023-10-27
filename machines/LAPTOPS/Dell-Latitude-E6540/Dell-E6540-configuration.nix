@@ -66,7 +66,7 @@
   #  plymouth.theme = "breeze";
   };
 
-  networking.hostName = "Dell-E6540-NixOS"; # Define your hostname.
+  networking.hostName = "Dell-NixOS"; # Define your hostname.
 
   #---------------------------------------------------------------------
   #   Allow unfree packages
@@ -79,6 +79,7 @@
     "openssl-1.1.1v"
     "openssl-1.1.1w"
     "electron-12.2.3"
+    "zotero-6.0.26"
 
   ];
 

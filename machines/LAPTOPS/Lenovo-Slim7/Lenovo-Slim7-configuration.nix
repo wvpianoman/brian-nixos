@@ -65,7 +65,7 @@
   #  plymouth.theme = "breeze";
   };
 
-  networking.hostName = "Lenovo-Slim7-NixOS"; # Define your hostname.
+  networking.hostName = "Lenovo-NixOS"; # Define your hostname.
 
   #---------------------------------------------------------------------
   #   Allow unfree packages
@@ -78,6 +78,7 @@
     "openssl-1.1.1v"
     "openssl-1.1.1w"
     "electron-12.2.3"
+    "zotero-6.0.26"
 
   ];
 

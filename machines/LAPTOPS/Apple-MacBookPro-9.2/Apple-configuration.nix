@@ -64,6 +64,7 @@
     "openssl-1.1.1v"
     "openssl-1.1.1w"
     "electron-12.2.3"
+    "zotero-6.0.26"
 
   ];
 
