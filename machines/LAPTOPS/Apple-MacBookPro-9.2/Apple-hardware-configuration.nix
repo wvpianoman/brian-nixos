@@ -44,35 +44,37 @@
 
     "intel_pstate=ondemand"
     "mitigations=off"
-    "quiet"
+ #   "quiet"
 
   ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/f5dba7ed-ea99-4698-9f2a-9a6847229faf";
-    fsType = "ext4";
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/77fa6a4a-ee92-4e89-8996-84f8c157a4bc";
+      fsType = "f2fs";
+    };
 
     # Optimize SSD
-    options = [
+   # options = [
 
-      "data=ordered"
-      "defaults"
-      "discard"
-      "errors=remount-ro"
-      "nodiratime"
-      "relatime"
-      # "noatime"
+   #   "data=ordered"
+   #   "defaults"
+   #   "discard"
+   #   "errors=remount-ro"
+   #   "nodiratime"
+   #   "relatime"
+   #   "noatime"
 
-    ];
-  };
+    #];
+  
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/0669-FFDA";
-    fsType = "vfat";
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/BA19-3D4C";
+      fsType = "vfat";
+    };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/c7beaf24-5290-4730-bb92-d9c7213802b1"; }];
+    [ { device = "/dev/disk/by-uuid/f80435dc-e2d6-428d-baf6-3d3939043e05"; }
+    ];
 
   #---------------------------------------------------------------------
   # For Intel hardware / chipsets
