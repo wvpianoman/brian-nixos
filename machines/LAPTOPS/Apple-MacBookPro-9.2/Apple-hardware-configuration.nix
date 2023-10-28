@@ -54,7 +54,7 @@
 
     "intel_pstate=ondemand"
     "mitigations=off"
- #   "quiet"
+    "quiet"
 
   ];
 
@@ -72,7 +72,7 @@
       "errors=remount-ro"   # Remounts the file system as read-only (ro) in case of errors to prevent further potential data corruption.
       "nodiratime"          # Disables updating directory access time, improving file system performance by reducing unnecessary writes.
       "relatime"            # Updates the access time of files relative to the modification time, minimizing the performance impact compared to atime
-      # "noatime"           # Disables updating access times for files, improving file system performance by reducing write operations.
+      "noatime"           # Disables updating access times for files, improving file system performance by reducing write operations.
 
     ];
 
