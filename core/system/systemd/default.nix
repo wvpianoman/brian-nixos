@@ -11,10 +11,12 @@
 
 {
 
-  # ---------------------------------------------------------------------
-  # Configure the flathub remote
-  # Terminal: sudo systemctl status configure-flathub-repo
-  # ---------------------------------------------------------------------
+  imports = [
+
+    #  ./tmpfs-mount.service
+  ];
+
+  services.flatpak.enable = true;
 
   # ---------------------------------------------------------------------
   # Add a systemd tmpfiles rule that creates a directory /var/spool/samba 
@@ -26,9 +28,11 @@
       "d /var/spool/samba 1777 root root -"
       "r! /tmp/**/*"
     ];
+
+    extraConfig = "DefaultTimeoutStopSec=10s";
+
   };
 
-  services.flatpak.enable = true;
   systemd.services = {
     # ---------------------------------------------------------------------
     # Do not restart these, since it messes up the current session
@@ -60,6 +64,10 @@
 
     };
 
+    # ---------------------------------------------------------------------
+    # Configure the flathub remote
+    # Terminal: sudo systemctl status configure-flathub-repo
+    # ---------------------------------------------------------------------
     configure-flathub-repo = {
       enable = true;
       after = [ "multi-user.target" "network.target" ];

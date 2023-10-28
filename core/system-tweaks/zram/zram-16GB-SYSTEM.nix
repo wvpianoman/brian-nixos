@@ -10,6 +10,6 @@
   zramSwap.memoryPercent = 35;
 
   # 16GB
-  zramSwap.memoryMax = 17179869184;
+  #zramSwap.memoryMax = 17179869184;
 
 }

@@ -74,7 +74,7 @@
       #---------------------------------------------------------------------
 
       Tolga_NixOS_Public = {
-        path = "/home/brian/Public";
+        path = "/home/tolga/Public";
         comment = "Public Share";
         browseable = true;
         "read only" = false;
@@ -82,7 +82,7 @@
         writable = true;
         "create mask" = "0777";
         "directory mask" = "0777";
-        "force user" = "brian";
+        "force user" = "tolga";
         "force group" = "samba";
       };
 
@@ -98,7 +98,7 @@
         "guest ok" = false;
         "create mask" = "0644";
         "directory mask" = "0755";
-        "force user" = "brian";
+        "force user" = "tolga";
         "force group" = "samba";
       };
 
