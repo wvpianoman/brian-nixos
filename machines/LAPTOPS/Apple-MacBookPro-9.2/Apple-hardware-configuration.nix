@@ -38,7 +38,17 @@
 
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "wl" ];
+  boot.kernelModules = [
+       "wl"
+       "kvm-intel"
+       "tcp_bbr"       # Dynamically optimize how data is sent over a network, aiming to achieve higher throughput and reduced latency
+    ];
+
+    # Enable BBR congestion control algorithm for TCP, , which can lead to improved network throughput and reduced latency.
+
+  boot.kernel.sysctl = {
+      "net.ipv4.tcp_congestion_control" = "bbr";
+      };
 
   boot.kernelParams = [
 
@@ -51,21 +61,22 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/77fa6a4a-ee92-4e89-8996-84f8c157a4bc";
       fsType = "f2fs";
-    };
+
 
     # Optimize SSD
-   # options = [
+    options = [
 
-   #   "data=ordered"
-   #   "defaults"
-   #   "discard"
-   #   "errors=remount-ro"
-   #   "nodiratime"
-   #   "relatime"
-   #   "noatime"
+   #   "data=ordered"        # Ensures data ordering, improving file system reliability and performance by writing data to disk in a specific order.
+      "defaults"            # Applies the default options for mounting, which usually include common settings for permissions, ownership, and read/write access.
+   #   "discard"             # Enables the TRIM command, which allows the file system to notify the storage device of unused blocks, improving performance and longevity of solid-state drives (SSDs).
+   #   "errors=remount-ro"   # Remounts the file system as read-only (ro) in case of errors to prevent further potential data corruption.
+   #   "nodiratime"          # Disables updating directory access time, improving file system performance by reducing unnecessary writes.
+   #   "relatime"            # Updates the access time of files relative to the modification time, minimizing the performance impact compared to atime
+      # "noatime"           # Disables updating access times for files, improving file system performance by reducing write operations.
 
-    #];
-  
+    ];
+
+    };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/BA19-3D4C";
