@@ -14,8 +14,8 @@
   #    telegram-desktop                  # Telegram Desktop messaging app
   #    element-desktop-wayland           # A feature-rich client for Matrix.org for Wayland
 
-  #    betterbird                        # Betterbird is a fine-tuned version of Mozilla Thunderbird, Thunderbird on steroids, if you will
-      thunderbird                       # A full-featured e-mail client
+      betterbird                        # Betterbird is a fine-tuned version of Mozilla Thunderbird, Thunderbird on steroids, if you will
+  #    thunderbird                       # A full-featured e-mail client
   #    bluemail                          # Free, secure, universal email app, capable of managing an unlimited number of mail accounts
 
       #------------------------------------
