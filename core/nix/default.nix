@@ -33,6 +33,8 @@ in {
       warn-dirty = false;
 
     };
+    
+    extraOptions = "experimental-features = nix-command flakes";
 
     # package = pkgs.nixUnstable; # Keep this if you want to use nixUnstable, otherwise replace with the appropriate nix version
 

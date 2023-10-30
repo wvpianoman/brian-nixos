@@ -370,7 +370,7 @@ with lib;
 
       gum                           # gum https://github.com/charmbracelet/gum
 
-      krusader                      # Norton/Total Commander clone for KDE
+      # krusader                      # Norton/Total Commander clone for KDE
                                     # krusader
 
       espeak-classic                # Compact open source software speech synthesizer
@@ -446,7 +446,7 @@ with lib;
       lsdvd                         # Display information about audio, video, and subtitle tracks on a DVD
       ncdu                          # Disk usage analyzer with an ncurses interface
       neofetch                      # A fast, highly customizable system info script
-      parallel-full                 #
+      parallel-full                 # provides additional features for parallel computing. It is used for parallel processing, distributed computing, and other high-performance computing scenarios
       pciutils                      # A collection of programs for inspecting and manipulating configuration of PCI devices
       pfetch                        # A pretty system information tool written in POSIX sh
       pmutils                       # A small collection of scripts that handle suspend and resume on behalf of HAL
@@ -465,14 +465,14 @@ with lib;
       # Office and Productivity:
       #---------------------------------------------------------------------
 
-      deepin.deepin-calculator      # An easy to use calculator for ordinary users
+      # deepin.deepin-calculator      # An easy to use calculator for ordinary users
       wpsoffice                     # Office suite, formerly Kingsoft Office
 
       #---------------------------------------------------------------------
       # New additions:
       #---------------------------------------------------------------------
 
-      # megasync          # Easy automated syncing between your computers and your MEGA Cloud Drive
+    #   megasync          # Easy automated syncing between your computers and your MEGA Cloud Drive
       rclone            # Command line program to sync files and directories to and from major cloud storage
       rclone-browser    # Graphical Frontend to Rclone written in Qt
       glances           # glances   : Cross-platform curses-based monitoring tool
