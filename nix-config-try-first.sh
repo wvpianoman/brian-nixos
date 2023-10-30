@@ -15,7 +15,7 @@ parted /dev/nvme0n1 -- mkpart primary -64GiB 100%
 
 # Format the EFI boot partition
 mkfs.fat -F32 /dev/nvme0n1p1
-mkfs.ext4 /dev/nvme0n1p3  # Format the NixOS root partition
+mkfs.f2fs /dev/nvme0n1p3  # Format the NixOS root partition
 
 # Encrypt the NixOS root partition with LUKS
 cryptsetup luksFormat /dev/nvme0n1p3
@@ -24,7 +24,10 @@ cryptsetup luksFormat /dev/nvme0n1p3
 cryptsetup luksOpen /dev/nvme0n1p3 nixos
 
 # Format the LUKS device with a Btrfs filesystem
-mkfs.btrfs -L nixos /dev/mapper/nixos
+# mkfs.btrfs -L nixos /dev/mapper/nixos
+
+# Format the LUKS device with a f2fs filesystem
+mkfs.f2fs -L nixos /dev/mapper/nixos
 
 # Mount the root filesystem
 mount /dev/disk/by-label/nixos /mnt
