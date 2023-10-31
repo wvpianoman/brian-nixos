@@ -1,3 +1,5 @@
+#!/bin/bash/usr
+
 # Generate NixOS configuration for your system
 sudo nixos-rebuild switch --upgrade
 
