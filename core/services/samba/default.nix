@@ -1,18 +1,30 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, inputs, ... }:
+let
 
-{
+  # samba credentials:  Terminal run ==>   create-smb-user
   #---------------------------------------------------------------------
-  # Adding a rule to the iptables firewall to allow NetBIOS name 
-  # resolution traffic on UDP port 137 - NixOS wiki
-  #---------------------------------------------------------------------
+  sharedOptions = {
 
-  services.samba-wsdd.enable = true;
+    # Common options
+    "guest ok" = true;
+    "read only" = false;
+
+    # Only users with samba in their extraGroup settings can access the following shared folders below HP800_Private && HP800_Public
+    "valid users" = "@samba";
+
+    browseable = true;
+    writable = true;
+
+  };
+
+in {
 
   #---------------------------------------------------------------------
   # Samba Configuration - NixOS wiki
   # For a user to be authenticated on the samba server, you must add 
   # their password using sudo smbpasswd -a <user> as root
   #---------------------------------------------------------------------
+  services.samba-wsdd.enable = true;
 
   services.samba = {
     enable = true;
@@ -55,68 +67,63 @@
 
     shares = {
 
+      sharedOptions = sharedOptions;
+
       #---------------------------------------------------------------------
       # Home Directories Share - From my old fedora days
       #---------------------------------------------------------------------
 
-      homes = {
+      homes = sharedOptions // {
         comment = "Home Directories";
         browseable = false;
-        "read only" = false;
         "create mask" = "0700";
         "directory mask" = "0700";
         "valid users" = "%S, %D%w%S";
-        writable = true;
       };
 
       #---------------------------------------------------------------------
       # Public Share
       #---------------------------------------------------------------------
 
-      Tolga_NixOS_Public = {
-        path = "/home/tolga/Public";
+      HP800_Public = sharedOptions // {
+
+        path = "/home/brian/Public";
         comment = "Public Share";
-        browseable = true;
-        "read only" = false;
-        "guest ok" = true;
-        writable = true;
         "create mask" = "0777";
         "directory mask" = "0777";
-        "force user" = "tolga";
-        "force group" = "samba";
+
       };
 
       #---------------------------------------------------------------------
       # Private Share
       #---------------------------------------------------------------------
 
-      Tolga_NixOS_Private = {
+      HP800_Private = sharedOptions // {
+
         path = "/home/NixOs";
         comment = "Private Share";
-        browseable = true;
-        "read only" = false;
-        "guest ok" = false;
         "create mask" = "0644";
         "directory mask" = "0755";
-        "force user" = "tolga";
-        "force group" = "samba";
+        "guest ok" = false;
+
       };
 
       #---------------------------------------------------------------------
       # Printer Share
       #---------------------------------------------------------------------
 
-      printers = {
+      printers = sharedOptions // {
+
         comment = "All Printers";
         path = "/var/spool/samba";
         public = true;
-        browseable = true;
-        "guest ok" = true;
         writable = false;
         printable = true;
         "create mask" = "0700";
+
       };
     };
+
   };
 
 }

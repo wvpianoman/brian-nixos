@@ -5,6 +5,18 @@
   # Enable the X11 windowing system && KDE Plasma Desktop Environment.
   #---------------------------------------------------------------------
 
+  imports = [
+
+    # Choose DE, still under review
+
+    # ./cinnamon/cinnamon.nix
+    # ./gnome/gnome.nix
+    # ./hyperland/hyperland.nix
+    # ./kde/kde.nix
+    # ./sway/sway.nix
+
+  ];
+
   services.xserver = {
     enable = true;
     layout = "us";

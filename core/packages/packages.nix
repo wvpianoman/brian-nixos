@@ -499,6 +499,7 @@ with lib;
       glxinfo                   # Test utilities for OpenGL
       libva                     # An implementation for VA-API (Video Acceleration API)
       libva-utils               # A collection of utilities and examples for VA-API
+      vim                       # The most popular clone of the VI editor
 
     ];
   };
