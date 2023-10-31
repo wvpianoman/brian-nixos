@@ -11,7 +11,7 @@
 
     # ./cinnamon/cinnamon.nix
     # ./gnome/gnome.nix
-    # ./hyperland/hyperland.nix
+    # ./hyprland/hyprland.nix
     # ./kde/kde.nix
     # ./sway/sway.nix
 
