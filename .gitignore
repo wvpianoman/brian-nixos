@@ -1,6 +1,7 @@
 # ignore ALL .log files
 *.log
 hardware-configuration.nix
+configuration.nix.bak
 
 # ignore ALL backupfiles
 NIXOS-ARCHIVES/

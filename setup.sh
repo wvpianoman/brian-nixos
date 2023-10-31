@@ -1,4 +1,4 @@
-#!/bin/bash/usr
+#!/bin/sh
 
 # This is what I use after a fresh install of nixOS to install git and 
 # pull down my repository from github.  You will notice that I make a backup
