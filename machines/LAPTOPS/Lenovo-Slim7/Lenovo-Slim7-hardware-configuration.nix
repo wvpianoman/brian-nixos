@@ -53,9 +53,9 @@
 
   ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/868d2910-5f1a-4a0a-95fe-c0e33dc7009d";
-    fsType = "ext4";
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/ebbd8291-07b4-4110-99f9-cc0e5e86d249";
+      fsType = "f2fs";
 
     # Optimize SSD
     options = [
@@ -69,17 +69,15 @@
    #    "noatime"           # Disables updating access times for files, improving file system performance by reducing write operations.
 
     ];
+    };
 
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/E5D0-EC81";
-    fsType = "vfat";
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/99D1-9878";
+      fsType = "vfat";
+    };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/950f0105-cbc2-4c24-bf03-5c5f0a46b634"; }
-    ];
+    [ { device = "/dev/disk/by-uuid/2a557930-86b7-4847-a131-71984d33e9e8"; } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
