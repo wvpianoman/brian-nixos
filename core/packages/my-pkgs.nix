@@ -16,7 +16,7 @@
 
       #betterbird                        # Betterbird is a fine-tuned version of Mozilla Thunderbird, Thunderbird on steroids, if you will
       thunderbird                       # A full-featured e-mail client
-      bluemail                          # Free, secure, universal email app, capable of managing an unlimited number of mail accounts
+   #   bluemail                          # Free, secure, universal email app, capable of managing an unlimited number of mail accounts
 
       #------------------------------------
       # Miscellaneous:
@@ -56,8 +56,8 @@
       # File Transfer
       # ---------------------------------------------------------------------
       megasync                        # Easy automated syncing between your computers and your MEGA Cloud Drive
-  #    rclone                          # Command line program to sync files and directories to and from major cloud storage
-  #    rclone-browser                  # Graphical Frontend to Rclone written in Qt
+      rclone                          # Command line program to sync files and directories to and from major cloud storage
+      rclone-browser                  # Graphical Frontend to Rclone written in Qt
 
       #---------------------------------------------------------------------
       # USB/Disk Utilities
@@ -69,11 +69,11 @@
       #---------------------------------------------------------------------
       # XDG and File Managers
       #---------------------------------------------------------------------
-      xfce.thunar                     # Xfce file manager
-      xfce.thunar-volman              # Thunar extension for automatic management of removable drives and media
-      xfce.thunar-dropbox-plugin      # A plugin that adds context-menu items for Dropbox to Thunar
-      xfce.thunar-archive-plugin      # Thunar plugin providing file context menus for archives
-      xfce.thunar-media-tags-plugin   # Thunar plugin providing tagging and renaming features for media files
+  #    xfce.thunar                     # Xfce file manager
+  #    xfce.thunar-volman              # Thunar extension for automatic management of removable drives and media
+  #    xfce.thunar-dropbox-plugin      # A plugin that adds context-menu items for Dropbox to Thunar
+  #    xfce.thunar-archive-plugin      # Thunar plugin providing file context menus for archives
+  #    xfce.thunar-media-tags-plugin   # Thunar plugin providing tagging and renaming features for media files
 
       #------------------------------------
       # Shell Enhancements and Utilities:
