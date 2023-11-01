@@ -59,7 +59,7 @@
       wantedBy = [ "pre-sleep.service" ];
       environment = {
         DISPLAY = ":0";
-        XAUTHORITY = "/home/tolga/.Xauthority";
+        XAUTHORITY = "/home/brian/.Xauthority";
       };
 
     };
@@ -88,6 +88,8 @@
       script = "/etc/nixos/core/system/systemd/custom-info-script.sh";
       wantedBy = [ "multi-user.target" ];
     };
+
+    NetworkManager-wait-online.enable = false;
 
   };
 

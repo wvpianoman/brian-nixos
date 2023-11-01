@@ -39,9 +39,17 @@ in
     # call attribute thats declared above
     # ---------------------------------------------
     importfile 
-
-#    ./createCustomDirectories-and-profilePictures.nix
-
+    
+    # Choose DE, still under review
+    # ---------------------------------------------
+    # ./core/services/xserver/cinnamon/cinnamon.nix
+    # ./core/services/xserver/gnome/gnome.nix
+    # ./core/services/xserver/hyperland/hyperland.nix
+    # ./core/services/xserver/kde/kde.nix
+    # ./core/services/xserver/sway/sway.nix
+    #./test.nix
+    ./core/services/xserver
+    
   ];
 }
 
