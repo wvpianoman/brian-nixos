@@ -80,23 +80,23 @@
       #------------------------------------
       bashInteractive                 # GNU Bourne-Again Shell, the de facto standard shell on Linux (for interactive use)
 
-      fish
-      fishPlugins.tide                # The ultimate Fish prompt.
-      fishPlugins.pure                # Pretty, minimal and fast Fish prompt, ported from zsh
-      fishPlugins.forgit              # A utility tool powered by fzf for using git interactively.
-      fishPlugins.plugin-git          # Git plugin for fish (similar to oh-my-zsh git)
+  #    fish
+  #    fishPlugins.tide                # The ultimate Fish prompt.
+  #    fishPlugins.pure                # Pretty, minimal and fast Fish prompt, ported from zsh
+  #    fishPlugins.forgit              # A utility tool powered by fzf for using git interactively.
+  #    fishPlugins.plugin-git          # Git plugin for fish (similar to oh-my-zsh git)
 
-      zsh                             # The Z shell
-      zsh-z                           # Jump quickly to directories that you have visited frequently in the past, or recently
-      zsh-edit                        # A set of powerful extensions to the Zsh command line editor
-      zsh-forgit                      # A utility tool powered by fzf for using git interactively
-      zsh-git-prompt                  # Informative git prompt for zsh
-      zsh-completions                 # Additional completion definitions for zsh
-      zsh-autocomplete                # Real-time type-ahead completion for Zsh. Asynchronous find-as-you-type autocompletion
-      zsh-powerlevel10k               # A fast reimplementation of Powerlevel9k ZSH theme
-      zsh-you-should-use              # ZSH plugin that reminds you to use existing aliases for commands you just typed
-      zsh-syntax-highlighting         # Fish shell like syntax highlighting for Zsh
-      oh-my-zsh                       # A framework for managing your zsh configuration
+  #    zsh                             # The Z shell
+  #    zsh-z                           # Jump quickly to directories that you have visited frequently in the past, or recently
+  #    zsh-edit                        # A set of powerful extensions to the Zsh command line editor
+  #    zsh-forgit                      # A utility tool powered by fzf for using git interactively
+  #    zsh-git-prompt                  # Informative git prompt for zsh
+  #    zsh-completions                 # Additional completion definitions for zsh
+  #    zsh-autocomplete                # Real-time type-ahead completion for Zsh. Asynchronous find-as-you-type autocompletion
+  #    zsh-powerlevel10k               # A fast reimplementation of Powerlevel9k ZSH theme
+  #    zsh-you-should-use              # ZSH plugin that reminds you to use existing aliases for commands you just typed
+  #    zsh-syntax-highlighting         # Fish shell like syntax highlighting for Zsh
+  #    oh-my-zsh                       # A framework for managing your zsh configuration
 
       #------------------------------------
       # system Utilities:
