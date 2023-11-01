@@ -7,7 +7,7 @@ with lib;
   # My personal software collection
   # ---------------------------------------------------------------------
 
- # services.teamviewer.enable = true;
+  services.teamviewer.enable = true;
 
   environment = {
     systemPackages = with pkgs; [
@@ -295,7 +295,7 @@ with lib;
 
       # heroku                         # Everything you need to get started using Heroku
       # powershell                     # Powerful cross-platform (Windows, Linux, and macOS) shell and scripting language based on .NET
-      # teamviewer                     # Desktop sharing application, providing remote support and online meetings
+      teamviewer                     # Desktop sharing application, providing remote support and online meetings
       anydesk                        # Desktop sharing application, providing remote support and online meetings
       sshpass                        # Non-interactive ssh password auth
 

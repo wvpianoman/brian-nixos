@@ -33,7 +33,7 @@ with lib;
     libinput.touchpad.disableWhileTyping = true;
     libinput.touchpad.clickMethod = "clickfinger";
     exportConfiguration = true;
-  };
+  }; 
 
   #---------------------------------------------------------------------
   # Update microcode when available

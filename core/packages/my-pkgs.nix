@@ -116,10 +116,10 @@
       #------------------------------------
       # Remote Desktop:
       #------------------------------------
-      anydesk                        # Desktop sharing application, providing remote support and online meetings
-      rustdesk                       # Virtual / remote desktop infrastructure for everyone! Open source TeamViewer / Citrix alternative
-      nomachine-client               # NoMachine remote desktop client (nxplayer)
-      remmina                        # Remote desktop client written in GTK
+   #   anydesk                        # Desktop sharing application, providing remote support and online meetings
+   #   rustdesk                       # Virtual / remote desktop infrastructure for everyone! Open source TeamViewer / Citrix alternative
+   #   nomachine-client               # NoMachine remote desktop client (nxplayer)
+   #   remmina                        # Remote desktop client written in GTK
 
       #------------------------------------
       # Download Manager
