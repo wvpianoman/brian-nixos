@@ -14,7 +14,7 @@
       telegram-desktop                  # Telegram Desktop messaging app
       element-desktop-wayland           # A feature-rich client for Matrix.org for Wayland
 
-      #betterbird                        # Betterbird is a fine-tuned version of Mozilla Thunderbird, Thunderbird on steroids, if you will
+   #   betterbird                        # Betterbird is a fine-tuned version of Mozilla Thunderbird, Thunderbird on steroids, if you will
       thunderbird                       # A full-featured e-mail client
    #   bluemail                          # Free, secure, universal email app, capable of managing an unlimited number of mail accounts
 
@@ -80,11 +80,11 @@
       #------------------------------------
       bashInteractive                 # GNU Bourne-Again Shell, the de facto standard shell on Linux (for interactive use)
 
-  #    fish
-  #    fishPlugins.tide                # The ultimate Fish prompt.
-  #    fishPlugins.pure                # Pretty, minimal and fast Fish prompt, ported from zsh
-  #    fishPlugins.forgit              # A utility tool powered by fzf for using git interactively.
-  #    fishPlugins.plugin-git          # Git plugin for fish (similar to oh-my-zsh git)
+      fish
+      fishPlugins.tide                # The ultimate Fish prompt.
+      fishPlugins.pure                # Pretty, minimal and fast Fish prompt, ported from zsh
+      fishPlugins.forgit              # A utility tool powered by fzf for using git interactively.
+      fishPlugins.plugin-git          # Git plugin for fish (similar to oh-my-zsh git)
 
   #    zsh                             # The Z shell
   #    zsh-z                           # Jump quickly to directories that you have visited frequently in the past, or recently
@@ -107,6 +107,7 @@
      # libsForQt5.dolphin-plugins
       vulkan-tools                    # Khronos official Vulkan Tools and Utilities
       wayland-utils                   # Wayland utilities (wayland-info)
+      nodePackages_latest.remod-cli   # chmod for human beings!
 
       #------------------------------------
       # Clipboard Utilities:
