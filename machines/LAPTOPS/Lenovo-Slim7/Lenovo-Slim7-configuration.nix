@@ -17,8 +17,8 @@
 
     # Select your kernel
     #---------------------------------------------
-    # ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix    # Latest default NixOS kernel
-    ../../../core/system-tweaks/kernel-upgrades/xanmod.nix             # Xanmod kernel
+    ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix    # Latest default NixOS kernel
+    # ../../../core/system-tweaks/kernel-upgrades/xanmod.nix             # Xanmod kernel
     # ../../../core/system-tweaks/kernel-upgrades/zen.nix                # Zen kernel
 
     # Custom System tweaks
