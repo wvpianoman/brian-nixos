@@ -3,7 +3,7 @@
 let
 
   my-nix = pkgs.writeScriptBin "my-nix" ''
-    #!/usr/bin/env bash
+    ###!/usr/bin/env bash
     #!/run/current-system/sw/bin/bash
 
     # Tolga Erok    10/6/2023   Basic script that allows user to run common Nix commands at sudo level.

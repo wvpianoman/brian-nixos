@@ -155,4 +155,10 @@
   system.stateVersion = "23.05";
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 
+  services = {
+    envfs = {
+      enable = true;
+    };
+  };
+
 }

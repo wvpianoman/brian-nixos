@@ -3,14 +3,14 @@
 let
 
   nixos-post-setup = pkgs.writeScriptBin "nixos-post-setup" ''
-    #!/usr/bin/env bash
-
+    ###!/usr/bin/env bash
+  #!/run/current-system/sw/bin/bash
     # Personal nixos post setup
     # Tolga Erok. ¯\_(ツ)_/¯
     # 9/9/2023
 
     # set -x
-
+ 
     # -----------------------------------------------------------------------------------
     # Install some  agents
     # -----------------------------------------------------------------------------------

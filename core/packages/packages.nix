@@ -501,6 +501,11 @@ with lib;
       libva-utils               # A collection of utilities and examples for VA-API
       vim                       # The most popular clone of the VI editor
 
+      arc-kde-theme
+      layan-kde
+      sweet
+
+
     ];
   };
 }
