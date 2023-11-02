@@ -17,8 +17,8 @@
 
     # Select your kernel
     #---------------------------------------------
-    ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix    # Latest default NixOS kernel
-    # ../../../core/system-tweaks/kernel-upgrades/xanmod.nix             # Xanmod kernel
+    # ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix    # Latest default NixOS kernel
+    ../../../core/system-tweaks/kernel-upgrades/xanmod.nix             # Xanmod kernel
     # ../../../core/system-tweaks/kernel-upgrades/zen.nix                # Zen kernel
 
     # Custom System tweaks
@@ -79,6 +79,7 @@
     "openssl-1.1.1w"
     "electron-12.2.3"
     "zotero-6.0.26"
+    "zotero-6.0.27"
 
   ];
 

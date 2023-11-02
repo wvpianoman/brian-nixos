@@ -18,14 +18,14 @@
   #---------------------------------------------------------------------
   boot.initrd.availableKernelModules = [
 
-      "ahci"        # Enables the Advanced Host Controller Interface (AHCI) driver, typically used for SATA (Serial ATA) controllers.
+ #     "ahci"        # Enables the Advanced Host Controller Interface (AHCI) driver, typically used for SATA (Serial ATA) controllers.
       "ehci_pci"    # Enables the Enhanced Host Controller Interface (EHCI) driver for PCI-based USB controllers, providing support for USB 2.0.
       "thunderbolt"
       "sd_mod"      # Enables the SCSI disk module (sd_mod), which allows the system to recognize and interact with SCSI-based storage devices.
       "sdhci_pci"
-      "sr_mod"      # Loads the SCSI (Small Computer System Interface) CD/DVD-ROM driver, allowing the system to recognize and use optical drives.
-      "uas"         # Enables the USB Attached SCSI (UAS) driver, which provides a faster and more efficient way to access USB storage devices.
-      "usbhid"      # Enables the USB Human Interface Device (HID) driver, which provides support for USB input devices such as keyboards and mice.
+ #     "sr_mod"      # Loads the SCSI (Small Computer System Interface) CD/DVD-ROM driver, allowing the system to recognize and use optical drives.
+ #     "uas"         # Enables the USB Attached SCSI (UAS) driver, which provides a faster and more efficient way to access USB storage devices.
+ #     "usbhid"      # Enables the USB Human Interface Device (HID) driver, which provides support for USB input devices such as keyboards and mice.
       "usb_storage" # Enables the USB Mass Storage driver, allowing the system to recognize and use USB storage devices like USB flash drives and external hard drives.
       "nvme"
       "xhci_pci"    # Enables the eXtensible Host Controller Interface (xHCI) driver for PCI-based USB controllers, providing support for USB 3.0 and later standards.
@@ -49,21 +49,21 @@
   boot.kernelParams = [
 
     "mitigations=off"
- #   "quiet"
+    "quiet"
     "intel_pstate=ondemand"
 
   ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/ebbd8291-07b4-4110-99f9-cc0e5e86d249";
-      fsType = "f2fs";
+    { device = "/dev/disk/by-uuid/4529fa1b-89b4-4130-b226-93672190c59e";
+      fsType = "ext4";
 
     # Optimize SSD
     options = [
 
-   #   "data=ordered"        # Ensures data ordering, improving file system reliability and performance by writing data to disk in a specific order.
+      "data=ordered"        # Ensures data ordering, improving file system reliability and performance by writing data to disk in a specific order.
       "defaults"            # Applies the default options for mounting, which usually include common settings for permissions, ownership, and read/write access.
-   #   "discard"             # Enables the TRIM command, which allows the file system to notify the storage device of unused blocks, improving performance and longevity of solid-state drives (SSDs).
+      "discard"             # Enables the TRIM command, which allows the file system to notify the storage device of unused blocks, improving performance and longevity of solid-state drives (SSDs).
       "errors=remount-ro"   # Remounts the file system as read-only (ro) in case of errors to prevent further potential data corruption.
       "nodiratime"          # Disables updating directory access time, improving file system performance by reducing unnecessary writes.
       "relatime"            # Updates the access time of files relative to the modification time, minimizing the performance impact compared to atime
@@ -73,12 +73,12 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/99D1-9878";
+    { device = "/dev/disk/by-uuid/A088-1A43";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/2a557930-86b7-4847-a131-71984d33e9e8"; } ];
+    [ { device = "/dev/disk/by-uuid/a4204361-17cf-4b97-9091-88284b6ec36c"; } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

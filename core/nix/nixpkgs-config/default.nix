@@ -22,7 +22,7 @@ with lib;
         "openssl-1.1.1v"
         "python-2.7.18.6"
         "qtwebkit-5.212.0-alpha4"
-
+        "zotero-6.0.27"
       ];
 
       allowUnfreePredicate = pkg:
