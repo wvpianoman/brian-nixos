@@ -501,9 +501,9 @@ with lib;
       libva-utils               # A collection of utilities and examples for VA-API
       vim                       # The most popular clone of the VI editor
 
-      arc-kde-theme
-      layan-kde
-      sweet
+      arc-kde-theme             # A port of the arc theme for Plasma
+      layan-kde                 # A flat Design theme for KDE Plasma desktop
+      sweet                     # Light and dark colorful Gtk3.20+ theme
 
 
     ];
