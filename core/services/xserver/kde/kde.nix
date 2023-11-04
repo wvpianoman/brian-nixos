@@ -5,7 +5,7 @@
   # Enable the X11 windowing system && KDE Plasma Desktop Environment.
   #---------------------------------------------------------------------
   services.xserver = {
-    enable = true;    
+    enable = true;
     dpi = 98;               # scaling of fonts and graphical elements on the screen
     libinput.enable = true; # Enable touchpad support (enabled default in most desktopManager).
 
@@ -42,33 +42,5 @@
   #---------------------------------------------------------------------
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
-
-}
-
-#{ config, pkgs, ... }: 
-
-{
-  # -----------------------------------------------------------------
-  #   Enable the X11 windowing system.
-  # -----------------------------------------------------------------
-  services.xserver.enable = true;
-
-  # -----------------------------------------------------------------
-  # scaling of fonts and graphical elements on the screen
-  # -----------------------------------------------------------------
-  services.xserver.dpi = 98;
-
-  # -----------------------------------------------------------------
-  #   Enable the KDE Plasma Desktop Environment.
-  # -----------------------------------------------------------------
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
-
-  #---------------------------------------------------------------------
-  # Enable automatic login for the user.
-  #---------------------------------------------------------------------
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "brian";
 
 }

@@ -32,24 +32,47 @@
     # Main Core
     #---------------------------------------------
     ../../../core/apple-default.nix
+    ../../../core/boot/efi/efi.nix         # Use EFI Bootloader
     ../../../core/gpu/intel/intel-laptop
 
     ../../../user
     ./Apple-hardware-configuration.nix
-    ../../../core/boot/efi/efi.nix          # Use EFI Bootloader
+    ./boot
 
   ];
-
+  #---------------------------------------------------------------------
+  # Enable automatic login for the user.
+  #---------------------------------------------------------------------
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "brian";
   #---------------------------------------------------------------------
   # Enable networking & set host name
   #---------------------------------------------------------------------
   networking.hostName = "MacBook-Pro";
+#  networking.networkmanager.enable = true;
 
-  #---------------------------------------------------------------------
-  #   Automatic system upgrades, automatically reboot after an upgrade if
-  #   necessary
-  #---------------------------------------------------------------------
-  # system.autoUpgrade.allowReboot = true;  # Very annoying .
+
+  # mkpasswd -m sha-512
+  #  hashedPassword =
+  #    "$6$yn6swk2CdH.7MJu/$GtdPxLNz0kyNmDXZ7FsCNVKvgd16Lk3xxp5AGxzq/ojyM6uderrA5SSTYz4Y8cvu97BHi7mCg6pB8zfhlUjHd.";
+
+  #  openssh.authorizedKeys.keys = [
+  #    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvVHo9LMvIwrgm1Go89hsQy4tMpE5dsftxdJuqdrf99 kingtolga@gmail.com"
+  #  ];
+
+  # Generate an SSH Key Pair:                 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  # Locate Your Public Key:                   usually ~/.ssh/id_rsa.pub
+  # Create or Edit the authorized_keys File:  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+  # To create a new authorized_keys file:     mkdir -p ~/.ssh
+  #                                           cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys
+  # Set Permissions:                          chmod 700 ~/.ssh
+  #                                           chmod 600 ~/.ssh/authorized_keys
+  # Copy the Public Key Entry:                ssh-rsa bla bla bla== your_email@example.com
+  #                                           Replace your_email@example.com
+
+  # Enable automatic system upgrades and reboots if necessary
+  # system.autoUpgrade.allowReboot = true;
+
   system.autoUpgrade.enable = true;
   system.copySystemConfiguration = true;
   system.stateVersion = "23.05"; # Did you read the comment?

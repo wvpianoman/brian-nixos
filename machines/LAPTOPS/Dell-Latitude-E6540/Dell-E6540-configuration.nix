@@ -17,9 +17,9 @@
 
     # Select your kernel
     #---------------------------------------------
-    # ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix  # Latest default NixOS kernel
-    ../../../core/system-tweaks/kernel-upgrades/xanmod.nix             # Xanmod kernel
-    # ../../../core/system-tweaks/kernel-upgrades/zen.nix              # Zen kernel
+    # ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix   # Latest default NixOS kernel
+    ../../../core/system-tweaks/kernel-upgrades/xanmod.nix              # Xanmod kernel
+    # ../../../core/system-tweaks/kernel-upgrades/zen.nix               # Zen kernel
 
     # Custom System tweaks
     #---------------------------------------------
@@ -30,7 +30,8 @@
     # Main Core
     #---------------------------------------------
     ../../../core
-    ../../../core/boot/efi/efi.nix            # Use EFI Bootloader
+    ../../../core/boot/efi/efi.nix         # Use EFI Bootloader
+  #  ../../../core/gpu/intel/intel-laptop/HD-INTEL.nix
     ../../../core/gpu/intel/intel-laptop
 
     ../../../user
@@ -38,12 +39,20 @@
 
     
   ];
-
   #---------------------------------------------------------------------
-  # Enable networking & set host name
+  # Enable automatic login for the user.
   #---------------------------------------------------------------------
-  networking.hostName = "Dell-Lattitude";
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "brian";
+ 
+  networking.hostName = "Dell-Latitude"; # Define your hostname.
 
+ # -----------------------------------------------------------------
+  #   Enable networking
+  # -----------------------------------------------------------------
+#  networking.networkmanager.enable = true;
+
+ 
   #---------------------------------------------------------------------
   #   Automatic system upgrades, automatically reboot after an upgrade if
   #   necessary

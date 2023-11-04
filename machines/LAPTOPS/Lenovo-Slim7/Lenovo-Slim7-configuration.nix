@@ -36,12 +36,21 @@
     ../../../user
     ./Lenovo-Slim7-hardware-configuration.nix
 
+    
   ];
+  #---------------------------------------------------------------------
+  # Enable automatic login for the user.
+  #---------------------------------------------------------------------
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "brian";
 
-  #---------------------------------------------------------------------
-  # Enable networking & set host name
-  #---------------------------------------------------------------------
-    networking.hostName = "Lenovo-Slim";
+  networking.hostName = "Lenovo-Slim7"; # Define your hostname.
+
+  
+  # -----------------------------------------------------------------
+  #   Enable networking
+  # -----------------------------------------------------------------
+#  networking.networkmanager.enable = true;
 
   #---------------------------------------------------------------------
   #   Automatic system upgrades, automatically reboot after an upgrade if
