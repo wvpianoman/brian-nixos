@@ -20,8 +20,10 @@ with lib;
         "electron-24.8.6"
         "openssl-1.1.1u"
         "openssl-1.1.1v"
+        "openssl-1.1.1w"
         "python-2.7.18.6"
         "qtwebkit-5.212.0-alpha4"
+        "zotero-6.0.26"
         "zotero-6.0.27"
       ];
 
