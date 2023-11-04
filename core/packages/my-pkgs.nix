@@ -80,6 +80,8 @@
       #------------------------------------
       bashInteractive                 # GNU Bourne-Again Shell, the de facto standard shell on Linux (for interactive use)
 
+      libsForQt5.yakuake              # Quad-style terminal emulator for KDE
+
       fish
       fishPlugins.tide                # The ultimate Fish prompt.
       fishPlugins.pure                # Pretty, minimal and fast Fish prompt, ported from zsh
