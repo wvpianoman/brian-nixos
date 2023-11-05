@@ -40,6 +40,7 @@
     # ---------------------------------------------------------------------
     NetworkManager.restartIfChanged = false;
     display-manager.restartIfChanged = false;
+    libvirtd.restartIfChanged = false;
     polkit.restartIfChanged = false;
     systemd-logind.restartIfChanged = false;
     wpa_supplicant.restartIfChanged = false;
@@ -57,9 +58,10 @@
 
       before = [ "pre-sleep.service" ];
       wantedBy = [ "pre-sleep.service" ];
+      
       environment = {
         DISPLAY = ":0";
-        XAUTHORITY = "/home/brian/.Xauthority";
+        XAUTHORITY = "/home/tolga/.Xauthority";
       };
 
     };
@@ -89,18 +91,23 @@
       wantedBy = [ "multi-user.target" ];
     };
 
-    NetworkManager-wait-online.enable = false;
-
-  };
-
-  #---------------------------------------------
-  # Custom derivation
-  #---------------------------------------------
-  system.activationScripts = {
-    customInfoScript = {
-      text = ''
-        /etc/nixos/activation-scripts/run-custom-info-script.sh
+    #--------------------------------------------------------------------- 
+    # Modify autoconnect priority of the connection to tolgas home network
+    #---------------------------------------------------------------------
+    modify-autoconnect-priority = {
+      description = "Modify autoconnect priority of OPTUS_B27161 connection";
+      script = ''
+        nmcli connection modify OPTUS_B27161 connection.autoconnect-priority 1
       '';
     };
+
+    #--------------------------------------------------------------------- 
+    # Make nixos boot a tad faster by turning these off during boot
+    #--------------------------------------------------------------------- 
+    NetworkManager-wait-online.enable = false;
+    systemd-udev-settle.enable = false;
+
   };
+
 }
+
