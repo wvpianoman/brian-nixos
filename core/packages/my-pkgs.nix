@@ -34,7 +34,7 @@
       zotero                           # Collect, organize, cite, and share your research sources
       qnotero                          # Quick access to Zotero references
 
-      onlyoffice-bin                   # Office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents
+      onlyoffice-bin_7_4               # Office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents
 
       #------------------------------------
       # Desktop Accessories
@@ -80,8 +80,6 @@
       #------------------------------------
       bashInteractive                 # GNU Bourne-Again Shell, the de facto standard shell on Linux (for interactive use)
 
-      libsForQt5.yakuake              # Quad-style terminal emulator for KDE
-
       fish
       fishPlugins.tide                # The ultimate Fish prompt.
       fishPlugins.pure                # Pretty, minimal and fast Fish prompt, ported from zsh
@@ -105,8 +103,7 @@
       #------------------------------------
       bat                             # A cat(1) clone with syntax highlighting and Git integration
       btop                            # A monitor of resources
-     # meld                            # Visual diff and merge tool
-     # libsForQt5.dolphin-plugins
+
       vulkan-tools                    # Khronos official Vulkan Tools and Utilities
       wayland-utils                   # Wayland utilities (wayland-info)
       nodePackages_latest.remod-cli   # chmod for human beings!
@@ -122,6 +119,7 @@
       # Remote Desktop:
       #------------------------------------
       anydesk                        # Desktop sharing application, providing remote support and online meetings
+   #   rustdesk                       # Yet another remote desktop software
    #   nomachine-client               # NoMachine remote desktop client (nxplayer)
    #   remmina                        # Remote desktop client written in GTK
 
