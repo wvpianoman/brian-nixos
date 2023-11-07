@@ -11,8 +11,8 @@
       #------------------------------------
       # Messaging and Communication:
       #------------------------------------
-      telegram-desktop                  # Telegram Desktop messaging app
-      element-desktop-wayland           # A feature-rich client for Matrix.org for Wayland
+   #   telegram-desktop                  # Telegram Desktop messaging app
+   #   element-desktop-wayland           # A feature-rich client for Matrix.org for Wayland
 
    #   betterbird                        # Betterbird is a fine-tuned version of Mozilla Thunderbird, Thunderbird on steroids, if you will
       thunderbird                       # A full-featured e-mail client
@@ -69,11 +69,11 @@
       #---------------------------------------------------------------------
       # XDG and File Managers
       #---------------------------------------------------------------------
-  #    xfce.thunar                     # Xfce file manager
-  #    xfce.thunar-volman              # Thunar extension for automatic management of removable drives and media
-  #    xfce.thunar-dropbox-plugin      # A plugin that adds context-menu items for Dropbox to Thunar
-  #    xfce.thunar-archive-plugin      # Thunar plugin providing file context menus for archives
-  #    xfce.thunar-media-tags-plugin   # Thunar plugin providing tagging and renaming features for media files
+      xfce.thunar                     # Xfce file manager
+      xfce.thunar-volman              # Thunar extension for automatic management of removable drives and media
+      xfce.thunar-dropbox-plugin      # A plugin that adds context-menu items for Dropbox to Thunar
+      xfce.thunar-archive-plugin      # Thunar plugin providing file context menus for archives
+      xfce.thunar-media-tags-plugin   # Thunar plugin providing tagging and renaming features for media files
 
       #------------------------------------
       # Shell Enhancements and Utilities:

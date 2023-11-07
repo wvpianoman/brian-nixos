@@ -16,7 +16,8 @@
   #---------------------------------------------------------------------
   # Boot configuration
   #---------------------------------------------------------------------
-  boot.initrd.availableKernelModules = [
+  boot = {
+    initrd.availableKernelModules = [
 
   #    "ahci"        # Enables the Advanced Host Controller Interface (AHCI) driver, typically used for SATA (Serial ATA) controllers.
       "ehci_pci"    # Enables the Enhanced Host Controller Interface (EHCI) driver for PCI-based USB controllers, providing support for USB 2.0.
@@ -31,43 +32,63 @@
       "xhci_pci"    # Enables the eXtensible Host Controller Interface (xHCI) driver for PCI-based USB controllers, providing support for USB 3.0 and later standards.
   ];
 
-  boot.extraModulePackages = [ ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [
+    extraModulePackages = [ ];
+    initrd.kernelModules = [ ];
+    kernelModules = [ "kvm-intel" "tcp_bbr" ];
 
-      "kvm-intel"
-      "tcp_bbr"       # Dynamically optimize how data is sent over a network, aiming to achieve higher throughput and reduced latency
+    kernel.sysctl = {
+
+    "net.ipv4.tcp_congestion_control" = "bbr";    # Tweak local networking
+
+    "kernel.sysrq" = 1;                           # Enable SysRQ for rebooting the machine properly if it freezes. [Source](https://oglo.dev/tutorials/sysrq/index.html)
+    "net.core.netdev_max_backlog" = 30000;        # Help prevent packet loss during high traffic periods.
+    "net.core.rmem_default" = 262144;             # Default socket receive buffer size, improve network performance & applications that use sockets. Adjusted for 32GB RAM.
+    "net.core.rmem_max" = 67108864;               # Maximum socket receive buffer size, determine the amount of data that can be buffered in memory for network operations. Adjusted for 32GB RAM.
+    "net.core.wmem_default" = 262144;             # Default socket send buffer size, improve network performance & applications that use sockets. Adjusted for 32GB RAM.
+    "net.core.wmem_max" = 67108864;               # Maximum socket send buffer size, determine the amount of data that can be buffered in memory for network operations. Adjusted for 32GB RAM.
+    "net.ipv4.ipfrag_high_threshold" = 5242880;   # Reduce the chances of fragmentation. Adjusted for SSD.
+    "net.ipv4.tcp_keepalive_intvl" = 30;          # TCP keepalive interval between probes to detect if a connection is still alive.
+    "net.ipv4.tcp_keepalive_probes" = 5;          # TCP keepalive probes to detect if a connection is still alive.
+    "net.ipv4.tcp_keepalive_time" = 300;          # TCP keepalive interval in seconds to detect if a connection is still alive.
+    "vm.dirty_background_bytes" = 583200768;      # 556 MB (128 MB + 450 MB)
+    "vm.dirty_bytes" = 851968768;                 # 812 MB (384 MB + 450 MB)
+    "vm.min_free_kbytes" = 65536;                 # Minimum free memory for safety (in KB)
+    "vm.swappiness" = 0;                          # Adjust how aggressively the kernel swaps data from RAM to disk. Lower values prioritize keeping data in RAM. Adjusted for 32GB RAM.
+    "vm.vfs_cache_pressure" = 90;                 # Adjust vfs_cache_pressure (0-1000) to manage memory used for caching filesystem objects. Adjusted for 32GB RAM.
+
+      # Adjust dirty data management for NVMe drives
+    "vm.dirty_background_ratio" = "5";            # Set the ratio of dirty memory at which background writeback starts (5%).
+    "vm.dirty_expire_centisecs" = "3000";         # Set the time at which dirty data is old enough to be eligible for writeout (3000 centiseconds).
+    "vm.dirty_ratio" = "10";                      # Set the ratio of dirty memory at which a process is forced to write out dirty data (10%).
+    "vm.dirty_time" = "0";                        # Disable dirty time accounting.
+    "vm.dirty_writeback_centisecs" = "300";       # Set the interval between two consecutive background writeback passes (300 centiseconds).
+
+    };
+
+    kernelParams = [
+
+      "mitigations=off"
+      "quiet"
+      "intel_pstate=ondemand"
 
     ];
+  };
 
-    # Enable BBR congestion control algorithm for TCP, , which can lead to improved network throughput and reduced latency.
-
-  boot.kernel.sysctl = {
-      "net.ipv4.tcp_congestion_control" = "bbr";
-    };
-    
-  boot.kernelParams = [
-
-    "mitigations=off"
- #   "quiet"
-    "intel_pstate=ondemand"
-
-  ];
-
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4529fa1b-89b4-4130-b226-93672190c59e";
-      fsType = "ext4";
-
-    # Optimize SSD
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/4529fa1b-89b4-4130-b226-93672190c59e";
+    fsType = "ext4";
     options = [
 
-      "data=ordered"        # Ensures data ordering, improving file system reliability and performance by writing data to disk in a specific order.
-      "defaults"            # Applies the default options for mounting, which usually include common settings for permissions, ownership, and read/write access.
-      "discard"             # Enables the TRIM command, which allows the file system to notify the storage device of unused blocks, improving performance and longevity of solid-state drives (SSDs).
-      "errors=remount-ro"   # Remounts the file system as read-only (ro) in case of errors to prevent further potential data corruption.
-      "nodiratime"          # Disables updating directory access time, improving file system performance by reducing unnecessary writes.
-      "relatime"            # Updates the access time of files relative to the modification time, minimizing the performance impact compared to atime
-   #    "noatime"           # Disables updating access times for files, improving file system performance by reducing write operations.
+      # Optimised && suitable for SSDs and NVMe drives to ensure good performance and longevity.
+
+      "commit=600"                  # nvme tweak?
+      "data=ordered"                # Ensures data ordering, improving file system reliability and performance by writing data to disk in a specific order.
+      "defaults"                    # Applies the default options for mounting, which usually include common settings for permissions, ownership, and read/write access.
+      "discard"                     # Enables the TRIM command, which allows the file system to notify the storage device of unused blocks, improving performance and longevity of solid-state drives (SSDs).
+      "errors=remount-ro"           # Remounts the file system as read-only (ro) in case of errors to prevent further potential data corruption.
+      "noatime"                     # Disables updating access times for files, improving file system performance by reducing write operations.
+      "nodiratime"                  # Disables updating directory access time, improving file system performance by reducing unnecessary writes.
+      "relatime"                    # Updates the access time of files relative to the modification time, minimizing the performance impact compared to atime
 
     ];
     };
