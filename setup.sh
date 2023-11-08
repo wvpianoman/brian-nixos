@@ -46,7 +46,7 @@ ECHO " # You need to edit the hardware-configuration contained in the
 # in the original hardware-configuration.nix.  Replace ONLY 
 #
 # device = "/dev/disk/by-uuid/ebbd8291-07b4-4110-99f9-cc0e5e86d249";
-#      fsType = "f2fs"; 
+#      fsType = "etx4";
 #
 # in the ROOT filesystem definition in the hardware-configuration 
 # you are editing.  

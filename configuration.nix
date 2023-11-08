@@ -67,7 +67,10 @@ in
     # ./core/services/xserver/gnome/gnome.nix
     # ./core/services/xserver/hyperland/hyperland.nix
     # ./core/services/xserver/sway/sway.nix    
-    ./core/services/xserver/kde/kde.nix
+     ./core/services/xserver/kde/kde.nix
+    # ./core/services/xserver/budgie/budgie.nix
+    # ./core/services/xserver/xfce/xfce.nix
+    # ./core/services/xserver/enlightenment/enlightenment.nix
     
   ];
 }
