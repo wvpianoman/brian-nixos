@@ -7,7 +7,7 @@ with lib;
   # My personal software collection
   # ---------------------------------------------------------------------
 
-  services.teamviewer.enable = true;
+ services.teamviewer.enable = true;
 
   environment = {
     systemPackages = with pkgs; [
@@ -16,15 +16,15 @@ with lib;
       # Andriod software
       # ---------------------------------------------------------------------
 
-      android-file-transfer  # Reliable MTP client with minimalistic UI         
+  #    android-file-transfer  # Reliable MTP client with minimalistic UI
                              # provides: aft-mtp-cli android-file-transfer aft-mtp-mount
 
-      android-tools          # Android SDK platform tools
+  #    android-tools          # Android SDK platform tools
                              # provides: lpadd append2simg lpmake mke2fs.android mkdtboimg simg2img lpdump lpunpack ext2simg 
                              # e2fsdroid adb unpack_bootimg repack_bootimg avbtool img2simg fastboot mkbootimg lpflash
 
-      droidcam               # Linux client for DroidCam app
-      scrcpy                 # Display and control Android devices over USB or TCP/IP
+  #    droidcam               # Linux client for DroidCam app
+  #    scrcpy                 # Display and control Android devices over USB or TCP/IP
       # waydroid             # Waydroid is a container-based approach to boot a full Android system on a regular GNU/Linux system
 
       # ---------------------------------------------------------------------
@@ -171,9 +171,9 @@ with lib;
       nixfmt                            # An opinionated formatter for Nix
       # nix-linter                        # to check for several common mistakes or stylistic errors in Nix expressions, such as unused arguments, empty let blocks, etcetera.
       nixos-option
-      vscode                            # Open source source code editor developed by Microsoft for Windows, Linux and macOS 
-      vscode-extensions.brettm12345.nixfmt-vscode
-      vscode-extensions.mkhl.direnv
+  #    vscode                            # Open source source code editor developed by Microsoft for Windows, Linux and macOS
+  #    vscode-extensions.brettm12345.nixfmt-vscode
+  #    vscode-extensions.mkhl.direnv
 
       # ---------------------------------------------------------------------
       # Github related
@@ -281,7 +281,7 @@ with lib;
       # Picture Editors
       # ---------------------------------------------------------------------
 
-      gimp-with-plugins              # The GNU Image Manipulation Program
+  #    gimp-with-plugins              # The GNU Image Manipulation Program
 
       # ---------------------------------------------------------------------
       # Disc burner
@@ -438,7 +438,7 @@ with lib;
       # stow                          # A tool for managing the installation of multiple software packages in the same run-time directory tree
       # tig                           # Text-mode interface for git
       # tldr                          # Simplified and community-driven man pages
-      # vim                           # The most popular clone of the VI editor
+      vim                           # The most popular clone of the VI editor
       gnome.zenity                  # Tool to display dialogs from the commandline and shell scripts
       less                          # A more advanced file pager than ‘more’
       lfs                           # Get information on your mounted disks
@@ -459,7 +459,7 @@ with lib;
       # ---------------------------------------------------------------------
 
       xdg-launch                    # A command line XDG compliant launcher and tools
-      xdg-utils                     # A set of command line tools that assist applications with a variety of desktop integration tasks
+      xdg-utils                     # A set of command line tools that assist applications with a variety of desktop integration tasks for opening default programs when clicking links
 
       #---------------------------------------------------------------------
       # Office and Productivity:
@@ -492,20 +492,24 @@ with lib;
       # Extra Misc packages
       #-----------------------------------------------------------------
 
-      # rocm-opencl-icd          # OpenCL ICD definition for AMD GPUs using the ROCm stack
-      # rocm-opencl-runtime      # OpenCL runtime for AMD GPUs, part of the ROCm stack
+      # plex                      # Media library streaming server
+      # plex-media-player         # Streaming media player for Plex
+      # plexRaw                   # Media library streaming server
+      # rocm-opencl-icd           # OpenCL ICD definition for AMD GPUs using the ROCm stack
+      # rocm-opencl-runtime       # OpenCL runtime for AMD GPUs, part of the ROCm stack
+      # smartmontools             # Tools for monitoring the health of hard drives
+      # redhat-official-fonts     # Red Hat's Open Source Fonts - Red Hat Display and Red Hat Text
       appimage-run     
-      firefox                   # A web browser built from Firefox source tree   Version: 118.0.2
-      glxinfo                   # Test utilities for OpenGL
-      libva                     # An implementation for VA-API (Video Acceleration API)
-      libva-utils               # A collection of utilities and examples for VA-API
-      vim                       # The most popular clone of the VI editor
-
-      arc-kde-theme             # A port of the arc theme for Plasma
-      layan-kde                 # A flat Design theme for KDE Plasma desktop
-      sweet                     # Light and dark colorful Gtk3.20+ theme
+      firefox                     # A web browser built from Firefox source tree   Version: 118.0.2
+      glxinfo                     # Test utilities for OpenGL
+      google-chrome               # A freeware web browser developed by Google
+      libva                       # An implementation for VA-API (Video Acceleration API)
+      libva-utils                 # A collection of utilities and examples for VA-API
+      minidlna                    # Media server software
+      nftables                    # The project that aims to replace the existing {ip,ip6,arp,eb}tables framework
+      plasma-browser-integration
 
 
     ];
   };
-}
+} 

@@ -7,13 +7,8 @@
 
   imports = [
 
-   #  ./distrobox
-   #  ./flatpak
-   #  ./plasma-manager/plasma-config.nix
-   #  ./steam
     ./custom-pkgs
-    ./internet
-    ./packages.nix
+    ./680iLT-packages.nix
  #   ./vm
     ./680iLT-pkgs.nix
 

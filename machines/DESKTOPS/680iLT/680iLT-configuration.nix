@@ -25,12 +25,12 @@
     # Custom System tweaks
     #---------------------------------------------
     ../../../core/system-tweaks/storage-tweaks/HHD/HHD-tweak.nix           # SSD read & write tweaks
-    ../../../core/system-tweaks/zram/zram-8GB-SYSTEM.nix                   # Zram tweak for 16GB
-    ../../../core/system-tweaks/kernel-tweaks/8GB-SYSTEM/8GB-SYSTEM.nix    # Kernel tweak for 16GB
+    # ../../../core/system-tweaks/zram/zram-8GB-SYSTEM.nix                   # Zram tweak for 8GB
+    ../../../core/system-tweaks/kernel-tweaks/8GB-SYSTEM/8GB-SYSTEM.nix    # Kernel tweak for 8GB
 
     # Main Core
     #---------------------------------------------
-    ../../../core680iLT/680iLT.nix
+    ../../../core/680iLT-default.nix
     ../../../core/boot/grub/grub.nix         # Use GRUB Bootloader
     ../../../core/gpu/amd/opengl
 
