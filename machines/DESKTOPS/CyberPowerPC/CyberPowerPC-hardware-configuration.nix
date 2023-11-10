@@ -24,7 +24,7 @@
       "ohci_pci"
       "pata_atiixp"
       "sd_mod"      # Enables the SCSI disk module (sd_mod), which allows the system to recognize and interact with SCSI-based storage devices.
-      "sdhci_pci"
+  #    "sdhci_pci"
       "sr_mod"      # Loads the SCSI (Small Computer System Interface) CD/DVD-ROM driver, allowing the system to recognize and use optical drives.
       "usbhid"      # Enables the USB Human Interface Device (HID) driver, which provides support for USB input devices such as keyboards and mice.
       "usb_storage" # Enables the USB Mass Storage driver, allowing the system to recognize and use USB storage devices like USB flash drives and external hard drives.
@@ -33,7 +33,7 @@
 
     extraModulePackages = [ ];
     initrd.kernelModules = [ ];
-    kernelModules = [ "kvm-intel" "tcp_bbr" ];
+    kernelModules = [ "kvm-amd" "tcp_bbr" ];
 
     # Enable BBR congestion control algorithm for TCP, , which can lead to improved network throughput and reduced latency.
 
@@ -70,13 +70,13 @@
 
     "mitigations=off"
     "quiet"
-    "intel_pstate=ondemand"
+  #  "intel_pstate=ondemand"
 
     ];
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3259c1c9-5213-49c4-81db-28364920a6a0";
+    { device = "/dev/disk/by-uuid/9bd77562-580a-4f51-bf1b-61223a9945ed";
       fsType = "ext4";
 
     # Optimize SSD
@@ -93,11 +93,10 @@
       "nodiratime"                  # Disables updating directory access time, improving file system performance by reducing unnecessary writes.
       "relatime"                    # Updates the access time of files relative to the modification time, minimizing the performance impact compared to atime
 
-    ];
-    };
+    ]; };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/55300b8e-0fc4-4d2e-93ec-b067e6f82ae8"; }
+    [ { device = "/dev/disk/by-uuid/74861714-a854-4936-8dd8-3edf033cd541"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

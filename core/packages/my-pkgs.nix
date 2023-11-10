@@ -63,7 +63,7 @@
       # USB/Disk Utilities
       #---------------------------------------------------------------------
       baobab                          # Graphical application to analyse disk usage in any GNOME environment
-      etcher                          # Flash OS images to SD cards and USB drives, safely and easily
+
       #  woeusb                           # Create bootable USB disks from Windows ISO images
 
       #---------------------------------------------------------------------

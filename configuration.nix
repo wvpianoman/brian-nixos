@@ -43,6 +43,9 @@ let
     else if builtins.readFile "/sys/devices/virtual/dmi/id/product_name" == "GA-78LMT-USB3 6.0\n" then
       machines/DESKTOPS/CyberPowerPC/CyberPowerPC-configuration.nix
 
+    else if builtins.readFile "/sys/devices/virtual/dmi/id/product_name" == "680iLT\n" then
+      machines/DESKTOPS/680iLT/680iLT-configuration.nix
+
   else
 
     # Manually symlink host/machine

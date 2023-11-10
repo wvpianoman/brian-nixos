@@ -9,6 +9,8 @@
     #---------------------------------------------------------------------
     #   Network and memory-related optimizationss for 8GB
     #---------------------------------------------------------------------
+      "net.ipv4.tcp_congestion_control" = "bbr";     # Tweak local networking
+
     "kernel.sysrq" = 1;                         # Enable SysRQ for rebooting the machine properly if it freezes. [Source](https://oglo.dev/tutorials/sysrq/index.html)
     "net.core.netdev_max_backlog" = 30000;      # Help prevent packet loss during high traffic periods.
     "net.core.rmem_default" = 262144;           # Default socket receive buffer size, improve network performance & applications that use sockets. Adjusted for 8GB RAM.
@@ -22,7 +24,7 @@
     "vm.dirty_background_bytes" = 134217728;    # 128 MB
     "vm.dirty_bytes" = 402653184;               # 384 MB
     "vm.min_free_kbytes" = 131072;              # Minimum free memory for safety (in KB), helping prevent memory exhaustion situations. Adjusted for 8GB RAM.
-    "vm.swappiness" = 10;                        # Adjust how aggressively the kernel swaps data from RAM to disk. Lower values prioritize keeping data in RAM. Adjusted for 8GB RAM.
+    "vm.swappiness" = 10;                       # Adjust how aggressively the kernel swaps data from RAM to disk. Lower values prioritize keeping data in RAM. Adjusted for 8GB RAM.
     "vm.vfs_cache_pressure" = 90;               # Adjust vfs_cache_pressure (0-1000) to manage memory used for caching filesystem objects. Adjusted for 8GB RAM.
 
   };
