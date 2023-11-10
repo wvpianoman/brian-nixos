@@ -17,22 +17,21 @@
 #  
 #------------------ HP EliteDesk 800 G4 SFF ------------------------
 
-# MODEL             HP EliteDesk 800 G4 SFF
-# CPU               Intel(R) Core(TM) i7-8700 CPU @ 3.2GHz - 4.6GHz (Turbo) x 6 (vPro)
-# i-GPU             Intel UHD Graphics 630, Coffee Lake
-# d-GPU             NVIDIA GeForce GT 1030/PCIe/SSE2
 # BLUE-TOOTH        REALTEK 5G
-# MOTHERBOARD       Intel Q370 PCH-H—vPro
-# NETWORK           Intel Corporation Wi-Fi 6 AX210/AX211/AX411 160MHz
-# RAM               Maximum: 64 GB, DDR4-2666 (16 GB x 4)
+# CPU	              Intel(R) Core(TM)  i7-8700 CPU @ 3.2GHz - 4.6Ghz (Turbo) x 6 (vPro)
+# i-GPU	            Intel UHD Graphics 630, Coffee Lake 
+# d-GPU             NVIDIA GeForce GT 1030/PCIe/SSE2
+# MODEL             HP EliteDesk 800 G4 SFF
+# MOTHERBOARD	      Intel Q370 PCH-H—vPro
+# NETWORK	          Intel Corporation Wi-Fi 6 AX210/AX211/AX411 160MHz
+# RAM	              Maximum: 64 GB, DDR4-2666 (16 GB x 4)
 # STORAGE           256 GB, M.2 2280, PCIe NVMe SSD
-# EXPANSION SLOTS   (1) M.2 PCIe x1 2230 (for WLAN), (2) M.2 PCIe x4 2280/2230 combo (for storage)
+# EXPENSION SLOTS   (1) M.2 PCIe x1 2230 (for WLAN), (2) M.2 PCIe x4 2280/2230 combo (for storage)
 #                   (2) PCI Express v3.0 x1, (1) PCI Express v3.0 x16 (wired as x4), (1) PCI Express v3.0 x16
 # PSU               250W
-# SOURCE            [HP EliteDesk 800 G4 SFF](https://support.hp.com/au-en/document/c06047207)
+# SOURCE            https://support.hp.com/au-en/document/c06047207
 
 #---------------------------------------------------------------------
-
 
 {
 
@@ -69,6 +68,13 @@
   #---------------------------------------------------------------------
   networking.hostName = "HP-G4-800";                                            # Define your hostname. 
   
+  # Nobara tweaks
+  boot.kernel.sysctl = {
+    "kernel.pid_max" = 4194304;                                # allows a large number of processes and threads to be managed
+    "fs.aio-max-nr" = 1048576;                                 # defines the maximum number of asynchronous I/O requests that can be in progress at a given time.
+    "fs.inotify.max_user_watches" = 524288;                    # sets the maximum number of file system watches, enhancing file system monitoring capabilities.
+  };
+  
   #                                                                       
   #    .--~*teu.      .x~~"*Weu.              .n~~%x.       cuuu....uK    
   #   dF     988Nx   d8Nu.  9888c           x88X   888.     888888888     
@@ -84,4 +90,4 @@
   #                                                                       
   #   https://patorjk.com/software/taag/#p=testall&h=1&c=bash&f=ANSI%20Shadow&t=23.05                                                                      
   # 
-}
+} 

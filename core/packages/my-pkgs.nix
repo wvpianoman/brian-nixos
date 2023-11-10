@@ -118,7 +118,7 @@
       #------------------------------------
       # Remote Desktop:
       #------------------------------------
-      anydesk                        # Desktop sharing application, providing remote support and online meetings
+   #   anydesk                        # Desktop sharing application, providing remote support and online meetings
    #   rustdesk                       # Yet another remote desktop software
    #   nomachine-client               # NoMachine remote desktop client (nxplayer)
    #   remmina                        # Remote desktop client written in GTK
@@ -128,6 +128,14 @@
       #------------------------------------
       uget                           # Download manager using GTK and libcurl
       uget-integrator                # Native messaging host to integrate uGet Download Manager with web browsers
+
+      #-----------------------------------------------------------------
+      # Extra Misc packages
+      #-----------------------------------------------------------------
+
+      arc-kde-theme             # A port of the arc theme for Plasma
+      layan-kde                 # A flat Design theme for KDE Plasma desktop
+      sweet                     # Light and dark colorful Gtk3.20+ theme
     ];
   };
 }

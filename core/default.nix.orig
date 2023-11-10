@@ -2,15 +2,17 @@
 
 {
   #---------------------------------------------------------------------  
-  # My software packages        ( TODO LIST).
+  # My CORE components        ( TODO LIST).
   #---------------------------------------------------------------------
 
   imports = [
-
-    ./custom-pkgs
-    ./packages.nix
-    ./vm
-    ./my-pkgs.nix
+    
+  #  ./modules/iphone/iphone.nix
+    ./nix
+    ./packages
+    ./programs
+    ./services
+    ./system
 
   ];
 
