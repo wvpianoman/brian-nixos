@@ -22,10 +22,11 @@ let
     sudo nix-channel --update
 
     echo -e "\e[1;32m[✔]\e[0m Checking updates for system and installed programs...\n"
-    nix-env -u '*'
+    # sudo nix-env -u '*'
+    sudo nix-env --upgrade 
 
     sudo nixos-rebuild switch --upgrade
-    sudo nixos-rebuild switch
+    # sudo nixos-rebuild switch
 
     clear && echo -e "\e[1;32m[✔]\e[0m Optimizing system...\n"
     sudo nix-store --optimise
@@ -39,6 +40,11 @@ let
     flatpak uninstall --delete-data
     sudo rm -rfv /var/tmp/flatpak-cache-*
     sleep 1
+
+    clear && echo -e "\e[1;32m[✔]\e[0m Restarting kernel tweaks...\n"
+    sleep 2
+    sudo sysctl --system
+    sleep 3
 
     clear && echo -e "\e[1;32m[✔]\e[0m System update's and optimization completed:\e[0m\n"
 

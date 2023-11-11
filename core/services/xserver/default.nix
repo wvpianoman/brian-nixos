@@ -10,14 +10,15 @@
 
     # Choose DE, still under review
 
+    # ./budgie/budgie.nix
     # ./cinnamon/cinnamon.nix
+    # ./enlightenment/enlightenment.nix
     # ./gnome/gnome.nix
     # ./hyperland/hyperland.nix
-    # .//sway/sway.nix
+    # ./i3/i3.nix
     # ./kde/kde.nix
-    # ./budgie/budgie.nix
+    # ./sway/sway.nix
     # ./xfce/xfce.nix
-    # ./enlightenment/enlightenment.nix
 
   ];
 

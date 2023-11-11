@@ -135,7 +135,7 @@ with lib;
 
       # dialog                        # Display dialog boxes from shell
       doas                            # Executes the given command as another user
-      # fx                              # Terminal JSON viewer
+      fx                              # Terminal JSON viewer
 
       fzf                             # A command-line fuzzy finder written in Go
                                       # provides: fzf-tmux fzf-share fzf
@@ -206,8 +206,8 @@ with lib;
       # luigi                          # Python package that helps you build complex pipelines of batch jobs
       # quarto                         # Open-source scientific and technical publishing system built on Pandoc
       # visidata                       # Interactive terminal multitool for tabular data
-      # mpi                              # Open source MPI-3 implementation
-      # root                             # A data analysis framework
+      mpi                            # Open source MPI-3 implementation
+      root                           # A data analysis framework
 
       # ---------------------------------------------------------------------
       # Scanning and Image Viewing
@@ -381,13 +381,10 @@ with lib;
       # Libraries
       # ---------------------------------------------------------------------
 
-      libarchive                    # bsdtar bsdcpio bsdcat
       libarchive                    # Multi-format archive and compression library
                                     # provides: bsdtar bsdcpio bsdcat
 
       libbtbb                       # Bluetooth baseband decoding library
-      libnotify                     # Desktop Notify agent example: notify-send --icon=fcitx --app-name="DONE" "Fonts folder copied into $(whoami)" "$font_dest" -u normal
-      notify-desktop                # Desktop Notify agent example: notify-desktop --icon=call-start "Incoming call"   SOURCE: https://github.com/nowrep/notify-desktop/tree/master
 
       libnotify                     # Desktop Notify agent 
                                     # example: notify-send --icon=fcitx --app-name="DONE" "Fonts folder copied into $(whoami)" "$font_dest" -u normal
@@ -435,7 +432,6 @@ with lib;
                                     # inotifywait   inotifywatch
                                     # Source:  https://github.com/inotify-tools/inotify-tools/wiki
 
-      # less                          # A more advanced file pager than ‘more’
       # lf                            # A terminal file manager written in Go and heavily inspired by ranger
       # neovim                        # Vim text editor fork focused on extensibility and agility
       # sl                            # Steam Locomotive runs across your terminal when you type 'sl'
@@ -450,6 +446,7 @@ with lib;
       lsdvd                         # Display information about audio, video, and subtitle tracks on a DVD
       ncdu                          # Disk usage analyzer with an ncurses interface
       neofetch                      # A fast, highly customizable system info script
+      parallel-full                 # provides additional features for parallel computing. It is used for parallel processing, distributed computing, and other high-performance computing scenarios
       pciutils                      # A collection of programs for inspecting and manipulating configuration of PCI devices
       pfetch                        # A pretty system information tool written in POSIX sh
       pmutils                       # A small collection of scripts that handle suspend and resume on behalf of HAL
@@ -495,25 +492,17 @@ with lib;
       # Extra Misc packages
       #-----------------------------------------------------------------
 
-      # lsb-release                 # Prints certain LSB (Linux Standard Base) and Distribution information
-      # plex                        # Media library streaming server
-      # plex-media-player           # Streaming media player for Plex
-      # plexRaw                     # Media library streaming server
-      # pstree                      # Show the set of running processes as a tree
-      # rename                      # Rename files according to a Perl rewrite expression
-      # rocm-opencl-icd             # OpenCL ICD definition for AMD GPUs using the ROCm stack
-      # rocm-opencl-runtime         # OpenCL runtime for AMD GPUs, part of the ROCm stack
-      # smartmontools               # Tools for monitoring the health of hard drives
-      # sysstat                     # A collection of performance monitoring tools for Linux (such as sar, iostat and pidstat)
-      # uptimed                     # Uptime record daemon
-      redhat-official-fonts       # Red Hat's Open Source Fonts - Red Hat Display and Red Hat Text
-      appimage-run
-      bash                        # GNU Bourne-Again Shell, the de facto standard shell on Linux
-      bc                          # GNU software calculator
+      # plex                      # Media library streaming server
+      # plex-media-player         # Streaming media player for Plex
+      # plexRaw                   # Media library streaming server
+      # rocm-opencl-icd           # OpenCL ICD definition for AMD GPUs using the ROCm stack
+      # rocm-opencl-runtime       # OpenCL runtime for AMD GPUs, part of the ROCm stack
+      # smartmontools             # Tools for monitoring the health of hard drives
+      # redhat-official-fonts     # Red Hat's Open Source Fonts - Red Hat Display and Red Hat Text
+      appimage-run     
       firefox                     # A web browser built from Firefox source tree   Version: 118.0.2
       glxinfo                     # Test utilities for OpenGL
       google-chrome               # A freeware web browser developed by Google
-      krita                       # A free and open source painting application
       libva                       # An implementation for VA-API (Video Acceleration API)
       libva-utils                 # A collection of utilities and examples for VA-API
       minidlna                    # Media server software
