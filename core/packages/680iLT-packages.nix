@@ -77,7 +77,7 @@ with lib;
       # Multimedia Utilities
       # ---------------------------------------------------------------------
 
-      audacity                        # Sound editor with graphical UI
+ #     audacity                        # Sound editor with graphical UI
 
       ffmpeg                          # A complete, cross-platform solution to record, convert and stream audio and video
                                       # provides: ffprobe ffmpeg
@@ -466,7 +466,7 @@ with lib;
       #---------------------------------------------------------------------
 
       # deepin.deepin-calculator      # An easy to use calculator for ordinary users
-      wpsoffice                     # Office suite, formerly Kingsoft Office
+ #     wpsoffice                     # Office suite, formerly Kingsoft Office
 
       #---------------------------------------------------------------------
       # New additions:
