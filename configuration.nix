@@ -66,17 +66,14 @@ in
     # Choose DE, still under review
     # ---------------------------------------------
     # ./core/services/xserver
-    # ./cinnamon/cinnamon.nix
-    # ./enlightenment/enlightenment.nix
-    # ./gnome/gnome.nix
-    # ./hyperland/hyperland.nix
-    # ./i3/i3.nix
-     ./kde/kde.nix
-    # ./sway/sway.nix
-    # ./xfce/xfce.nix
+    # ./core/services/xserver/cinnamon/cinnamon.nix
+    # ./core/services/xserver/enlightenment/enlightenment.nix
+    # ./core/services/xserver/gnome/gnome.nix
+    # ./core/services/xserver/hyperland/hyperland.nix
+    # ./core/services/xserver/i3/i3.nix
+     ./core/services/xserver/kde/kde.nix
+    # ./core/services/xserver/sway/sway.nix
+    # ./core/services/xserver/xfce/xfce.nix
     
   ];
 }
-
-
-
