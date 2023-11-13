@@ -501,8 +501,8 @@ with lib;
       # plexRaw                     # Media library streaming server
       # pstree                      # Show the set of running processes as a tree
       # rename                      # Rename files according to a Perl rewrite expression
-      # rocm-opencl-icd             # OpenCL ICD definition for AMD GPUs using the ROCm stack
-      # rocm-opencl-runtime         # OpenCL runtime for AMD GPUs, part of the ROCm stack
+      rocm-opencl-icd             # OpenCL ICD definition for AMD GPUs using the ROCm stack
+      rocm-opencl-runtime         # OpenCL runtime for AMD GPUs, part of the ROCm stack
       # smartmontools               # Tools for monitoring the health of hard drives
       # sysstat                     # A collection of performance monitoring tools for Linux (such as sar, iostat and pidstat)
       # uptimed                     # Uptime record daemon

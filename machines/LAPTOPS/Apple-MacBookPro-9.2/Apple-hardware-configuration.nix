@@ -61,7 +61,7 @@
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/77fa6a4a-ee92-4e89-8996-84f8c157a4bc";
-      fsType = "ext4";
+      fsType = "f2fs";
 
 
     # Optimize SSD
