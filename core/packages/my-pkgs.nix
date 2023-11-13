@@ -132,10 +132,10 @@
       #-----------------------------------------------------------------
       # Extra Misc packages
       #-----------------------------------------------------------------
-
       arc-kde-theme             # A port of the arc theme for Plasma
       layan-kde                 # A flat Design theme for KDE Plasma desktop
       sweet                     # Light and dark colorful Gtk3.20+ theme
+
     ];
   };
 }
