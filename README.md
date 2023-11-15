@@ -3,15 +3,16 @@
 </div>
 This repo contains the configs and programs for the computers in my stable.  Currently there are 3 laptops and 2 desktops I am deploying NixOS on:
 
+
 -MacbookPro 9,2
 
 -Dell Latitude E6540
 
 -Lenovo Slim7 16IAH7 82VB
 
-- CyperPowerPC AMD CPU/GPU @ work
+-CyperPowerPC AMD CPU/GPU @ work
 
-- Piece-built Pentium D desktop/tower
+-Piece-built Pentium D desktop/tower
 
 
   
