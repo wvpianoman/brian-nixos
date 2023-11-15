@@ -13,6 +13,7 @@ This repo contains the configs and programs for the computers in my stable.  Cur
 
 - Piece-built Pentium D desktop/tower
 
+
   
 + **Should I use NixOS?**
 
