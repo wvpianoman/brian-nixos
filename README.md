@@ -1,9 +1,7 @@
 <div align="center">
   <h1 style="font-size: 24px; color: blue;">My NixOs 23.05 environment</h1>
 </div>
-This repo contains the configs and programs for the computers in my stable.  Currently there are 3 laptops I am deploying NixOS on:
-
-
+This repo contains the configs and programs for the computers in my stable.  Currently there are 3 laptops and 2 desktops I am deploying NixOS on:
 
 -MacbookPro 9,2
 
@@ -11,7 +9,11 @@ This repo contains the configs and programs for the computers in my stable.  Cur
 
 -Lenovo Slim7 16IAH7 82VB
 
+- CyperPowerPC AMD CPU/GPU @ work
 
+- Piece-built Pentium D desktop/tower
+
+  
 + **Should I use NixOS?**
 
   **Short answer:** no.
