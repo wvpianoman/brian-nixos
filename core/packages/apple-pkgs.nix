@@ -63,7 +63,6 @@
       # USB/Disk Utilities
       #---------------------------------------------------------------------
   #    baobab                          # Graphical application to analyse disk usage in any GNOME environment
-      etcher                          # Flash OS images to SD cards and USB drives, safely and easily
       #  woeusb                           # Create bootable USB disks from Windows ISO images
 
       #---------------------------------------------------------------------
@@ -127,6 +126,10 @@
       #------------------------------------
  #     uget                           # Download manager using GTK and libcurl
  #     uget-integrator                # Native messaging host to integrate uGet Download Manager with web browsers
+
+ libsForQt5.dolphin
+ libsForQt5.dolphin-plugins
+
     ];
   };
 }

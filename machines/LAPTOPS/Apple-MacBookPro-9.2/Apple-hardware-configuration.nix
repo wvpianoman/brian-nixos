@@ -27,16 +27,6 @@
       "xhci_pci"            # Enables the eXtensible Host Controller Interface (xHCI) driver for PCI-based USB controllers, providing support for USB 3.0 and later standards.
   ];
 
-  # systemd.services.fix-suspend = {
-  #   script = ''
-  #     # Fix macbook 12 suspend issues
-  #     echo 0 > /sys/bus/pci/devices/0000:01:00.0/d3cold_allowed
-  #   '';
-  #   wantedBy = [ "multi-user.target" ];
-  # };
-
-  # boot.extraModulePackages = [ ];
-
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [
@@ -47,10 +37,6 @@
 
     # Enable BBR congestion control algorithm for TCP, , which can lead to improved network throughput and reduced latency.
 
-  boot.kernel.sysctl = {
-      "net.ipv4.tcp_congestion_control" = "bbr";
-      };
-
   boot.kernelParams = [
 
     "intel_pstate=ondemand"
@@ -60,8 +46,8 @@
   ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/77fa6a4a-ee92-4e89-8996-84f8c157a4bc";
-      fsType = "f2fs";
+    { device = "/dev/disk/by-uuid/31b89707-8f6a-4e7f-9469-e2fdd41870da";
+      fsType = "ext4";
 
 
     # Optimize SSD
@@ -80,12 +66,12 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/BA19-3D4C";
+    { device = "/dev/disk/by-uuid/1EA3-594A";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/f80435dc-e2d6-428d-baf6-3d3939043e05"; }
+    [ { device = "/dev/disk/by-uuid/c29229f5-a371-4189-b5e5-e90661f8593f"; }
     ];
 
   #---------------------------------------------------------------------

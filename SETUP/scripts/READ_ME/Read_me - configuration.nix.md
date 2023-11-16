@@ -4,7 +4,7 @@ Tolga Erok
 # *configuration.nix*
 Here's a brief summary of the script:
 
-1. The script starts by assigning the name `tolga` to the `variable name`.
+1. The script starts by assigning the name `brian` to the `variable name`.
 2. The script then imports the `hardware-configuration.nix` file.
 3. The bootloader and system settings are configured to enable GRUB as the bootloader, set the device to "/dev/sda," and use OSProber for boot detection.
 4. Automatic trimming process for SSDs is enabled.

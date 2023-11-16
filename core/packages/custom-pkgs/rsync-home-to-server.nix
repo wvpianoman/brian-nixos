@@ -9,7 +9,7 @@ let
      # 11/5/2023
      # About:
      #   Personal RSYNC script that only rsyncs selected folders listed in INCLUDE_FOLDERS variables
-     #   excluding ALL hidden files and folders from /home/tolga/ to //192.168.0.3/LinuxData/HOME/tolga
+     #   excluding ALL hidden files and folders from /home/brian/ to //192.168.0.3/LinuxData/HOME/brian
 
      DEST_DIR="/mnt/smb-rsync/"
      USERNAME="tolga"

@@ -16,7 +16,7 @@
 #####################################################################################################################################
 
 # Set the source and destination file paths
-source_path="/home/tolga/Documents/[ BUDGET 2023 ]/MAIN BUDGET v10-1 2023.xlsx"
+source_path="/home/brian/Documents/[ BUDGET 2023 ]/MAIN BUDGET v10-1 2023.xlsx"
 dest_path="/mnt/nixos_share/Documents/[ BUDGET 2023 ]/ARCHIEVES/"
 
 # Get the current date and time in the format of DD-MM-YYYY_HH-MM-SS
@@ -40,11 +40,11 @@ cp "$source_path" "$dest_path/$year/$month/$day/$filename"
 if [ $? -eq 0 ]; then
     # Change the file permissions to tolga:tolga and give full access
     chmod 777 "$dest_path/$year/$month/$day/$filename"
-    chown tolga:tolga "$dest_path/$year/$month/$day/$filename"
+    chown brian:brian "$dest_path/$year/$month/$day/$filename"
     
     # Change group permission to tolga and others to full access
     chmod g+rw "$dest_path/$year/$month/$day/$filename"
-    chgrp tolga "$dest_path/$year/$month/$day/$filename"
+    chgrp brian "$dest_path/$year/$month/$day/$filename"
     
     # Display a message to confirm that the copy has been completed
     echo "File copied successfully to $dest_path/$year/$month/$day/$filename"

@@ -83,7 +83,7 @@ function ssh_command_retry() {
     local delay=0
 
     for ((i = 1; i <= retries; i++)); do
-        ssh -q "tolga@$host" "$command" && {
+        ssh -q "brian@$host" "$command" && {
             echo -e "${GREEN}[✔]${NC} Connected to $host successfully"
             return 0
         }

@@ -29,7 +29,7 @@
 
   users.users.minidlna = {
     extraGroups =
-      [ "users" "samba" "wheel" "tolga" ]; # so minidlna can access the files.
+      [ "users" "samba" "wheel" "brian" ]; # so minidlna can access the files.
   };
 
   networking.firewall = {

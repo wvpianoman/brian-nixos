@@ -15,13 +15,13 @@ fi
 
 # Add aliases to .bashrc
 cat <<EOF >>"$root_bashrc_file"
-alias mynix='/home/tolga/scripts/MYTOOLS/scripts/COMMAN-NIX-COMMAND-SCRIPT/MyNixOS-commands.sh'
-alias mount='/home/tolga/scripts/MYTOOLS/scripts/Mounting-Options/MOUNT-ALL.sh'
-alias umount='/home/tolga/scripts/MYTOOLS/scripts/Mounting-Options/UMOUNT-ALL.sh'
-alias mse='/home/tolga/scripts/MYTOOLS/MAKE-SCRIPTS-EXECUTABLE.sh'
-alias htos='/home/tolga/scripts/MYTOOLS/scripts/Zysnc-Options/ZYSNC-HOME-TO-SERVER.sh'
-alias stoh='/home/tolga/scripts/MYTOOLS/scripts/Zysnc-Options/ZYSNC-SERVER-TO-HOME.sh'
-alias trimgen='/home/tolga/scripts/MYTOOLS/scripts/GENERATION-TRIMMER/TrimmGenerations.sh'
+alias mynix='/home/brian/scripts/MYTOOLS/scripts/COMMAN-NIX-COMMAND-SCRIPT/MyNixOS-commands.sh'
+alias mount='/home/brian/scripts/MYTOOLS/scripts/Mounting-Options/MOUNT-ALL.sh'
+alias umount='/home/brian/scripts/MYTOOLS/scripts/Mounting-Options/UMOUNT-ALL.sh'
+alias mse='/home/brian/scripts/MYTOOLS/MAKE-SCRIPTS-EXECUTABLE.sh'
+alias htos='/home/brian/scripts/MYTOOLS/scripts/Zysnc-Options/ZYSNC-HOME-TO-SERVER.sh'
+alias stoh='/home/brian/scripts/MYTOOLS/scripts/Zysnc-Options/ZYSNC-SERVER-TO-HOME.sh'
+alias trimgen='/home/brian/scripts/MYTOOLS/scripts/GENERATION-TRIMMER/TrimmGenerations.sh'
 EOF
 
 YELLOW='\033[1;33m'

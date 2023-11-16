@@ -9,9 +9,9 @@
 clear
 
 SOURCE_DIR="/mnt/smb-rsync/"
-DEST_DIR="/home/tolga/"
-USERNAME="tolga"
-PASSWORD="ibm450"
+DEST_DIR="/home/brian/"
+USERNAME="brian"
+PASSWORD="111211"
 SERVER_IP="192.168.0.20"
 username=$(id -u -n 1000)
 
@@ -84,7 +84,7 @@ while true; do
 
     # Mount smb share
     # sudo mount -t cifs //$SERVER_IP/LinuxData/HOME/PROFILES/$distro/$USERNAME $SOURCE_DIR -o $MOUNT_OPTIONS
-    sudo mount -t cifs "//$SERVER_IP/LinuxData/HOME/PROFILES/$distro/TOLGA/" "$SOURCE_DIR" -o "credentials=/etc/nixos/network/smb-secrets,uid=$USER,gid=samba,vers=3.1.1,rsize=8192,wsize=8192,cache=none,strictcache,dir_mode=0777,file_mode=0777"
+    sudo mount -t cifs "//$SERVER_IP/LinuxData/HOME/PROFILES/$distro/brian/" "$SOURCE_DIR" -o "credentials=/etc/nixos/network/smb-secrets,uid=$USER,gid=samba,vers=3.1.1,rsize=8192,wsize=8192,cache=none,strictcache,dir_mode=0777,file_mode=0777"
 
     # Rsync
     INCLUDE_FOLDERS=(

@@ -1113,7 +1113,7 @@
       "plasma-localerc"."Formats"."LANG" = "en_AU.UTF-8";
       "plasmarc"."Theme"."name" = "Layan";
       "plasmarc"."Wallpapers"."usersWallpapers" =
-        "/home/tolga/Pictures/wallpapers/nix.png,/home/tolga/Pictures/wallpapers/unix_nixos_23_05_1920x1080.jpg,/home/tolga/Pictures/wallpapers/Deepin_Material_Desktop.png,/home/tolga/Pictures/wallpapers/wp12329542-nixos-wallpapers.png,/home/tolga/Pictures/wallpapers/8000x4500.png,/home/tolga/Pictures/wallpaper.jpg,/home/tolga/Pictures/nix logos/68747470733a2f2f692e696d6775722e636f6d2f793359646e62482e706e67.png,/home/tolga/Pictures/nix logos/nix 2.png,/home/tolga/Public/Barren-Tree.jpg";
+        "/home/brian/Pictures/wallpapers/nix.png,/home/brian/Pictures/wallpapers/unix_nixos_23_05_1920x1080.jpg,/home/tolga/Pictures/wallpapers/Deepin_Material_Desktop.png,/home/brian/Pictures/wallpapers/wp12329542-nixos-wallpapers.png,/home/brian/Pictures/wallpapers/8000x4500.png,/home/brian/Pictures/wallpaper.jpg,/home/tolga/Pictures/nix logos/68747470733a2f2f692e696d6775722e636f6d2f793359646e62482e706e67.png,/home/brian/Pictures/nix logos/nix 2.png,/home/brian/Public/Barren-Tree.jpg";
     };
   };
 }

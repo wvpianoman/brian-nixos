@@ -17,9 +17,9 @@
 
     media_dir = [
       "APV,/mnt/DLNA/"                      # Master directory, set APV to filter all
-      # "A,/home/tolga/public/Music/"       # Music files are located here
-      # "P,/home/tolga/public/Pictures/"    # Pics  
-      # "V,/home/tolga/public/Vids/"        # Vidoes files are here
+      # "A,/home/brian/public/Music/"       # Music files are located here
+      # "P,/home/brian/public/Pictures/"    # Pics  
+      # "V,/home/brian/public/Vids/"        # Vidoes files are here
     ];
     
     inotify = "yes";
