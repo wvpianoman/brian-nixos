@@ -7,8 +7,6 @@
 
   imports = [
     
- #   ./modules/iphone/iphone.nix
-    ./modules/smart-drv-mon
     ./nix
     ./packages/cyberpowerpc-default.nix
     ./programs

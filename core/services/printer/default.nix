@@ -9,10 +9,6 @@ let
   #---------------------------------------------------------------------
   printerDrivers = [
 
-    #
-    # Use in terminal  
-    # $ NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup'
-
     #   pkgs.brgenml1cupswrapper        # Generic drivers for more Brother printers
     #   pkgs.brgenml1lpr                # Generic drivers for more Brother printers
     #   pkgs.brlaser                    # Drivers for some Brother printers
@@ -31,6 +27,9 @@ let
     pkgs.gutenprintBin                   # Additional, binary-only drivers for some printers
     pkgs.hplip                           # Drivers for HP printers
     pkgs.hplipWithPlugin                 # Drivers for HP printers, with the proprietary plugin.
+                                         #
+                                         # Use in terminal
+                                         # $ NIXPKGS_ALLOW_UNFREE=1 nix-shell -p hplipWithPlugin --run 'sudo -E hp-setup'
     pkgs.system-config-printer
 
   ];

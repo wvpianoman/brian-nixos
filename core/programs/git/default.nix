@@ -1,10 +1,23 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 let
   email = "dbf.linux@gmail.com";
   fullname = "Brian Francisco";
 
 in {
+  imports = [
+
+    #./gitfs.nix
+
+  ];
+
+  # Add the necessary packages
+  environment.systemPackages = with pkgs; [
+    gcc
+    gitfs
+    python39Packages.virtualenv # or use python3Packages.virtualenv if it corresponds to Python 3.9
+  ];
+
   programs = {
     git = {
       enable = true;
@@ -60,10 +73,18 @@ in {
           name = "${fullname}";
         };
 
+        core = { sshCommand = "ssh -i $HOME/.ssh/id_ed25519"; };
+
         status = { short = true; };
       };
     };
   };
+
+  # Trouble shoot git
+  # git remote remove main && git remote add origin git@github.com:tolgaerok/nixos-kde.git && git pull origin main
+  # or
+  # git checkout main && git fetch origin
+  # git reset --hard origin/main &&  git pull origin main && git push origin main
 
   # Do in terminal::
   # cat ~/.ssh/id_ed25519.pub

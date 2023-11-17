@@ -18,6 +18,7 @@
     # Select your kernel
     #---------------------------------------------
     # ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix    # Latest default NixOS kernel
+    # ../../../core/system-tweaks/kernel-upgrades/stable-LTS.nix         # Sometimes older pc's perform better on LTS kernel
     ../../../core/system-tweaks/kernel-upgrades/xanmod.nix               # Xanmod kernel
     # ../../../core/system-tweaks/kernel-upgrades/zen.nix                # Zen kernel
 
@@ -29,12 +30,16 @@
 
     # Main Core
     #---------------------------------------------
+    # ../../../core/programs/git/gitfs.nix
     ../../../core/cyberpowerpc-default.nix
     ../../../core/boot/grub/grub.nix         # Use GRUB Bootloader
     ../../../core/gpu/amd/opengl
-
-    ../../../user
+    ../../../core/modules
     ./CyberPowerPC-hardware-configuration.nix
+
+    # Users && user settings
+    # ---------------------------------------------
+    ../../../user
 
 
   ];

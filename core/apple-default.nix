@@ -7,7 +7,6 @@
 
   imports = [
     
-  #  ./modules/iphone/iphone.nix
     ./nix
     ./packages/apple-default.nix
     ./programs

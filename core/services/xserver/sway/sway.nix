@@ -46,6 +46,11 @@
         enable = true;
         wrapperFeatures.gtk = true;
     };
+
+  # Allow swaylock to unlock the computer for us
+  security.pam.services.swaylock = {
+    text = "auth include login";
+  };
 }
 
 ## NOTES ##

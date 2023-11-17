@@ -9,7 +9,6 @@
 
     ./custom-pkgs
     ./680iLT-packages.nix
- #   ./vm
     ./680iLT-pkgs.nix
 
   ];

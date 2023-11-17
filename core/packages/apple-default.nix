@@ -9,7 +9,6 @@
 
     ./custom-pkgs
     ./packages.nix
- #   ./vm
     ./apple-pkgs.nix
 
   ];

@@ -30,13 +30,16 @@
 
     # Main Core
     #---------------------------------------------
+    # ../../../core/programs/git/gitfs.nix
     ../../../core/680iLT-default.nix
     ../../../core/boot/grub/grub.nix         # Use GRUB Bootloader
     ../../../core/gpu/amd/opengl
-
-    ../../../user
+    ../../../core/modules
     ./680iLT-hardware-configuration.nix
 
+    # Users && user settings
+    # ---------------------------------------------
+    ../../../user
 
   ];
   #---------------------------------------------------------------------

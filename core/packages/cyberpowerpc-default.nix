@@ -9,7 +9,6 @@
 
     ./custom-pkgs
     ./packages.nix
-  #  ./vm
     ./my-pkgs.nix
 
   ];

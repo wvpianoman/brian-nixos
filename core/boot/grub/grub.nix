@@ -1,32 +1,32 @@
 { config, lib, ... }:
 
 {
+  imports = [
+    ../tmpfs/tmpfs.nix
+  ];
+
+  #---------------------------------------------------------------------
   # Bootloader for BIOS bootup
+  #---------------------------------------------------------------------
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
   #  boot.loader.grub.kernelParams = [ "video.allow_duplicates = 1" ];
 
-  # Copies latest Linux kernels for smoother boot.
+  #---------------------------------------------------------------------
+  # Copies latest Linux kernels for smoother boot
+  #---------------------------------------------------------------------
   boot.loader.grub.copyKernels = true;
 
-  # Enable EFI installation as removable
-  # boot.loader.grub.efiInstallAsRemovable = true;
+  #---------------------------------------------------------------------
+  # Initrd configuration, enables systemd services in the initial ramdisk (initrd).
+  #---------------------------------------------------------------------  
+  boot.initrd.systemd.enable = true;
 
-  # silence ACPI "errors" at boot shown before NixOS stage 1 output (default is 4)
-  boot.consoleLogLevel = 3;
-
-  # tmpfs (a filesystem stored in RAM) settings for the NixOS boot process.
-  # Clean tmpfs on system boot, useful for ensuring a clean state.
-  boot.tmp.cleanOnBoot = true;
-
-  # Reboot after 5 seconds on kernel panic
-  boot.kernel.sysctl = { "kernel.panic" = 5; };
-
-  # Enable tmpfs for the specified directories.
-  boot.tmp.useTmpfs = true;
-
-  # Allocate 50% of RAM for tmpfs. You can adjust this percentage to your needs.
-  boot.tmp.tmpfsSize = "50%";
+  #---------------------------------------------------------------------
+  # Plymouth boot splash screen, activates the Plymouth boot splash screen.
+  #---------------------------------------------------------------------  
+  boot.plymouth.enable = true;
+  boot.plymouth.theme = "breeze";
 }
 

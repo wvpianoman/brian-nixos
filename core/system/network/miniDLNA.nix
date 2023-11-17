@@ -4,9 +4,13 @@
   # DLNA service: Check if working. Open browser: http://192.168.0.13:8200/
   # Add: ports 8200
   # Cache location: /var/cache/minidlna/  sometimes deleting it clears it
+  # sudo  netstat -tulpn | grep minidlnad         minidlnad --help
   # ------------------------------------------------------------------------
   services.minidlna.enable = true;
+  # networking.firewall.enable = false;
+
   services.minidlna.settings = {
+    #openFirewall = true;
     friendly_name = "NixOS-DLNA";
 
     # https://mylinuxramblings.wordpress.com/2016/02/19/mini-how-to-installing-minidlna-in-ubuntu/
@@ -21,10 +25,12 @@
       # "P,/home/brian/public/Pictures/"    # Pics  
       # "V,/home/brian/public/Vids/"        # Vidoes files are here
     ];
-    
-    inotify = "yes";
-    log_level = "error";
+
+    #log_level = "error";
     announceInterval = 1;
+    db_dir = "/var/cache/minidlna"; # Needs to be un-commented
+    inotify = "yes";
+    log_dir = "/var/log"; # Needs to be un-commented
   };
 
   users.users.minidlna = {
@@ -35,8 +41,8 @@
   networking.firewall = {
     enable = false;
     allowedTCPPorts = [ 8096 8200 ];
-    allowedUDPPorts = [ 1900 8200 ];
+    allowedUDPPorts = [ 1900 8200 58939 38982 ];
   };
 
 }
- 
+

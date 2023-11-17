@@ -29,13 +29,16 @@
 
     # Main Core
     #---------------------------------------------
+    # ../../../core/programs/git/gitfs.nix
     ../../../core
     ../../../core/boot/efi/efi.nix         # Use EFI Bootloader
     ../../../core/gpu/intel/intel-laptop
-
-    ../../../user
+    ../../../core/modules
     ./Lenovo-Slim7-hardware-configuration.nix
 
+    # Users && user settings
+    # ---------------------------------------------
+    ../../../user
     
   ];
   #---------------------------------------------------------------------
