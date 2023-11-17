@@ -93,7 +93,7 @@ let
         themeIni = [{
           section = "Theme";
           key = "FacesDir";
-          value = /etc/nixos/SETUP/profile-pics/brian.face.icon;
+          value = /etc/nixos/SETUP/profile-pics/tolga.face.icon;
         }];
       };
       deps = with pkgs; [ ];

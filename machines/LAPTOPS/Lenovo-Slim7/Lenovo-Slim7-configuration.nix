@@ -23,9 +23,9 @@
 
     # Custom System tweaks
     #---------------------------------------------
- #   ../../../core/system-tweaks/storage-tweaks/SSD/SSD-tweak.nix             # SSD read & write tweaks
+    ../../../core/system-tweaks/storage-tweaks/NVME/NVME-tweak.nix             # SSD read & write tweaks
     ../../../core/system-tweaks/zram/zram-32GB-SYSTEM.nix                    # Zram tweak for 16GB
- #   ../../../core/system-tweaks/kernel-tweaks/32GB-SYSTEM/32GB-SYSTEM.nix    # Kernel tweak for 16GB
+    ../../../core/system-tweaks/kernel-tweaks/32GB-SYSTEM/32GB-SYSTEM.nix    # Kernel tweak for 16GB
 
     # Main Core
     #---------------------------------------------

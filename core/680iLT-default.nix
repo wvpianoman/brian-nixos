@@ -9,7 +9,7 @@
     
   #  ./modules/iphone/iphone.nix
     ./nix
-    ./packages/680iLT.nix
+    ./packages/680iLT-default.nix
     ./programs
     ./services
     ./system

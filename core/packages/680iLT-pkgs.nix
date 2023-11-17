@@ -19,10 +19,12 @@
   #    bluemail                          # Free, secure, universal email app, capable of managing an unlimited number of mail accounts
 
       #------------------------------------
-      # Miscellaneous:
+      # Theming:
       #------------------------------------
       papirus-icon-theme               # Papirus icon theme
-  #    github-desktop                   # GUI for managing Git and GitHub
+      arc-kde-theme                    # A port of the arc theme for Plasma
+      layan-kde                        # A flat Design theme for KDE Plasma desktop
+      sweet                            # Light and dark colorful Gtk3.20+ theme
 
       #------------------------------------
       # Office Suites
@@ -127,6 +129,14 @@
       #------------------------------------
  #     uget                           # Download manager using GTK and libcurl
  #     uget-integrator                # Native messaging host to integrate uGet Download Manager with web browsers
+
+      #-----------------------------------------------------------------
+      # Extra Misc packages
+      #-----------------------------------------------------------------
+
+ #     github-desktop                   # GUI for managing Git and GitHub
+      libsForQt5.dolphin
+      libsForQt5.dolphin-plugins
     ];
   };
 }
