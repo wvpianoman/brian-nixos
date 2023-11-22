@@ -15,16 +15,13 @@ with lib;
       # allowUnfreePredicate = _: true;
 
       permittedInsecurePackages = [
-
         "electron-12.2.3"
         "electron-24.8.6"
         "openssl-1.1.1u"
         "openssl-1.1.1v"
-        "openssl-1.1.1w"
         "python-2.7.18.6"
         "qtwebkit-5.212.0-alpha4"
-        "zotero-6.0.26"
-        "zotero-6.0.27"
+
       ];
 
       allowUnfreePredicate = pkg:
@@ -32,10 +29,10 @@ with lib;
           "nvidia-settings"
           "nvidia-x11"
           "vscode"
-        # "spotify"
-        # "steam"
-        # "steam-original"
-        # "steam-run"
+          # "spotify"
+          # "steam"
+          # "steam-original"
+          # "steam-run"
 
           # they got fossed recently so idk
           "Anytype"

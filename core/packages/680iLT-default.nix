@@ -7,7 +7,6 @@
 
   imports = [
 
-    ./custom-pkgs
     ./680iLT-packages.nix
     ./680iLT-pkgs.nix
 

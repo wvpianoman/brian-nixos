@@ -18,21 +18,22 @@
 
     # Select your kernel
     #---------------------------------------------
-    # ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix    # Latest default NixOS kernel
-    ../../../core/system-tweaks/kernel-upgrades/xanmod.nix             # Xanmod kernel
-    # ../../../core/system-tweaks/kernel-upgrades/zen.nix                # Zen kernel
+ #    ../../../core/modules/system-tweaks/kernel-upgrades/latest-standard.nix  # Latest default NixOS kernel
+ #    ../../../core/modules/system-tweaks/kernel-upgrades/stable-LTS.nix       # Sometimes older pc's perform better on LTS kernel
+ #    ../../../core/modules/system-tweaks/kernel-upgrades/zen.nix              # Zen kernel
+    ../../../core/modules/system-tweaks/kernel-upgrades/xanmod.nix           # Xanmod kernel
 
     # Custom System tweaks
     #---------------------------------------------
-    ../../../core/system-tweaks/storage-tweaks/HHD/HHD-tweak.nix           # SSD read & write tweaks
-    # ../../../core/system-tweaks/zram/zram-8GB-SYSTEM.nix                   # Zram tweak for 8GB
-    ../../../core/system-tweaks/kernel-tweaks/8GB-SYSTEM/8GB-SYSTEM.nix    # Kernel tweak for 8GB
+    ../../../core/modules/system-tweaks/storage-tweaks/HHD-tweak.nix                 # SSD read & write tweaks
+  #   ../../../core/modules/system-tweaks/zram/zram-8GB-SYSTEM.nix                     # Zram tweak for 8GB
+    ../../../core/modules/system-tweaks/kernel-tweaks/8GB-SYSTEM.nix                 # Kernel tweak for 8GB
 
     # Main Core
     #---------------------------------------------
     # ../../../core/programs/git/gitfs.nix
     ../../../core/680iLT-default.nix
-    ../../../core/boot/grub/grub.nix         # Use GRUB Bootloader
+    ../../../core/boot/grub.nix         # Use GRUB Bootloader
     ../../../core/gpu/amd/opengl
     ../../../core/modules
     ./680iLT-hardware-configuration.nix

@@ -6,7 +6,7 @@ let
   #---------------------------------------------------------------------
 
   # Change to suit
-  mySharedPath = "/home/brian/Public"; # Change this path to your desired value
+  mySharedPath = "/home/tolga/Public"; # Change this path to your desired value
 
   sharedOptions = {
 

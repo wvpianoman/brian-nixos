@@ -83,8 +83,8 @@ with lib;
                                       # provides: ffprobe ffmpeg
 
       ffmpegthumbnailer               # A lightweight video thumbnailer
-      libdvdcss                       # A library for decrypting DVDs
-      libdvdread                      # A library for reading DVDs
+ #     libdvdcss                       # A library for decrypting DVDs
+ #     libdvdread                      # A library for reading DVDs
       libopus                         # Open, royalty-free, highly versatile audio codec
       libvorbis                       # Vorbis audio compression reference implementation
       mediainfo                       # Supplies technical and tag information about a video or audio file
@@ -122,12 +122,12 @@ with lib;
       # Database related
       # ---------------------------------------------------------------------
 
-      dbeaver                         # Universal SQL Client for developers, DBA and analysts. Supports MySQL, PostgreSQL, MariaDB, SQLite, and more
+  #    dbeaver                         # Universal SQL Client for developers, DBA and analysts. Supports MySQL, PostgreSQL, MariaDB, SQLite, and more
 
-      pgmodeler                       # A database modeling tool for PostgreSQL
+  #    pgmodeler                       # A database modeling tool for PostgreSQL
                                       # provides: pgmodeler-cli pgmodeler pgmodeler-ch pgmodeler-se
 
-      sqlitebrowser                   # DB Browser for SQLite
+  #    sqlitebrowser                   # DB Browser for SQLite
 
       # ---------------------------------------------------------------------
       # cli-utilities
@@ -296,7 +296,7 @@ with lib;
       # heroku                         # Everything you need to get started using Heroku
       # powershell                     # Powerful cross-platform (Windows, Linux, and macOS) shell and scripting language based on .NET
       teamviewer                     # Desktop sharing application, providing remote support and online meetings
-      anydesk                        # Desktop sharing application, providing remote support and online meetings
+ #     anydesk                        # Desktop sharing application, providing remote support and online meetings
       sshpass                        # Non-interactive ssh password auth
 
       # ---------------------------------------------------------------------
@@ -362,10 +362,10 @@ with lib;
       # Other Miscellaneous Programs
       # ---------------------------------------------------------------------
 
-      blueberry                     # Bluetooth configuration tool
+  #    blueberry                     # Bluetooth configuration tool
                                     # blueberry-tray blueberry
 
-      efibootmgr                    # A Linux user-space application to modify the Intel Extensible Firmware Interface (EFI) Boot Manager
+  #    efibootmgr                    # A Linux user-space application to modify the Intel Extensible Firmware Interface (EFI) Boot Manager
                                     # efibootdump efibootmgr
 
       gum                           # gum https://github.com/charmbracelet/gum
@@ -446,7 +446,7 @@ with lib;
       lsdvd                         # Display information about audio, video, and subtitle tracks on a DVD
       ncdu                          # Disk usage analyzer with an ncurses interface
       neofetch                      # A fast, highly customizable system info script
-      parallel-full                 # provides additional features for parallel computing. It is used for parallel processing, distributed computing, and other high-performance computing scenarios
+      # parallel-full                 # provides additional features for parallel computing. It is used for parallel processing, distributed computing, and other high-performance computing scenarios
       pciutils                      # A collection of programs for inspecting and manipulating configuration of PCI devices
       pfetch                        # A pretty system information tool written in POSIX sh
       pmutils                       # A small collection of scripts that handle suspend and resume on behalf of HAL

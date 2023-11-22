@@ -244,9 +244,9 @@ cd /etc/nixos/SETUP && make-executable
 # Check if the 59-minute cron job already exists in the crontab, if not add
 # ability to backup /etc/nixos every 59 mins
 # -----------------------------------------------------------------------------------
-if ! crontab -l | grep -q "*/59 * * * * nixos-archive >> /home/brian/test.log"; then
+if ! crontab -l | grep -q "*/59 * * * * nixos-archive >> /home/tolga/test.log"; then
   # Add the 59-minute cron job to the crontab
-  echo "*/59 * * * * nixos-archive >> /home/brian/test.log" | crontab -
+  echo "*/59 * * * * nixos-archive >> /home/tolga/test.log" | crontab -
   echo "Cron job added successfully to run every 59 minutes."
 else
   echo "Cron job already set to run every 59 minutes in the crontab."

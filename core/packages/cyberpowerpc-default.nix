@@ -7,7 +7,6 @@
 
   imports = [
 
-    ./custom-pkgs
     ./packages.nix
     ./my-pkgs.nix
 

@@ -18,6 +18,7 @@
     # Select your kernel
     #---------------------------------------------
     # ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix   # Latest default NixOS kernel
+    # ../../../core/system-tweaks/kernel-upgrades/stable-LTS.nix        # Sometimes older pc's perform better on LTS kernel
     ../../../core/system-tweaks/kernel-upgrades/xanmod.nix              # Xanmod kernel
     # ../../../core/system-tweaks/kernel-upgrades/zen.nix               # Zen kernel
 
@@ -31,8 +32,8 @@
     #---------------------------------------------
     # ../../../core/programs/git/gitfs.nix
     ../../../core
-    ../../../core/boot/efi/efi.nix         # Use EFI Bootloader
-    ../../../core/gpu/intel/intel-laptop
+    ../../../core/boot/efi.nix         # Use EFI Bootloader
+   # ../../../core/gpu/intel/intel-laptop
     ../../../core/modules
     ./Dell-E6540-hardware-configuration.nix 
 

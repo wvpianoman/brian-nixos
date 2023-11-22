@@ -73,8 +73,8 @@
         lsla = "lsd -la";
 
         # fun stuff
-        icons = "sxiv -t /home/brian/Pictures/icons";
-        wp = "sxiv -t /home/brian/Pictures/wallpapers";
+        icons = "sxiv -t /home/tolga/Pictures/icons";
+        wp = "sxiv -t /home/tolga/Pictures/wallpapers";
 
         # file access
         cp = "cp -riv";

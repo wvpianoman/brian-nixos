@@ -7,7 +7,7 @@
 #   excluding ALL hidden files and folders from /home/tolga/ to //192.168.0.3/LinuxData/HOME/tolga
 
 DEST_DIR="/mnt/smb-rsync/"
-USERNAME="brian"
+USERNAME="tolga"
 SERVER_IP="192.168.0.20"
 
 # MOUNT_OPTIONS="credentials=/etc/nixos/network/smb-secrets,uid=$USER,gid=samba,file_mode=0777,dir_mode=0777"
@@ -84,7 +84,7 @@ while true; do
     populate_include_folders
 
     # Menu options
-    echo -e "\n\e[1;31mRSYNC from /home/brian > W11:\e[0m"
+    echo -e "\n\e[1;31mRSYNC from /home/tolga > W11:\e[0m"
     echo -e "\e[1;34mPlease select a Linux distribution profile:\e[0m"
     echo "1. Fedora"
     echo "2. NixOS"

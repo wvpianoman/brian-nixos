@@ -34,8 +34,8 @@
     #---------------------------------------------
     # ../../../core/programs/git/gitfs.nix
     ../../../core/apple-default.nix
-    ../../../core/boot/efi/efi.nix         # Use EFI Bootloader
-    ../../../core/gpu/intel/intel-laptop
+    ../../../core/boot/efi.nix         # Use EFI Bootloader
+    #../../../core/gpu/intel/intel-laptop
     ../../../core/modules
     ./Apple-hardware-configuration.nix
     ./boot

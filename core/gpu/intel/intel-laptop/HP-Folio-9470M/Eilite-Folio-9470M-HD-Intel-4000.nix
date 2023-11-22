@@ -30,11 +30,11 @@ with lib;
   };
 
   services = {
+    # auto-cpufreq.enable = false;
     # kmscon.enable = false;
+    # kmscon.hwRender = true;
     acpid.enable = true;
-    auto-cpufreq.enable = false;
     fwupd.enable = true;
-    kmscon.hwRender = true;
     power-profiles-daemon.enable = false;
     thermald.enable = true;
     upower.enable = true;
@@ -91,13 +91,13 @@ with lib;
     driSupport = lib.mkDefault true;
     driSupport32Bit = lib.mkDefault true;
     extraPackages = with pkgs; [
+      # amdvlk
+      # intel-ocl
       # nvidia-vaapi-driver
-      amdvlk
       intel-gmmlib
-      intel-media-driver                                                                        # LIBVA_DRIVER_NAME=iHD
-      intel-ocl
-      libvdpau-va-gl
-      vaapiIntel                                                                                # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      intel-media-driver                                                                         # hardware decode/encode of video streams                                                                      
+      libvdpau-va-gl                                                                             # LIBVA_DRIVER_NAME=iHD
+      vaapiIntel                                                                                 # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau
       vulkan-validation-layers
     ];
@@ -106,7 +106,7 @@ with lib;
   #---------------------------------------------------------------------
   # Power management & Analyze power consumption on Intel-based laptops
   #---------------------------------------------------------------------  
-  hardware.bluetooth.powerOnBoot = false;
+  # hardware.bluetooth.powerOnBoot = false;
   networking.networkmanager.wifi.powersave = true;
 
   #---------------------------------------------------------------------
@@ -115,11 +115,13 @@ with lib;
   #---------------------------------------------------------------------
   powerManagement = {
     enable = true;
-
     powertop = {
       enable = lib.mkForce true;
     };
-};
+  };
+
+  # Allow brightness control by video group.
+  hardware.acpilight.enable = true;
 
   #---------------------------------------------------------------------
   # Enable TLP for better power management with Schedutil governor
@@ -147,8 +149,8 @@ with lib;
       CPU_MAX_PERF_ON_BAT = 75;
       CPU_MIN_PERF_ON_BAT = 75;
 
-      CPU_SCALING_GOVERNOR_ON_AC = "schedutil";       # Adjust as needed
-      CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";      # Adjust as needed
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";       # Adjust as needed
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";      # Adjust as needed
 
       NATACPI_ENABLE = 1;
 

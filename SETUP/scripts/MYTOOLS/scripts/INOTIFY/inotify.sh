@@ -5,8 +5,8 @@
 # 18/8/23
 
 # Set source and destination paths
-SOURCE_DIR="/home/brian/Templates/"
-DEST_REPO="/home/brian/nixos/nixos/"
+SOURCE_DIR="/home/tolga/Templates/"
+DEST_REPO="/home/tolga/nixos/nixos/"
 
 # Function to handle git operations and push changes
 commit_and_push() {

@@ -18,12 +18,13 @@
     # Select your kernel
     #---------------------------------------------
     # ../../../core/system-tweaks/kernel-upgrades/latest-standard.nix    # Latest default NixOS kernel
+    # ../../../core/system-tweaks/kernel-upgrades/stable-LTS.nix         # Sometimes older pc's perform better on LTS kernel
     ../../../core/system-tweaks/kernel-upgrades/xanmod.nix               # Xanmod kernel
     # ../../../core/system-tweaks/kernel-upgrades/zen.nix                # Zen kernel
 
     # Custom System tweaks
     #---------------------------------------------
-    ../../../core/system-tweaks/storage-tweaks/NVME/NVME-tweak.nix             # SSD read & write tweaks
+    ../../../core/system-tweaks/storage-tweaks/NVME/NVME-tweak.nix           # NVME read & write tweaks
     ../../../core/system-tweaks/zram/zram-32GB-SYSTEM.nix                    # Zram tweak for 16GB
     ../../../core/system-tweaks/kernel-tweaks/32GB-SYSTEM/32GB-SYSTEM.nix    # Kernel tweak for 16GB
 
@@ -31,8 +32,8 @@
     #---------------------------------------------
     # ../../../core/programs/git/gitfs.nix
     ../../../core
-    ../../../core/boot/efi/efi.nix         # Use EFI Bootloader
-    ../../../core/gpu/intel/intel-laptop
+    ../../../core/boot/efi.nix                    # Use EFI Bootloader
+    #../../../core/gpu/intel/intel-laptop
     ../../../core/modules
     ./Lenovo-Slim7-hardware-configuration.nix
 
