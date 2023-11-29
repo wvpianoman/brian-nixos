@@ -1,13 +1,12 @@
 # MODEL:      	Lenovo Thinkpad L540
-# BIOS:       	Lenovo BIOS
-# MOTHERBOARD:	Lenovo Motherboard
-# CPU:        	Intel Core i5-4200M (4) CPU @ 3.1GHz
+# BIOS:       	Lenovo BBIOS J4ET37WW(1.10) 11/12/2013
+# MOTHERBOARD:	Lenovo Motherboard 20AUS01H00
+# CPU:        	Intel Core i5-4200M (4) CPU @ 2.50GHz
 # GPU:        	Intel 4th Gen Core Processor Integrated Graphics Controller
-# GPU:
 # RAM:        	2x RAM Module 4GB SODIMM DDR3 1600MT/s
-# HARD DRIVE: 	SAMSUNG 120GB SSD
-# NETWORK:    	Intel  	Centrino Ultimate-N 6300
-# BLUETOOTH:  	
+# HARD DRIVE: 	KINGSTON 	SA400S37120G 120GB SSD
+# NETWORK:    	Intel Centrino Advanced-N 6235
+# BLUETOOTH:  	Intel Centrino Bluetooth Wireless Transceiver
 #--------------------------------------------------------------------------------------------------------------------------
 
 { config, pkgs, ... }:
@@ -50,7 +49,7 @@
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "brian";
  
-  networking.hostName = "Lenovo-L540"; # Define your hostname.
+  networking.hostName = "Thinkpad-L540"; # Define your hostname.
 
  # -----------------------------------------------------------------
   #   Enable networking
