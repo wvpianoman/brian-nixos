@@ -1,14 +1,13 @@
-# MODEL:      	Nvidia snc302eeh Desktop Computer (680iLT)
-# BIOS:       	Phoenix Technologies, LTD BIOS 6.00 PG 01/22/2008
-# MOTHERBOARD:	Nvidia Motherboard snc302eeh
-# CPU:        	Intel Pentium D 3.73GHz (4) @ 3.199GHz
-# GPU:        	AMD Turks PRO [Radeon HD 6570/7570/8550 / R5 230]
-# RAM:        	RAM Module(s) 8GB DDR3
-# HARD DRIVE: 	HGST HTS541010B7E610 1TB
-# HARD DRIVE: 	HGST HTS725050A7E630 500GB
-# HARD DRIVE: 	WD1600JS-00NCB1 160GB
-# NETWORK:
-# BLUETOOTH:
+# MODEL:      	Lenovo Thinkpad L540
+# BIOS:       	Lenovo BIOS
+# MOTHERBOARD:	Lenovo Motherboard
+# CPU:        	Intel Core i5-4200M (4) CPU @ 3.1GHz
+# GPU:        	Intel 4th Gen Core Processor Integrated Graphics Controller
+# GPU:
+# RAM:        	2x RAM Module 4GB SODIMM DDR3 1600MT/s
+# HARD DRIVE: 	SAMSUNG 120GB SSD
+# NETWORK:    	Intel  	Centrino Ultimate-N 6300
+# BLUETOOTH:  	
 #--------------------------------------------------------------------------------------------------------------------------
 
 { config, pkgs, ... }:
@@ -18,46 +17,46 @@
 
     # Select your kernel
     #---------------------------------------------
- #    ../../../core/modules/system-tweaks/kernel-upgrades/latest-standard.nix  # Latest default NixOS kernel
- #    ../../../core/modules/system-tweaks/kernel-upgrades/stable-LTS.nix       # Sometimes older pc's perform better on LTS kernel
- #    ../../../core/modules/system-tweaks/kernel-upgrades/zen.nix              # Zen kernel
-    ../../../core/modules/system-tweaks/kernel-upgrades/xanmod.nix           # Xanmod kernel
+    # ../../../core/modules/system-tweaks/kernel-upgrades/latest-standard.nix   # Latest default NixOS kernel
+    # ../../../core/modules/system-tweaks/kernel-upgrades/stable-LTS.nix        # Sometimes older pc's perform better on LTS kernel
+    ../../../core/modules/system-tweaks/kernel-upgrades/xanmod.nix             # Xanmod kernel
+    # ../../../core/modules/system-tweaks/kernel-upgrades/zen.nix               # Zen kernel
 
     # Custom System tweaks
     #---------------------------------------------
-    ../../../core/modules/system-tweaks/storage-tweaks/HHD-tweak.nix       # SSD read & write tweaks
-  #   ../../../core/modules/system-tweaks/zram/zram-8GB-SYSTEM.nix           # Zram tweak for 8GB
-    ../../../core/modules/system-tweaks/kernel-tweaks/8GB-SYSTEM.nix       # Kernel tweak for 8GB
+    ../../../core/modules/system-tweaks/storage-tweaks/SSD-tweak.nix   # SSD read & write tweaks
+    ../../../core/modules/system-tweaks/zram/zram-8GB-SYSTEM.nix      # Zram tweak for 8GB
+    ../../../core/modules/system-tweaks/kernel-tweaks/8GB-SYSTEM.nix  # Kernel tweak for 8GB
 
     # Main Core
     #---------------------------------------------
     # ../../../core/programs/git/gitfs.nix
-    ../../../core/680iLT-default.nix
-    ../../../core/boot/grub.nix         # Use GRUB Bootloader
-    ../../../core/gpu/amd/opengl
+    ../../../core
+    ../../../core/boot/grub.nix         # Use grub Bootloader
+    ../../../core/gpu/intel/intel-laptop
     ../../../core/modules
-    ./680iLT-hardware-configuration.nix
+    ./Thinkpad-L540-hardware-configuration.nix
 
     # Users && user settings
     # ---------------------------------------------
     ../../../user/brian/brian.nix
     ../../../user/sos/sos.nix
-
+    
   ];
   #---------------------------------------------------------------------
   # Enable automatic login for the user.
   #---------------------------------------------------------------------
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "brian";
+ 
+  networking.hostName = "Lenovo-L540"; # Define your hostname.
 
-  networking.hostName = "680iLT"; # Define your hostname.
-
-
-  # -----------------------------------------------------------------
+ # -----------------------------------------------------------------
   #   Enable networking
   # -----------------------------------------------------------------
 #  networking.networkmanager.enable = true;
 
+ 
   #---------------------------------------------------------------------
   #   Automatic system upgrades, automatically reboot after an upgrade if
   #   necessary

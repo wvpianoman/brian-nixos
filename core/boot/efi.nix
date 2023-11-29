@@ -4,7 +4,7 @@
   imports = [
 
     # Intialise tmpfs parameters
-    ../tmpfs/tmpfs.nix
+    ../core/boot/tmpfs.nix
 
   ];
   

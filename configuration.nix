@@ -28,6 +28,9 @@ let
     else if builtins.readFile "/sys/devices/virtual/dmi/id/product_name" == "680iLT\n" then
       machines/DESKTOPS/680iLT/680iLT-configuration.nix
 
+    else if builtins.readFile "/sys/devices/virtual/dmi/id/product_name" == "20AUS01H00\n" then
+      machines/LAPTOPS/Thinkpad-L540/Thinkpad-L540-configuration.nix
+
   else
 
     # Manually symlink host/machine
