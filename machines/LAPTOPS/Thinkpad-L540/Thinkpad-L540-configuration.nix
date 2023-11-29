@@ -41,7 +41,8 @@
     # ---------------------------------------------
     ../../../user/brian/brian.nix
     ../../../user/sos/sos.nix
-    
+    ../../../user/user-home-settings
+
   ];
   #---------------------------------------------------------------------
   # Enable automatic login for the user.
