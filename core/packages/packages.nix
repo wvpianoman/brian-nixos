@@ -445,7 +445,7 @@ with lib;
       vim                           # The most popular clone of the VI editor
       gnome.zenity                  # Tool to display dialogs from the commandline and shell scripts
       less                          # A more advanced file pager than ‘more’
-      lfs                           # Get information on your mounted disks
+    #  lfs                           # Get information on your mounted disks ** Depricated **
       lsd                           # The next gen ls command
       lsdvd                         # Display information about audio, video, and subtitle tracks on a DVD
       ncdu                          # Disk usage analyzer with an ncurses interface
@@ -469,7 +469,7 @@ with lib;
       #---------------------------------------------------------------------
 
       # deepin.deepin-calculator      # An easy to use calculator for ordinary users
-    #  wpsoffice                     # Office suite, formerly Kingsoft Office
+      wpsoffice                     # Office suite, formerly Kingsoft Office
 
       #---------------------------------------------------------------------
       # New additions:

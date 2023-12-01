@@ -110,6 +110,9 @@
       vulkan-tools                    # Khronos official Vulkan Tools and Utilities
       wayland-utils                   # Wayland utilities (wayland-info)
       nodePackages_latest.remod-cli   # chmod for human beings!
+      clinfo                          # Print all known information about all available OpenCL platforms and devices in the system
+      gpu-viewer                      # A front-end to glxinfo, vulkaninfo, clinfo and es2_info
+      fastfetch                       # Like neofetch, but much faster because written in C
 
       #------------------------------------
       # Clipboard Utilities:
