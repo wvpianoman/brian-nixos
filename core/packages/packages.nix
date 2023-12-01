@@ -469,7 +469,7 @@ with lib;
       #---------------------------------------------------------------------
 
       # deepin.deepin-calculator      # An easy to use calculator for ordinary users
-      wpsoffice                     # Office suite, formerly Kingsoft Office
+    #  wpsoffice                     # Office suite, formerly Kingsoft Office
 
       #---------------------------------------------------------------------
       # New additions:
@@ -519,7 +519,6 @@ with lib;
       minidlna                    # Media server software
       nftables                    # The project that aims to replace the existing {ip,ip6,arp,eb}tables framework
       plasma-browser-integration
-
 
     ];
   };

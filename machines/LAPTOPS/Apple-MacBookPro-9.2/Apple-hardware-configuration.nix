@@ -45,9 +45,10 @@
 
   ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/31b89707-8f6a-4e7f-9469-e2fdd41870da";
+fileSystems."/" =
+    { device = "/dev/disk/by-uuid/c59de917-bcb8-4d00-a33e-66c4bccf8030";
       fsType = "ext4";
+ #   };
 
 
     # Optimize SSD
@@ -66,12 +67,12 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1EA3-594A";
+    { device = "/dev/disk/by-uuid/665E-7F09";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/c29229f5-a371-4189-b5e5-e90661f8593f"; }
+    [ { device = "/dev/disk/by-uuid/dfbc6f73-8f45-45b8-bc97-e506bf5b861d"; }
     ];
 
   #---------------------------------------------------------------------

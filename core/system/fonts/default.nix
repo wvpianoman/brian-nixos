@@ -11,7 +11,7 @@
     fontconfig.enable = true;
     enableGhostscriptFonts = true;
 
-    fonts = with pkgs; [
+    packages = with pkgs; [
       (nerdfonts.override {
         fonts = [ "FiraCode" "SourceCodePro" "UbuntuMono" ];
       })
@@ -60,7 +60,7 @@
     # families and reasonable coverage of Unicode.
     #---------------------------------------------------------------------
 
-    enableDefaultFonts = false;
+    enableDefaultPackages = false;
 
     fontconfig = {
       allowBitmaps = true;
@@ -78,7 +78,7 @@
       hinting = {
         autohint = false;
         enable = true;
-        style = "hintslight";
+        style = "full";
       };
 
       subpixel = {

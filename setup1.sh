@@ -20,7 +20,7 @@ cd current-project
 sudo cp /etc/nixos/configuration.nix /etc/nixos/configuration.nix.bak
 
 # copy the files downloaded into /etc/nixos directory
-sudo rsync -av --exclude='.git' ./* /etc/nixos
+#sudo rsync -av --exclude='.git' ./* /etc/nixos
 
 # set ownership and permissions
 sudo chown -R $(whoami):$(id -gn) /etc/nixos

@@ -194,7 +194,9 @@
     # };
   };
 
-  nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
+ # nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;  depricated
+ #
+ # warning: The cfg.enablePlasmaBrowserIntegration argument for `firefox.override` is deprecated, please add `pkgs.plasma-browser-integration` to `nativeMessagingHosts.packages` instead
 
 }
 # NOTE: 

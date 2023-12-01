@@ -48,7 +48,7 @@ with lib;
     xserver = {
       videoDrivers = [ "modesetting" ];                                                                         # Use the dedicated Intel driver    
       libinput.enable = true;
-      libinput.touchpad.tapping = false;
+      libinput.touchpad.tapping = true;
       libinput.touchpad.naturalScrolling = true;
       libinput.touchpad.scrollMethod = "twofinger";
       libinput.touchpad.disableWhileTyping = true;
