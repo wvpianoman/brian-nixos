@@ -63,7 +63,7 @@
   # system.autoUpgrade.allowReboot = true;  # Very annoying .
   system.autoUpgrade.enable = true;
   system.copySystemConfiguration = true;
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 
 }
