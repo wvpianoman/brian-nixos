@@ -67,5 +67,5 @@ in
     # ./core/services/xserver/xfce/xfce.nix
     
   ];
-programs.nix-ld.dev.enable = true;
+programs.nix-ld.enable = true;
 }
