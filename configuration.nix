@@ -43,7 +43,12 @@ in
 
 {
   imports = [ 
-    
+
+    <nix-ld/modules/nix-ld.nix>
+
+  # The module in this repository defines a new module under (programs.nix-ld.dev) instead of (programs.nix-ld) 
+  # to not collide with the nixpkgs version.
+   
     # call attribute thats declared above
     # ---------------------------------------------
     importfile 
@@ -62,4 +67,5 @@ in
     # ./core/services/xserver/xfce/xfce.nix
     
   ];
+programs.nix-ld.dev.enable = true;
 }
