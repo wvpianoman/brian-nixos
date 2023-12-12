@@ -6,7 +6,9 @@
 {
   boot.kernel.sysctl = {
 
-        "net.ipv4.tcp_congestion_control" = "bbr";     # Tweak local networking
+    # "net.ipv4.tcp_congestion_control" = "bbr";    # Tweak local networking
+    "net.ipv4.tcp_congestion_control" = "westwood";   # sets the TCP congestion control algorithm to Westwood for IPv4 in the Linux kernel.
+
     #---------------------------------------------------------------------
     #   Network and memory-related optimizationss for desktop 16GB
     #---------------------------------------------------------------------

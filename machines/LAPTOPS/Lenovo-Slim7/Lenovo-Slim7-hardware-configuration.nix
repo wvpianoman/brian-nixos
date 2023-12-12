@@ -34,7 +34,14 @@
 
     extraModulePackages = [ ];
     initrd.kernelModules = [ ];
-    kernelModules = [ "kvm-intel" "tcp_bbr" ];
+    kernelModules = [
+    "kvm-intel"
+    "tcp_cubic"     # Cubic: A traditional and widely used congestion control algorithm
+    "tcp_reno"      # Reno: Another widely used and stable algorithm
+    "tcp_newreno"   # New Reno: An extension of the Reno algorithm with some improvements
+    "tcp_bbr"       # BBR: Dynamically optimize how data is sent over a network, aiming for higher throughput and reduced latency
+    "tcp_westwood"  # Westwood: Particularly effective in wireless networks
+    ];
 
     kernelParams = [
 

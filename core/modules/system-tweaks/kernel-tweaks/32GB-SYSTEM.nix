@@ -5,12 +5,12 @@
 
 {
   boot.kernel.sysctl = {
+    # "net.ipv4.tcp_congestion_control" = "bbr";    # Tweak local networking
+    "net.ipv4.tcp_congestion_control" = "westwood";   # sets the TCP congestion control algorithm to Westwood for IPv4 in the Linux kernel.
 
     #---------------------------------------------------------------------
     #   Network and memory-related optimizationss for 32GB
     #---------------------------------------------------------------------
-    "net.ipv4.tcp_congestion_control" = "bbr";    # Tweak local networking
-
     "kernel.sysrq" = 1;                           # Enable SysRQ for rebooting the machine properly if it freezes. [Source](https://oglo.dev/tutorials/sysrq/index.html)
     "net.core.netdev_max_backlog" = 30000;        # Help prevent packet loss during high traffic periods.
     "net.core.rmem_default" = 262144;             # Default socket receive buffer size, improve network performance & applications that use sockets. Adjusted for 32GB RAM.

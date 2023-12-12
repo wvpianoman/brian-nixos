@@ -37,7 +37,14 @@
     extraModprobeConfig = ''
     options Thread.ProcessorCount=8 Thread.MaxProcessorCount=8 Thread.MinFreeProcessorCount=2 Thread.JobThreadPriority=1'';
 
-    kernelModules = [ "kvm-amd" "tcp_bbr" ];
+    kernelModules = [
+    "kvm-amd"
+    "tcp_cubic"     # Cubic: A traditional and widely used congestion control algorithm
+    "tcp_reno"      # Reno: Another widely used and stable algorithm
+    "tcp_newreno"   # New Reno: An extension of the Reno algorithm with some improvements
+    "tcp_bbr"       # BBR: Dynamically optimize how data is sent over a network, aiming for higher throughput and reduced latency
+    "tcp_westwood"  # Westwood: Particularly effective in wireless networks
+    ];
 
     # Enable BBR congestion control algorithm for TCP, , which can lead to improved network throughput and reduced latency.
 
