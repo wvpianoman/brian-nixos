@@ -5,8 +5,9 @@
 
 {
   boot.kernel.sysctl = {
-    # "net.ipv4.tcp_congestion_control" = "bbr";    # Tweak local networking
-    "net.ipv4.tcp_congestion_control" = "westwood";   # sets the TCP congestion control algorithm to Westwood for IPv4 in the Linux kernel.
+    # "net.ipv4.tcp_congestion_control" = "bbr";        # Tweak local networking
+    "net.core.default_qdisc"="fq";                    # sets the default queuing discipline for network traffic in the Linux kernel to Fair Queueing (fq).
+    # "net.ipv4.tcp_congestion_control" = "westwood";   # sets the TCP congestion control algorithm to Westwood for IPv4 in the Linux kernel.
 
     #---------------------------------------------------------------------
     #   Network and memory-related optimizationss for 64GB

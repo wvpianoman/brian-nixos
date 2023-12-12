@@ -30,6 +30,17 @@
 
     };
 
+    timeServers = [
+      "0.nixos.pool.ntp.org"
+      "1.nixos.pool.ntp.org"
+      "2.nixos.pool.ntp.org"
+      "3.nixos.pool.ntp.org"
+      "time.google.com"
+      "time2.google.com"
+      "time3.google.com"
+      "time4.google.com"
+    ];
+
     # defaultGateway = "192.168.0.1";
     # interfaces.enp3s0.ipv4.addresses = [{
     #  address = "192.168.0.13";
@@ -51,7 +62,11 @@
     '';
 
   };
+  # Install network time protocol
+  environment.systemPackages = with pkgs; [ ntp ];
 
+  # Wifi network monitor connector
+  services.dbus.packages = [ pkgs.miraclecast ];
 }
 
 # wireless = {
