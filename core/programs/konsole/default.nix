@@ -45,12 +45,16 @@
         #---------------------------------------------------------------------
         
         # cd = "cd ..";
-        cl = "clear";
-        copy = "rsync -P";
-        la = "lsd -a";
-        ll = "lsd -l";
-        ls = "lsd";
-        lsla = "lsd -la";
+        CL =    "source ~/.bashrc";
+        cl =    "clear && CL";
+        cong =  "echo && sysctl net.ipv4.tcp_congestion_control && echo";
+        copy =  "rsync -P";
+        io =    "echo &&  cat /sys/block/sda/queue/scheduler && echo";
+        la =    "lsd -a";
+        ll =    "lsd -l";
+        ls =    "lsd";
+        lsla =  "lsd -la";
+        trim =  "sudo fstrim -av";
 
         #---------------------------------------------------------------------
         # Fun stuff

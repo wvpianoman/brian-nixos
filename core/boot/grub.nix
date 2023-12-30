@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./tmpfs.nix
+    ../tmpfs/tmpfs.nix
   ];
 
   #---------------------------------------------------------------------
@@ -11,6 +11,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.consoleMode = "max";
 
   #---------------------------------------------------------------------
   # Copies latest Linux kernels for smoother boot
@@ -21,6 +22,7 @@
   # Initrd configuration, enables systemd services in the initial ramdisk (initrd).
   #---------------------------------------------------------------------  
   boot.initrd.systemd.enable = true;
+  boot.initrd.verbose = false;              # Add this line for less verbose initrd
 
   #---------------------------------------------------------------------
   # Plymouth boot splash screen, activates the Plymouth boot splash screen.
