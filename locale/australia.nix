@@ -29,7 +29,7 @@
     ];
   };
 
-  # both location-based services and time synchronization services are active
+  # both location-based services and time synchronization services are active 
   services.geoclue2.enable = true;
   services.localtimed.enable = true;
 
